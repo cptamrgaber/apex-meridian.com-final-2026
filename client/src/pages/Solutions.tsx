@@ -17,9 +17,9 @@ export default function Solutions() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <img
-              src="/images/ai-logo-128.png"
+              src="/images/ai-logo-white-128.png"
               alt="AI Solutions"
-              className="h-24 w-24"
+              className="h-32 w-auto"
             />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">

@@ -14,9 +14,9 @@ export default function Technology() {
           <div className="container relative z-10 mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <img 
-                src="/images/ai-logo.png" 
+                src="/images/ai-logo-white-96.png" 
                 alt="AI Technology" 
-                className="w-24 h-24 mx-auto mb-6 opacity-90"
+                className="h-24 w-auto mx-auto mb-6 opacity-90"
               />
               <h1 className="text-5xl font-bold text-white mb-6">
                 The Meridian Engine

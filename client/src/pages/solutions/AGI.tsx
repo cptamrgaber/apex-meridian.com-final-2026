@@ -21,7 +21,7 @@ export default function AGI() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4 mb-6">
-            <img src="/images/ai-logo-64.png" alt="AI" className="h-16 w-16" />
+            <img src="/images/ai-logo-white-64.png" alt="AI" className="h-16 w-auto" />
             <Brain className="h-12 w-12 text-cyan-400" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
