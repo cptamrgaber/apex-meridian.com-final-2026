@@ -5,12 +5,35 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Solutions from "./pages/Solutions";
+import Aviation from "./pages/solutions/Aviation";
+import Cybersecurity from "./pages/solutions/Cybersecurity";
+import Education from "./pages/solutions/Education";
+import AGI from "./pages/solutions/AGI";
+import Technology from "./pages/Technology";
+import Investors from "./pages/Investors";
+import Contact from "./pages/Contact";
+import SiteMap from "./pages/SiteMap";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/solutions"} component={Solutions} />
+      <Route path={"/solutions/aviation"} component={Aviation} />
+      <Route path={"/solutions/cybersecurity"} component={Cybersecurity} />
+      <Route path={"/solutions/education"} component={Education} />
+      <Route path={"/solutions/agi"} component={AGI} />
+      <Route path={"/technology"} component={Technology} />
+      <Route path={"/investors"} component={Investors} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/sitemap"} component={SiteMap} />
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/terms"} component={Terms} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -18,18 +41,10 @@ function Router() {
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />
