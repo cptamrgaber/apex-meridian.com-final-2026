@@ -8,6 +8,28 @@ import Team from "@/pages/Team";
 import Careers from "@/pages/Careers";
 import CareerApply from "@/pages/CareerApply";
 import Applications from "@/pages/Applications";
+import Healthcare from "@/pages/solutions/healthcare";
+import Finance from "@/pages/solutions/finance";
+import Manufacturing from "@/pages/solutions/manufacturing";
+import Retail from "@/pages/solutions/retail";
+import Transportation from "@/pages/solutions/transportation";
+import Energy from "@/pages/solutions/energy";
+import MachineLearning from "@/pages/technology/machine-learning";
+import NLP from "@/pages/technology/nlp";
+import ComputerVision from "@/pages/technology/computer-vision";
+import Robotics from "@/pages/technology/robotics";
+import DataAnalytics from "@/pages/technology/data-analytics";
+import Blog from "@/pages/resources/blog";
+import CaseStudies from "@/pages/resources/case-studies";
+import Whitepapers from "@/pages/resources/whitepapers";
+import Research from "@/pages/resources/research";
+import Leadership from "@/pages/company/leadership";
+import Partners from "@/pages/company/partners";
+import Awards from "@/pages/company/awards";
+import Press from "@/pages/company/press";
+import FAQ from "@/pages/support/faq";
+import Documentation from "@/pages/support/documentation";
+import Training from "@/pages/support/training";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -48,6 +70,28 @@ function Router() {
       <Route path={"/careers"} component={Careers} />
       <Route path={"/careers/apply"} component={CareerApply} />
       <Route path={"/applications"} component={Applications} />
+      <Route path={"/solutions/healthcare"} component={Healthcare} />
+      <Route path={"/solutions/finance"} component={Finance} />
+      <Route path={"/solutions/manufacturing"} component={Manufacturing} />
+      <Route path={"/solutions/retail"} component={Retail} />
+      <Route path={"/solutions/transportation"} component={Transportation} />
+      <Route path={"/solutions/energy"} component={Energy} />
+      <Route path={"/technology/machine-learning"} component={MachineLearning} />
+      <Route path={"/technology/nlp"} component={NLP} />
+      <Route path={"/technology/computer-vision"} component={ComputerVision} />
+      <Route path={"/technology/robotics"} component={Robotics} />
+      <Route path={"/technology/data-analytics"} component={DataAnalytics} />
+      <Route path={"/resources/blog"} component={Blog} />
+      <Route path={"/resources/case-studies"} component={CaseStudies} />
+      <Route path={"/resources/whitepapers"} component={Whitepapers} />
+      <Route path={"/resources/research"} component={Research} />
+      <Route path={"/company/leadership"} component={Leadership} />
+      <Route path={"/company/partners"} component={Partners} />
+      <Route path={"/company/awards"} component={Awards} />
+      <Route path={"/company/press"} component={Press} />
+      <Route path={"/support/faq"} component={FAQ} />
+      <Route path={"/support/documentation"} component={Documentation} />
+      <Route path={"/support/training"} component={Training} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

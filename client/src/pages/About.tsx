@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Target, Eye, Heart, Users } from "lucide-react";
+import { Target, Eye, Heart, Users, Globe, Building, Award, TrendingUp } from "lucide-react";
 
 export default function About() {
   return (
@@ -16,7 +16,7 @@ export default function About() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/company-team.jpg"
+            src="/images/hero-home.jpg"
             alt="Apex Meridian Team"
             className="w-full h-full object-cover opacity-20"
           />
@@ -99,7 +99,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="/images/meridian-engine-architecture.jpg"
+                src="/images/hero-agi.jpg"
                 alt="Meridian Engine Architecture"
                 className="rounded-2xl shadow-2xl border border-cyan-500/20"
               />
@@ -108,8 +108,62 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Team */}
+      {/* Company Culture & Values */}
       <section className="py-20 bg-blue-950/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Our Culture</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We foster an environment of innovation, collaboration, and continuous learning
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 text-center">
+              <div className="bg-cyan-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="h-8 w-8 text-cyan-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Innovation First</h4>
+              <p className="text-gray-300 text-sm">
+                Encouraging creative thinking and breakthrough solutions
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 text-center">
+              <div className="bg-cyan-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-cyan-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Collaborative</h4>
+              <p className="text-gray-300 text-sm">
+                Cross-functional teams working together seamlessly
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 text-center">
+              <div className="bg-cyan-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-cyan-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Excellence</h4>
+              <p className="text-gray-300 text-sm">
+                Commitment to the highest standards in everything we do
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 text-center">
+              <div className="bg-cyan-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="h-8 w-8 text-cyan-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Ethical AI</h4>
+              <p className="text-gray-300 text-sm">
+                Responsible development with human welfare at the core
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Leadership Team</h2>
@@ -138,7 +192,7 @@ export default function About() {
       </section>
 
       {/* Global Presence */}
-      <section className="py-20">
+      <section className="py-20 bg-blue-950/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Global Presence</h2>
@@ -167,6 +221,60 @@ export default function About() {
                 <p className="text-cyan-400">{region.clients}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Headquarters */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Our Headquarters</h2>
+            <p className="text-xl text-gray-300">
+              Located in the heart of innovation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="bg-cyan-500/20 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Building className="h-6 w-6 text-cyan-400" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-2">Main Office</h4>
+                  <p className="text-gray-300">
+                    New Cairo, Cairo Governorate, Egypt
+                  </p>
+                  <p className="text-cyan-400 mt-2">
+                    +201 2 00 92 90 92
+                  </p>
+                  <p className="text-cyan-400">
+                    info@apex-meridian.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-cyan-500/20 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Globe className="h-6 w-6 text-cyan-400" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-2">Global Reach</h4>
+                  <p className="text-gray-300">
+                    With partners and clients in over 20 countries, we deliver AI solutions worldwide while maintaining our commitment to local expertise and support.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <img
+                src="/images/hero-cybersecurity.jpg"
+                alt="Office Location"
+                className="rounded-2xl shadow-2xl border border-cyan-500/20"
+              />
+            </div>
           </div>
         </div>
       </section>
