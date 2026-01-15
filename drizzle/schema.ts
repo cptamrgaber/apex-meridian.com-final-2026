@@ -25,4 +25,23 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+/**
+ * Employees table for internal company authentication
+ * Separate from Manus OAuth users table
+ */
+export const employees = mysqlTable("employees", {
+  id: int("id").autoincrement().primaryKey(),
+  username: varchar("username", { length: 64 }).notNull().unique(),
+  password: varchar("password", { length: 255 }).notNull(), // Hashed password
+  name: text("name").notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  department: varchar("department", { length: 100 }),
+  role: mysqlEnum("role", ["admin", "employee", "hr"]).default("employee").notNull(),
+  isActive: int("isActive").default(1).notNull(), // 1 = active, 0 = inactive
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  lastLogin: timestamp("lastLogin"),
+});
+
+export type Employee = typeof employees.$inferSelect;
+export type InsertEmployee = typeof employees.$inferInsert;
