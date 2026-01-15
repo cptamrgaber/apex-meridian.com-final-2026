@@ -45,3 +45,25 @@ export const employees = mysqlTable("employees", {
 
 export type Employee = typeof employees.$inferSelect;
 export type InsertEmployee = typeof employees.$inferInsert;
+
+/**
+ * Job applications table for career applications
+ */
+export const jobApplications = mysqlTable("jobApplications", {
+  id: int("id").autoincrement().primaryKey(),
+  jobTitle: varchar("jobTitle", { length: 200 }).notNull(),
+  department: varchar("department", { length: 100 }).notNull(),
+  fullName: varchar("fullName", { length: 200 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 50 }).notNull(),
+  linkedIn: varchar("linkedIn", { length: 500 }),
+  yearsOfExperience: int("yearsOfExperience").notNull(),
+  resumeUrl: varchar("resumeUrl", { length: 1000 }).notNull(), // S3 URL
+  coverLetter: text("coverLetter"),
+  status: mysqlEnum("status", ["pending", "reviewing", "interviewed", "accepted", "rejected"]).default("pending").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type JobApplication = typeof jobApplications.$inferSelect;
+export type InsertJobApplication = typeof jobApplications.$inferInsert;

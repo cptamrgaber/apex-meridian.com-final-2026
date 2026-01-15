@@ -168,6 +168,55 @@ export const appRouter = router({
         return { success: true };
       }),
   }),
+
+  // Careers and job applications
+  careers: router({
+    submitApplication: publicProcedure
+      .input(z.object({
+        jobTitle: z.string().min(1),
+        department: z.string().min(1),
+        fullName: z.string().min(1),
+        email: z.string().email(),
+        phone: z.string().min(1),
+        linkedIn: z.string().optional(),
+        yearsOfExperience: z.number().int().min(0),
+        resumeFile: z.string(), // base64 encoded PDF
+        resumeFileName: z.string(),
+        coverLetter: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const { submitJobApplication } = await import("./careersDb");
+        const result = await submitJobApplication(input);
+        
+        if (!result.success) {
+          throw new Error(result.error || "Failed to submit application");
+        }
+        
+        return { success: true, applicationId: result.applicationId };
+      }),
+    
+    getApplications: publicProcedure
+      .query(async () => {
+        const { getAllApplications } = await import("./careersDb");
+        return await getAllApplications();
+      }),
+    
+    updateApplicationStatus: publicProcedure
+      .input(z.object({
+        applicationId: z.number(),
+        status: z.enum(["pending", "reviewing", "interviewed", "accepted", "rejected"]),
+      }))
+      .mutation(async ({ input }) => {
+        const { updateApplicationStatus } = await import("./careersDb");
+        const result = await updateApplicationStatus(input.applicationId, input.status);
+        
+        if (!result.success) {
+          throw new Error(result.error || "Failed to update application status");
+        }
+        
+        return { success: true };
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
