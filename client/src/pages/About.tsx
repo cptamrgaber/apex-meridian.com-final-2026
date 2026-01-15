@@ -120,17 +120,16 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "Dr. Sarah Chen", role: "Chief Executive Officer", expertise: "AI Strategy & Leadership" },
-              { name: "Dr. Michael Rodriguez", role: "Chief Technology Officer", expertise: "Machine Learning & Systems" },
-              { name: "Dr. Aisha Patel", role: "Chief Science Officer", expertise: "AGI Research & Ethics" },
-              { name: "James Thompson", role: "Chief Operating Officer", expertise: "Operations & Growth" }
+              { role: "Chief Executive Officer", expertise: "AI Strategy & Leadership" },
+              { role: "Chief Technology Officer", expertise: "Machine Learning & Systems" },
+              { role: "Chief Science Officer", expertise: "AGI Research & Ethics" },
+              { role: "Chief Operating Officer", expertise: "Operations & Growth" }
             ].map((member, index) => (
               <div key={index} className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 text-center">
                 <div className="bg-cyan-500/20 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-12 w-12 text-cyan-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-cyan-400 font-semibold mb-2">{member.role}</p>
+                <p className="text-cyan-400 font-semibold text-lg mb-2">{member.role}</p>
                 <p className="text-gray-300 text-sm">{member.expertise}</p>
               </div>
             ))}
