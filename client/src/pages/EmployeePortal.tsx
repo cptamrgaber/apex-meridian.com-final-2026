@@ -5,13 +5,14 @@ import { FileText, Calendar, Users, Settings, LogOut, BookOpen, MessageSquare, A
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProtectedRoute from "@/components/ProtectedRoute";
+import { useEmployeeAuth } from "@/hooks/useEmployeeAuth";
 
 function EmployeePortalContent() {
   const [, setLocation] = useLocation();
+  const { employee, logout } = useEmployeeAuth();
 
-  const handleLogout = () => {
-    localStorage.removeItem("auth_token");
-    localStorage.removeItem("user_role");
+  const handleLogout = async () => {
+    await logout();
     setLocation("/login");
   };
 
@@ -68,7 +69,7 @@ function EmployeePortalContent() {
                   Employee Portal
                 </h1>
                 <p className="text-xl text-gray-300">
-                  Welcome back! Access your resources and tools below.
+                  Welcome back, {employee?.name}! Access your resources and tools below.
                 </p>
               </div>
               <Button
