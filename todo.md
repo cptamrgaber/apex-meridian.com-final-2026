@@ -96,3 +96,13 @@
 - [x] Support every subject with figures, pictures, and graphs
 - [ ] Include employee login for employee and HR sections
 - [x] Add legal pages (Privacy Policy, Terms of Service)
+
+
+## Logo Fixes (URGENT)
+- [x] Replace header logo with main text logo image (Apex-Meridian_1.png)
+- [x] Keep tree logo as AI symbol only (not main logo)
+- [x] Fix tree logo aspect ratio to maintain circular/square shape
+- [x] Update Header component to use correct logo
+- [x] Ensure tree logo is only used as favicon and AI symbol
+- [x] Create white version of logo for dark backgrounds
+- [x] Test all pages with corrected logos

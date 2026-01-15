@@ -8,18 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="mb-4">
               <img
-                src="/images/ai-logo-64.png"
-                alt="Apex Meridian AI"
-                className="h-10 w-10"
+                src="/images/logo-main-white.png"
+                alt="Apex Meridian"
+                className="h-12 w-auto mb-2"
+                style={{ objectFit: 'contain' }}
               />
-              <div>
-                <h3 className="text-white text-lg font-bold tracking-wider">
-                  A p e x - M e r i d i a n ®
-                </h3>
-                <p className="text-cyan-400 text-xs">LLC</p>
-              </div>
+              <p className="text-cyan-400 text-sm font-semibold">LLC</p>
             </div>
             <p className="text-gray-300 text-sm mb-4">
               AI-Powered Solutions for a Smarter World

@@ -13,22 +13,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <Link href="/">
-            <div className="flex items-center space-x-4 cursor-pointer group">
-              {/* AI Tree Logo */}
+            <div className="cursor-pointer group">
               <img
-                src="/images/ai-logo-64.png"
-                alt="Apex Meridian AI"
-                className="h-12 w-12 group-hover:scale-110 transition-transform"
+                src="/images/logo-main-white.png"
+                alt="Apex Meridian"
+                className="h-16 w-auto group-hover:scale-105 transition-transform"
+                style={{ objectFit: 'contain' }}
               />
-              {/* Text Logo */}
-              <div className="flex flex-col">
-                <span className="text-white text-2xl font-bold tracking-wider">
-                  A p e x - M e r i d i a n ®
-                </span>
-                <span className="text-cyan-400 text-xs tracking-wide">
-                  AI Technology Solutions
-                </span>
-              </div>
             </div>
           </Link>
 
