@@ -1,6 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import Login from "@/pages/Login";
+import EmployeePortal from "@/pages/EmployeePortal";
+import HRDashboard from "@/pages/HRDashboard";
+import Team from "@/pages/Team";
+import Careers from "@/pages/Careers";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -34,6 +39,11 @@ function Router() {
       <Route path={"/sitemap"} component={SiteMap} />
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
+      <Route path={"/login"} component={Login} />
+      <Route path={"/employee"} component={EmployeePortal} />
+      <Route path={"/hr"} component={HRDashboard} />
+      <Route path={"/team"} component={Team} />
+      <Route path={"/careers"} component={Careers} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
