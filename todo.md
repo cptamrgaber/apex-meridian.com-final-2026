@@ -119,3 +119,10 @@
 - [x] Fix nested <a> tag error in Footer component
 - [x] Check all Link components for nested anchors
 - [x] Test all pages after fix
+
+
+## Remaining Nested Anchor Fixes
+- [x] Check Header component for nested anchors
+- [x] Fixed all nested anchors in Header desktop menu
+- [x] Fixed all nested anchors in Header mobile menu
+- [x] Test until error is completely resolved

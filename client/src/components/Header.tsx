@@ -25,16 +25,12 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link href="/">
-              <a className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
-                Home
-              </a>
+            <Link href="/" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
+              Home
             </Link>
             
-            <Link href="/about">
-              <a className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
-                About
-              </a>
+            <Link href="/about" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
+              About
             </Link>
 
             {/* Solutions Dropdown */}
@@ -54,51 +50,35 @@ export default function Header() {
                   onMouseLeave={() => setSolutionsOpen(false)}
                   className="absolute top-full left-0 mt-2 w-64 bg-blue-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-cyan-500/20 py-2"
                 >
-                  <Link href="/solutions">
-                    <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
-                      All Solutions
-                    </a>
+                  <Link href="/solutions" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    All Solutions
                   </Link>
-                  <Link href="/solutions/aviation">
-                    <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
-                      Aviation Intelligence
-                    </a>
+                  <Link href="/solutions/aviation" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    Aviation Intelligence
                   </Link>
-                  <Link href="/solutions/cybersecurity">
-                    <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
-                      Cybersecurity Shield
-                    </a>
+                  <Link href="/solutions/cybersecurity" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    Cybersecurity Shield
                   </Link>
-                  <Link href="/solutions/education">
-                    <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
-                      Education & Cognitive Enhancement
-                    </a>
+                  <Link href="/solutions/education" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    Education & Cognitive Enhancement
                   </Link>
-                  <Link href="/solutions/agi">
-                    <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
-                      AGI Research
-                    </a>
+                  <Link href="/solutions/agi" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    AGI Research
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link href="/technology">
-              <a className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
-                Technology
-              </a>
+            <Link href="/technology" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
+              Technology
             </Link>
 
-            <Link href="/investors">
-              <a className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
-                Investors
-              </a>
+            <Link href="/investors" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
+              Investors
             </Link>
 
-            <Link href="/contact">
-              <a className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
-                Contact
-              </a>
+            <Link href="/contact" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
+              Contact
             </Link>
 
             <Link href="/contact">
@@ -120,55 +100,35 @@ export default function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 space-y-2">
-            <Link href="/">
-              <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
-                Home
-              </a>
+            <Link href="/" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              Home
             </Link>
-            <Link href="/about">
-              <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
-                About
-              </a>
+            <Link href="/about" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              About
             </Link>
-            <Link href="/solutions">
-              <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
-                Solutions
-              </a>
+            <Link href="/solutions" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              Solutions
             </Link>
-            <Link href="/solutions/aviation">
-              <a className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
-                Aviation Intelligence
-              </a>
+            <Link href="/solutions/aviation" className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
+              Aviation Intelligence
             </Link>
-            <Link href="/solutions/cybersecurity">
-              <a className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
-                Cybersecurity Shield
-              </a>
+            <Link href="/solutions/cybersecurity" className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
+              Cybersecurity Shield
             </Link>
-            <Link href="/solutions/education">
-              <a className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
-                Education & Cognitive Enhancement
-              </a>
+            <Link href="/solutions/education" className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
+              Education & Cognitive Enhancement
             </Link>
-            <Link href="/solutions/agi">
-              <a className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
-                AGI Research
-              </a>
+            <Link href="/solutions/agi" className="block px-4 py-3 pl-8 text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded text-sm">
+              AGI Research
             </Link>
-            <Link href="/technology">
-              <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
-                Technology
-              </a>
+            <Link href="/technology" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              Technology
             </Link>
-            <Link href="/investors">
-              <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
-                Investors
-              </a>
+            <Link href="/investors" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              Investors
             </Link>
-            <Link href="/contact">
-              <a className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
-                Contact
-              </a>
+            <Link href="/contact" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              Contact
             </Link>
           </div>
         )}
