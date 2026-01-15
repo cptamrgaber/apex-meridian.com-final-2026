@@ -113,3 +113,9 @@
 - [x] Reduce logo size by 30% in header
 - [x] Reduce logo size by 30% in footer
 - [x] Test logo appearance on all pages
+
+
+## Bug Fixes
+- [x] Fix nested <a> tag error in Footer component
+- [x] Check all Link components for nested anchors
+- [x] Test all pages after fix
