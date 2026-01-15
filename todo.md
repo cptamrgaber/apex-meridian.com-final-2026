@@ -106,3 +106,10 @@
 - [x] Ensure tree logo is only used as favicon and AI symbol
 - [x] Create white version of logo for dark backgrounds
 - [x] Test all pages with corrected logos
+
+
+## Logo Color and Size Fixes (URGENT)
+- [x] Fix logo color - should be white or blue, NOT yellow
+- [x] Reduce logo size by 30% in header
+- [x] Reduce logo size by 30% in footer
+- [x] Test logo appearance on all pages
