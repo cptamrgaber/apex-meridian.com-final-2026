@@ -6,7 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Users, UserPlus, LogOut, Trash2, Edit, Key, CheckCircle, XCircle, Briefcase } from "lucide-react";
+import { Users, UserPlus, LogOut, Trash2, Edit, Key, CheckCircle, XCircle, Briefcase, Download, Mail, Phone, Calendar } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -18,6 +20,12 @@ function HRDashboardContent() {
   const [, setLocation] = useLocation();
   const { employee, logout } = useEmployeeAuth();
   const { data: employees, refetch } = trpc.employee.list.useQuery();
+  const { data: applications, refetch: refetchApplications } = trpc.careers.getApplications.useQuery();
+  
+  const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [departmentFilter, setDepartmentFilter] = useState<string>("all");
+  
+  const updateStatusMutation = trpc.careers.updateApplicationStatus.useMutation();
   
   // State for dialogs
   const [addDialogOpen, setAddDialogOpen] = useState(false);
@@ -176,24 +184,14 @@ function HRDashboardContent() {
                   Welcome, {employee?.name} • Manage employees and operations
                 </p>
               </div>
-              <div className="flex gap-3">
-                <Button
-                  onClick={() => setLocation("/applications")}
-                  variant="outline"
-                  className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10"
-                >
-                  <Briefcase className="mr-2 h-4 w-4" />
-                  Job Applications
-                </Button>
-                <Button
-                  onClick={handleLogout}
-                  variant="outline"
-                  className="border-red-500/50 text-red-400 hover:bg-red-500/10"
-                >
-                  <LogOut className="mr-2 h-4 w-4" />
-                  Logout
-                </Button>
-              </div>
+              <Button
+                onClick={handleLogout}
+                variant="outline"
+                className="border-red-500/50 text-red-400 hover:bg-red-500/10"
+              >
+                <LogOut className="mr-2 h-4 w-4" />
+                Logout
+              </Button>
             </div>
           </div>
 
@@ -237,7 +235,24 @@ function HRDashboardContent() {
             </Card>
           </div>
 
-          {/* Employee Management */}
+          {/* Tabs for Employee Management and Job Applications */}
+          <Tabs defaultValue="employees" className="w-full">
+            <TabsList className="bg-blue-900/50 border-cyan-500/20">
+              <TabsTrigger value="employees" className="data-[state=active]:bg-cyan-500/20">
+                <Users className="mr-2 h-4 w-4" />
+                Employee Management
+              </TabsTrigger>
+              <TabsTrigger value="applications" className="data-[state=active]:bg-cyan-500/20">
+                <Briefcase className="mr-2 h-4 w-4" />
+                Job Applications
+                {applications && applications.length > 0 && (
+                  <Badge className="ml-2 bg-cyan-500">{applications.length}</Badge>
+                )}
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="employees" className="mt-6">
+              {/* Employee Management */}
           <Card className="bg-blue-900/50 backdrop-blur-sm border-cyan-500/20">
             <CardHeader>
               <div className="flex justify-between items-center">

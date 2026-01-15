@@ -7,6 +7,7 @@ import HRDashboard from "@/pages/HRDashboard";
 import Team from "@/pages/Team";
 import Careers from "@/pages/Careers";
 import CareerApply from "@/pages/CareerApply";
+import Applications from "@/pages/Applications";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -46,6 +47,7 @@ function Router() {
       <Route path={"/team"} component={Team} />
       <Route path={"/careers"} component={Careers} />
       <Route path={"/careers/apply"} component={CareerApply} />
+      <Route path={"/applications"} component={Applications} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
