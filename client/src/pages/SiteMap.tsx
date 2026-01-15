@@ -1,116 +1,146 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Link } from "wouter";
 
 export default function SiteMap() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
+      <SEO 
+        title="Site Map - Navigate Our Website"
+        description="Complete sitemap of Apex Meridian website with all pages organized by category for easy navigation."
+      />
       <Header />
       
-      <main className="pt-20 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-4xl font-bold text-white mb-8 text-center">Site Map</h1>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Main Pages */}
-              <div className="bg-slate-900/50 rounded-lg p-6 border border-cyan-500/30">
-                <h2 className="text-2xl font-semibold text-cyan-400 mb-4">Main Pages</h2>
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/technology" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Technology
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/investors" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Investors
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+      <main className="pt-32 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-5xl font-bold text-white mb-4 text-center">
+            Site <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Map</span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-12 text-center">
+            Complete navigation of all pages on our website
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Main Pages */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Main Pages</h2>
+              <ul className="space-y-2">
+                <li><Link href="/" className="text-gray-300 hover:text-cyan-400 transition-colors">Home</Link></li>
+                <li><Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors">About Us</Link></li>
+                <li><Link href="/technology" className="text-gray-300 hover:text-cyan-400 transition-colors">Technology</Link></li>
+                <li><Link href="/investors" className="text-gray-300 hover:text-cyan-400 transition-colors">Investors</Link></li>
+                <li><Link href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact</Link></li>
+              </ul>
+            </div>
 
-              {/* Solutions */}
-              <div className="bg-slate-900/50 rounded-lg p-6 border border-cyan-500/30">
-                <h2 className="text-2xl font-semibold text-cyan-400 mb-4">Solutions</h2>
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/solutions" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Solutions Overview
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/aviation" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Aviation Intelligence
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/cybersecurity" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Cybersecurity Shield
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/education" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Education & Cognitive Enhancement
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions/agi" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      AGI Research
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+            {/* Solutions - Core */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Solutions - Core</h2>
+              <ul className="space-y-2">
+                <li><Link href="/solutions" className="text-gray-300 hover:text-cyan-400 transition-colors">Solutions Overview</Link></li>
+                <li><Link href="/solutions/aviation" className="text-gray-300 hover:text-cyan-400 transition-colors">Aviation Intelligence</Link></li>
+                <li><Link href="/solutions/cybersecurity" className="text-gray-300 hover:text-cyan-400 transition-colors">Cybersecurity Shield</Link></li>
+                <li><Link href="/solutions/education" className="text-gray-300 hover:text-cyan-400 transition-colors">Education & Cognitive Enhancement</Link></li>
+                <li><Link href="/solutions/agi" className="text-gray-300 hover:text-cyan-400 transition-colors">AGI Research</Link></li>
+              </ul>
+            </div>
 
-              {/* Legal */}
-              <div className="bg-slate-900/50 rounded-lg p-6 border border-cyan-500/30">
-                <h2 className="text-2xl font-semibold text-cyan-400 mb-4">Legal</h2>
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/privacy" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/terms" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      Terms of Service
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+            {/* Solutions - Industries */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Solutions - Industries</h2>
+              <ul className="space-y-2">
+                <li><Link href="/solutions/healthcare" className="text-gray-300 hover:text-cyan-400 transition-colors">Healthcare AI</Link></li>
+                <li><Link href="/solutions/finance" className="text-gray-300 hover:text-cyan-400 transition-colors">Financial Services</Link></li>
+                <li><Link href="/solutions/manufacturing" className="text-gray-300 hover:text-cyan-400 transition-colors">Manufacturing & Industry 4.0</Link></li>
+                <li><Link href="/solutions/retail" className="text-gray-300 hover:text-cyan-400 transition-colors">Retail & E-commerce</Link></li>
+                <li><Link href="/solutions/transportation" className="text-gray-300 hover:text-cyan-400 transition-colors">Transportation & Logistics</Link></li>
+                <li><Link href="/solutions/energy" className="text-gray-300 hover:text-cyan-400 transition-colors">Energy & Utilities</Link></li>
+              </ul>
+            </div>
 
-              {/* Contact Information */}
-              <div className="bg-slate-900/50 rounded-lg p-6 border border-cyan-500/30">
-                <h2 className="text-2xl font-semibold text-cyan-400 mb-4">Contact Information</h2>
-                <div className="space-y-3 text-gray-300">
-                  <p>
-                    <strong className="text-white">Email:</strong><br />
-                    info@apex-meridian.com
-                  </p>
-                  <p>
-                    <strong className="text-white">Phone:</strong><br />
-                    +201 2 00 92 90 92
-                  </p>
-                  <p>
-                    <strong className="text-white">Website:</strong><br />
-                    apex-meridian.net
-                  </p>
-                </div>
+            {/* Technology */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Technology</h2>
+              <ul className="space-y-2">
+                <li><Link href="/technology" className="text-gray-300 hover:text-cyan-400 transition-colors">Platform Overview</Link></li>
+                <li><Link href="/technology/machine-learning" className="text-gray-300 hover:text-cyan-400 transition-colors">Machine Learning</Link></li>
+                <li><Link href="/technology/nlp" className="text-gray-300 hover:text-cyan-400 transition-colors">Natural Language Processing</Link></li>
+                <li><Link href="/technology/computer-vision" className="text-gray-300 hover:text-cyan-400 transition-colors">Computer Vision</Link></li>
+                <li><Link href="/technology/robotics" className="text-gray-300 hover:text-cyan-400 transition-colors">Robotics & Automation</Link></li>
+                <li><Link href="/technology/data-analytics" className="text-gray-300 hover:text-cyan-400 transition-colors">Data Analytics</Link></li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Resources</h2>
+              <ul className="space-y-2">
+                <li><Link href="/resources/blog" className="text-gray-300 hover:text-cyan-400 transition-colors">Blog & News</Link></li>
+                <li><Link href="/resources/case-studies" className="text-gray-300 hover:text-cyan-400 transition-colors">Case Studies</Link></li>
+                <li><Link href="/resources/whitepapers" className="text-gray-300 hover:text-cyan-400 transition-colors">Whitepapers</Link></li>
+                <li><Link href="/resources/research" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Papers</Link></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Company</h2>
+              <ul className="space-y-2">
+                <li><Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors">About Us</Link></li>
+                <li><Link href="/company/leadership" className="text-gray-300 hover:text-cyan-400 transition-colors">Leadership Team</Link></li>
+                <li><Link href="/team" className="text-gray-300 hover:text-cyan-400 transition-colors">Our Team</Link></li>
+                <li><Link href="/organization" className="text-gray-300 hover:text-cyan-400 transition-colors">Organization Chart</Link></li>
+                <li><Link href="/careers" className="text-gray-300 hover:text-cyan-400 transition-colors">Careers</Link></li>
+                <li><Link href="/company/partners" className="text-gray-300 hover:text-cyan-400 transition-colors">Partners & Alliances</Link></li>
+                <li><Link href="/company/awards" className="text-gray-300 hover:text-cyan-400 transition-colors">Awards & Recognition</Link></li>
+                <li><Link href="/company/press" className="text-gray-300 hover:text-cyan-400 transition-colors">Press & Media</Link></li>
+              </ul>
+            </div>
+
+            {/* Support */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Support</h2>
+              <ul className="space-y-2">
+                <li><Link href="/support/faq" className="text-gray-300 hover:text-cyan-400 transition-colors">FAQ</Link></li>
+                <li><Link href="/support/documentation" className="text-gray-300 hover:text-cyan-400 transition-colors">Documentation</Link></li>
+                <li><Link href="/support/training" className="text-gray-300 hover:text-cyan-400 transition-colors">Training & Certification</Link></li>
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Legal</h2>
+              <ul className="space-y-2">
+                <li><Link href="/privacy" className="text-gray-300 hover:text-cyan-400 transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="text-gray-300 hover:text-cyan-400 transition-colors">Terms of Service</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact Information */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Contact</h2>
+              <div className="space-y-3 text-gray-300 text-sm">
+                <p>
+                  <strong className="text-white">General Inquiries:</strong><br />
+                  <a href="mailto:info@apex-meridian.com" className="text-cyan-400 hover:text-cyan-300">info@apex-meridian.com</a>
+                </p>
+                <p>
+                  <strong className="text-white">Sales:</strong><br />
+                  <a href="mailto:sales@apex-meridian.com" className="text-cyan-400 hover:text-cyan-300">sales@apex-meridian.com</a>
+                </p>
+                <p>
+                  <strong className="text-white">Support:</strong><br />
+                  <a href="mailto:support@apex-meridian.com" className="text-cyan-400 hover:text-cyan-300">support@apex-meridian.com</a>
+                </p>
+                <p>
+                  <strong className="text-white">HR & Careers:</strong><br />
+                  <a href="mailto:hr@apex-meridian.com" className="text-cyan-400 hover:text-cyan-300">hr@apex-meridian.com</a>
+                </p>
+                <p>
+                  <strong className="text-white">Phone:</strong><br />
+                  +201 2 00 92 90 92
+                </p>
               </div>
             </div>
           </div>
