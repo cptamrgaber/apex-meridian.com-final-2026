@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { TrendingUp, DollarSign, Users, Globe } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -32,6 +33,10 @@ export default function Investors() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
+      <SEO 
+        title="Investor Relations - Join the AI Revolution"
+        description="Invest in Apex Meridian and join the AI revolution. 285% YoY growth, $127M ARR, 50+ enterprise clients. Explore our market opportunity and financial performance."
+      />
       <Header />
       
       <main className="pt-20">

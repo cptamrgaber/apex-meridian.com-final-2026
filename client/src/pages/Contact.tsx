@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,14 +17,8 @@ export default function Contact() {
     message: ""
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
+  const contactMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
       toast.success("Message sent successfully! We'll get back to you within 24 hours.");
       setFormData({
         name: "",
@@ -32,8 +28,15 @@ export default function Contact() {
         subject: "",
         message: ""
       });
-      setIsSubmitting(false);
-    }, 1000);
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to send message. Please try again.");
+    },
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    contactMutation.mutate(formData);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,6 +48,10 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
+      <SEO 
+        title="Contact Us - Get in Touch"
+        description="Contact Apex Meridian to discuss AI solutions for your organization. Reach our team in Cairo, Egypt or submit an inquiry online. Available 24/7."
+      />
       <Header />
       
       {/* Hero Section */}
@@ -234,10 +241,10 @@ export default function Contact() {
 
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={contactMutation.isPending}
                     className="w-full md:w-auto px-10 py-6 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold text-lg rounded-lg transition-all transform hover:scale-105 shadow-2xl"
                   >
-                    {isSubmitting ? (
+                    {contactMutation.isPending ? (
                       "Sending..."
                     ) : (
                       <>

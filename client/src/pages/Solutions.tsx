@@ -1,11 +1,16 @@
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Plane, Shield, GraduationCap, Brain, ArrowRight } from "lucide-react";
 
 export default function Solutions() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
+      <SEO 
+        title="AI Solutions - Aviation, Cybersecurity, Education & AGI"
+        description="Explore Apex Meridian's comprehensive AI solutions for aviation intelligence, cybersecurity defense, adaptive learning, and AGI research. Transform your industry with cutting-edge technology."
+      />
       <Header />
       
       {/* Hero Section */}

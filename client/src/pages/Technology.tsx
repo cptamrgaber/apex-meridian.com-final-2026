@@ -1,10 +1,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Brain, Database, Cpu, Network, Shield, Zap } from "lucide-react";
 
 export default function Technology() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
+      <SEO 
+        title="Meridian Engine - Advanced AI Platform"
+        description="Discover the Meridian Engine, Apex Meridian's proprietary AI platform powering aviation, cybersecurity, education, and AGI solutions with 96.5% accuracy."
+      />
       <Header />
       
       <main className="pt-20">

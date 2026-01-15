@@ -3,10 +3,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Plane, Shield, GraduationCap, Brain } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
+      <SEO 
+        title="Home - AI Technology Solutions"
+        description="Apex Meridian delivers cutting-edge AI solutions for aviation, cybersecurity, education, and AGI research. Transform your organization with our proprietary Meridian Engine platform."
+        keywords="AI solutions, artificial intelligence, aviation AI, cybersecurity AI, education technology, AGI research, Meridian Engine, machine learning"
+      />
       <Header />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">

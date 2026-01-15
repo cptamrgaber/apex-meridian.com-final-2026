@@ -12,6 +12,7 @@ import {
   deleteEmployee,
   toggleEmployeeStatus,
 } from "./employeeDb";
+import { sendContactEmail } from "./email";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -142,6 +143,28 @@ export const appRouter = router({
       .input(z.object({ id: z.number() }))
       .mutation(async ({ input }) => {
         await toggleEmployeeStatus(input.id);
+        return { success: true };
+      }),
+  }),
+
+  // Contact form
+  contact: router({
+    submit: publicProcedure
+      .input(z.object({
+        name: z.string().min(1, "Name is required"),
+        email: z.string().email("Valid email is required"),
+        company: z.string().optional(),
+        phone: z.string().optional(),
+        subject: z.string().min(1, "Subject is required"),
+        message: z.string().min(10, "Message must be at least 10 characters"),
+      }))
+      .mutation(async ({ input }) => {
+        const result = await sendContactEmail(input);
+        
+        if (!result.success) {
+          throw new Error(result.error || "Failed to send email");
+        }
+        
         return { success: true };
       }),
   }),

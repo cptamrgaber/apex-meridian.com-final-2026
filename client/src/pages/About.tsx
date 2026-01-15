@@ -1,10 +1,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Target, Eye, Heart, Users } from "lucide-react";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
+      <SEO 
+        title="About Us - Leading AI Innovation"
+        description="Learn about Apex Meridian's mission to transform industries through artificial intelligence. Meet our expert team and discover our commitment to responsible AI development."
+      />
       <Header />
       
       {/* Hero Section */}

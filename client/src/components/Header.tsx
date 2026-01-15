@@ -98,8 +98,10 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 space-y-2">
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-4 space-y-2">
             <Link href="/" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
               Home
             </Link>
@@ -131,7 +133,7 @@ export default function Header() {
               Contact
             </Link>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );
