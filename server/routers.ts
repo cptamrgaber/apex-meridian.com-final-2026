@@ -145,6 +145,63 @@ export const appRouter = router({
         await toggleEmployeeStatus(input.id);
         return { success: true };
       }),
+
+    // Employee requests
+    submitRequest: publicProcedure
+      .input(z.object({
+        type: z.enum(["vacation", "duty", "report"]),
+        startDate: z.string().optional(),
+        endDate: z.string().optional(),
+        reason: z.string(),
+        details: z.string(),
+        assignmentType: z.string().optional(),
+        location: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const employee = ctx.req.cookies.employee_session ? JSON.parse(ctx.req.cookies.employee_session) : null;
+        if (!employee) {
+          throw new Error("Not authenticated");
+        }
+
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { employeeRequests } = await import("../drizzle/schema");
+
+        await db.insert(employeeRequests).values({
+          employeeId: employee.id,
+          employeeName: employee.name,
+          department: employee.department || "General",
+          requestType: input.type === "vacation" ? "vacation" : input.type === "duty" ? "duty_assignment" : "report",
+          title: input.reason,
+          description: input.details + (input.assignmentType ? `\nAssignment Type: ${input.assignmentType}` : "") + (input.location ? `\nLocation: ${input.location}` : ""),
+          startDate: input.startDate ? new Date(input.startDate) : null,
+          endDate: input.endDate ? new Date(input.endDate) : null,
+          status: "pending",
+        });
+
+        return { success: true };
+      }),
+
+    getMyRequests: publicProcedure
+      .query(async ({ ctx }) => {
+        const employee = ctx.req.cookies.employee_session ? JSON.parse(ctx.req.cookies.employee_session) : null;
+        if (!employee) {
+          return [];
+        }
+
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) return [];
+        const { employeeRequests } = await import("../drizzle/schema");
+        const { eq, desc } = await import("drizzle-orm");
+
+        const requests = await db.select().from(employeeRequests)
+          .where(eq(employeeRequests.employeeId, employee.id))
+          .orderBy(desc(employeeRequests.createdAt));
+
+        return requests;
+      }),
   }),
 
   // Contact form

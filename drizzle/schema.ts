@@ -67,3 +67,64 @@ export const jobApplications = mysqlTable("jobApplications", {
 
 export type JobApplication = typeof jobApplications.$inferSelect;
 export type InsertJobApplication = typeof jobApplications.$inferInsert;
+/**
+ * Employee requests table for vacation, duty assignments, and reports
+ */
+export const employeeRequests = mysqlTable("employeeRequests", {
+  id: int("id").autoincrement().primaryKey(),
+  employeeId: int("employeeId").notNull(),
+  employeeName: varchar("employeeName", { length: 200 }).notNull(),
+  department: varchar("department", { length: 100 }).notNull(),
+  requestType: mysqlEnum("requestType", ["vacation", "duty_assignment", "report", "other"]).notNull(),
+  title: varchar("title", { length: 200 }).notNull(),
+  description: text("description").notNull(),
+  startDate: timestamp("startDate"),
+  endDate: timestamp("endDate"),
+  status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
+  hrNotes: text("hrNotes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type EmployeeRequest = typeof employeeRequests.$inferSelect;
+export type InsertEmployeeRequest = typeof employeeRequests.$inferInsert;
+
+/**
+ * Department projects table for tracking progress
+ */
+export const departmentProjects = mysqlTable("departmentProjects", {
+  id: int("id").autoincrement().primaryKey(),
+  department: varchar("department", { length: 100 }).notNull(),
+  projectName: varchar("projectName", { length: 200 }).notNull(),
+  description: text("description").notNull(),
+  status: mysqlEnum("status", ["planning", "in_progress", "on_hold", "completed"]).default("planning").notNull(),
+  progress: int("progress").default(0).notNull(), // 0-100
+  startDate: timestamp("startDate"),
+  endDate: timestamp("endDate"),
+  teamMembers: text("teamMembers"), // JSON array of employee IDs
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type DepartmentProject = typeof departmentProjects.$inferSelect;
+export type InsertDepartmentProject = typeof departmentProjects.$inferInsert;
+
+/**
+ * Company documents table for policies, manuals, and regulations
+ */
+export const companyDocuments = mysqlTable("companyDocuments", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 200 }).notNull(),
+  category: mysqlEnum("category", ["policy", "manual", "regulation", "handbook", "procedure", "guideline"]).notNull(),
+  department: varchar("department", { length: 100 }), // null = company-wide
+  description: text("description"),
+  content: text("content").notNull(), // Markdown content
+  fileUrl: varchar("fileUrl", { length: 1000 }), // Optional PDF/file URL
+  version: varchar("version", { length: 20 }).default("1.0").notNull(),
+  isActive: int("isActive").default(1).notNull(), // 1 = active, 0 = archived
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CompanyDocument = typeof companyDocuments.$inferSelect;
+export type InsertCompanyDocument = typeof companyDocuments.$inferInsert;

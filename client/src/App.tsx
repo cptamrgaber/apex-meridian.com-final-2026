@@ -31,6 +31,8 @@ import FAQ from "@/pages/support/faq";
 import Documentation from "@/pages/support/documentation";
 import Training from "@/pages/support/training";
 import OrganizationChart from "@/pages/OrganizationChart";
+import DepartmentPortal from "@/pages/DepartmentPortal";
+import EmployeeRequests from "@/pages/EmployeeRequests";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -93,7 +95,9 @@ function Router() {
       <Route path={"/support/faq"} component={FAQ} />
       <Route path={"/support/documentation"} component={Documentation} />
       <Route path={"/support/training"} component={Training} />
-      <Route path={"/organization"} component={OrganizationChart} />
+      <Route path="/organization-chart" component={OrganizationChart} />
+      <Route path="/departments/:dept" component={DepartmentPortal} />
+      <Route path="/employee-requests" component={EmployeeRequests} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

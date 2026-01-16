@@ -257,3 +257,41 @@
 - [ ] Test all changes
 - [ ] Save final checkpoint
 - [ ] Publish to production
+
+
+## Phase 11: Comprehensive Employee Portal System
+- [x] Create database schema for:
+  - [x] Department projects and progress tracking
+  - [x] Employee requests (vacations, duty assignments, reports)
+  - [x] Company documents and policies
+- [x] Create 12 department-specific portal pages with:
+  - [x] Department policies and rules
+  - [x] Project progress tracking
+  - [x] Team member list
+  - [x] Department-specific resources
+- [x] Build employee request system:
+  - [x] Vacation request form
+  - [x] Duty assignment request form
+  - [x] Report submission form
+  - [x] Request status tracking
+  - [x] Backend tRPC procedures for creating and retrieving requests
+  - [x] Frontend EmployeeRequests page with form and request list
+  - [x] Vitest tests for employee request system (6/6 passed)
+- [ ] Create company documentation library:
+  - Employee handbook
+  - HR policies and procedures
+  - Department-specific manuals
+  - Safety regulations
+  - Code of conduct
+  - Compliance guidelines
+- [ ] Update Employee Portal with:
+  - Department navigation
+  - Request submission interface
+  - Document access
+- [ ] Update HR Dashboard with:
+  - Request management interface
+  - Document management
+  - Department oversight
+- [ ] Test all systems end-to-end
+- [ ] Save checkpoint
+- [ ] Publish to production
