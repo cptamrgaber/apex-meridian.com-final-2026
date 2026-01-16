@@ -98,9 +98,9 @@ export default function Investors() {
                 },
                 {
                   icon: Globe,
-                  value: "4",
-                  label: "Global Regions",
-                  description: "Worldwide presence"
+                  value: "5",
+                  label: "Target Regions",
+                  description: "Strategic regional focus"
                 }
               ].map((metric, index) => (
                 <div 
@@ -302,8 +302,8 @@ export default function Investors() {
                     description: "98% customer retention rate with multi-year enterprise contracts"
                   },
                   {
-                    title: "Global Expansion",
-                    description: "Established presence in North America, Europe, MENA, and Asia-Pacific"
+                    title: "Regional Expansion",
+                    description: "Strategic presence across Egypt, North Africa, Middle East, Rest of Africa, and Europe"
                   }
                 ].map((highlight, index) => (
                   <div 

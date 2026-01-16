@@ -195,9 +195,9 @@ export default function About() {
       <section className="py-20 bg-blue-950/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Global Presence</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Regional Presence & Data Center Strategy</h2>
             <p className="text-xl text-gray-300">
-              Serving clients across four continents
+              Self-hosted infrastructure with planned data centers across Egypt, Africa, Middle East, and Europe
             </p>
           </div>
 
@@ -209,16 +209,18 @@ export default function About() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-12">
             {[
-              { region: "North America", clients: "20+ clients" },
-              { region: "Europe", clients: "15+ clients" },
-              { region: "Middle East & Africa", clients: "10+ clients" },
-              { region: "Asia Pacific", clients: "5+ clients" }
+              { region: "Egypt", clients: "Primary Market", priority: "1st" },
+              { region: "North Africa", clients: "Expanding", priority: "2nd" },
+              { region: "Middle East", clients: "Growing", priority: "3rd" },
+              { region: "Rest of Africa", clients: "Emerging", priority: "4th" },
+              { region: "Europe", clients: "Strategic", priority: "5th" }
             ].map((region, index) => (
               <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 text-center">
+                <div className="text-xs font-semibold text-cyan-400 mb-2">{region.priority} Priority</div>
                 <h4 className="text-xl font-bold text-white mb-2">{region.region}</h4>
-                <p className="text-cyan-400">{region.clients}</p>
+                <p className="text-cyan-300">{region.clients}</p>
               </div>
             ))}
           </div>

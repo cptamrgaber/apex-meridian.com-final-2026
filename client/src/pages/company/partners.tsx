@@ -21,15 +21,15 @@ export default function Partners() {
         },
         {
           name: "Microsoft Azure",
-          description: "Cloud infrastructure and AI services platform. Azure provides scalable compute resources, managed AI services, and global deployment capabilities.",
-          type: "Cloud Platform",
-          benefits: ["Global cloud infrastructure", "Azure AI services integration", "Enterprise security compliance"]
+          description: "Development and testing infrastructure partner. Azure provides development tools and testing environments while our production systems run on self-hosted infrastructure.",
+          type: "Development Tools",
+          benefits: ["Development environment", "Testing infrastructure", "AI development tools"]
         },
         {
           name: "Amazon Web Services (AWS)",
-          description: "Cloud computing and machine learning services. AWS SageMaker and EC2 instances power our development and production environments.",
-          type: "Cloud Platform",
-          benefits: ["Scalable ML infrastructure", "SageMaker integration", "Global edge computing"]
+          description: "Development tools and services partner. AWS provides development and testing capabilities while production deployments utilize our self-hosted regional data centers.",
+          type: "Development Tools",
+          benefits: ["Development tools", "Testing environments", "ML experimentation platform"]
         }
       ]
     },
@@ -89,10 +89,28 @@ export default function Partners() {
           benefits: ["Enterprise security integration", "Threat intelligence sharing", "AI security best practices"]
         },
         {
-          name: "Egyptian AI Ethics Council",
-          description: "National AI ethics and governance body. Collaboration ensures our AI development adheres to ethical guidelines and regulatory requirements.",
-          type: "Regulatory & Ethics",
-          benefits: ["Ethics framework alignment", "Regulatory guidance", "Industry standards development"]
+          name: "Information Technology Industry Development Agency (ITIDA)",
+          description: "Egypt's government agency for IT industry development. Strategic partnership supporting technology innovation, startup ecosystem growth, and digital transformation initiatives.",
+          type: "Government Agency",
+          benefits: ["Government support programs", "Industry networking", "Export facilitation", "Funding opportunities"]
+        },
+        {
+          name: "Technology Innovation and Entrepreneurship Center (TIEC)",
+          description: "National innovation hub supporting tech startups and entrepreneurs. Collaboration provides access to incubation programs, mentorship, and innovation resources.",
+          type: "Innovation Hub",
+          benefits: ["Startup ecosystem access", "Innovation programs", "Mentorship network", "Funding connections"]
+        },
+        {
+          name: "Egyptian AI Society",
+          description: "Leading professional organization for AI practitioners in Egypt. Partnership promotes AI research, knowledge sharing, and professional development in the Egyptian AI community.",
+          type: "Professional Organization",
+          benefits: ["AI community engagement", "Research collaboration", "Talent networking", "Industry events"]
+        },
+        {
+          name: "Ministry of Communications and Information Technology (MCIT)",
+          description: "Egypt's government ministry overseeing ICT sector development. Strategic alignment with national digital transformation and AI strategy initiatives.",
+          type: "Government Ministry",
+          benefits: ["Policy alignment", "National AI strategy participation", "Digital Egypt initiatives", "Regulatory support"]
         }
       ]
     },
@@ -114,10 +132,28 @@ export default function Partners() {
           benefits: ["NLP research collaboration", "Ethics research", "Student internship programs"]
         },
         {
-          name: "MIT - Computer Science and AI Laboratory (CSAIL)",
-          description: "World-renowned AI research center. Research partnership focusing on AGI development, transfer learning, and AI safety.",
-          type: "International Research",
-          benefits: ["Cutting-edge research collaboration", "Knowledge exchange programs", "Joint publications"]
+          name: "Ain Shams University - Faculty of Computer and Information Sciences",
+          description: "Leading Egyptian university with strong computer science programs. Joint research in machine learning, computer vision, and Arabic NLP with access to talented graduates.",
+          type: "Academic Research",
+          benefits: ["Research collaboration", "Graduate recruitment", "Joint projects", "Lab access"]
+        },
+        {
+          name: "Alexandria University - Faculty of Engineering",
+          description: "Historic Egyptian university with excellence in engineering and technology. Partnership focuses on AI applications in industrial automation and smart systems.",
+          type: "Academic Research",
+          benefits: ["Applied research programs", "Industry-academia bridge", "Talent pipeline", "Innovation labs"]
+        },
+        {
+          name: "Nile University",
+          description: "Private research university with strong technology focus. Collaboration on AI research, entrepreneurship programs, and technology commercialization.",
+          type: "Academic Research",
+          benefits: ["Research partnerships", "Entrepreneurship programs", "Technology transfer", "Student projects"]
+        },
+        {
+          name: "Arab Academy for Science, Technology and Maritime Transport",
+          description: "Regional institution specializing in technology and maritime studies. Partnership supports AI applications in transportation, logistics, and maritime safety.",
+          type: "Regional Academic",
+          benefits: ["Industry-specific research", "Regional collaboration", "Professional training", "Maritime AI applications"]
         }
       ]
     }
@@ -146,7 +182,7 @@ export default function Partners() {
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             <Card className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border-cyan-500/20 text-center">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-cyan-400 mb-2">15+</div>
+                <div className="text-4xl font-bold text-cyan-400 mb-2">20+</div>
                 <div className="text-gray-300">Strategic Partners</div>
               </CardContent>
             </Card>

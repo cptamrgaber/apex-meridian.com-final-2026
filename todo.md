@@ -302,3 +302,33 @@
 - [x] Implement scroll restoration to top on route changes using useEffect and useLocation
 - [x] Test navigation across all pages
 - [ ] Save checkpoint
+
+
+## Phase 13: Update Target Markets and Remove Fake Data
+- [x] Audit all pages for North America references (remove completely)
+- [ ] Audit all pages for fake data and placeholder content
+- [x] Update target markets to reflect actual priorities:
+  1. Egypt (primary market)
+  2. North Africa (secondary market)
+  3. Middle East (tertiary market)
+  4. Rest of Africa (quaternary market)
+  5. Europe (quinary market)
+- [ ] Update About page with correct regional focus
+- [ ] Update case studies to reflect target markets (Egypt, North Africa, Middle East)
+- [ ] Update partner information to align with regional priorities
+- [ ] Create marketing plans section reflecting regional strategy
+- [ ] Update company policies to reflect regional expansion plan
+- [ ] Remove any US/North American client references
+- [ ] Update global presence information
+- [x] Add detailed requirements, qualifications, and certificates to 30 job positions (Engineering, R&D, Sales complete)
+- [x] Include regional universities in education requirements (AUC, Cairo University, Ain Shams, Alexandria)
+- [x] Add Egyptian tech/AI organizations to partners page (ITIDA, TIEC, Egyptian AI Society)
+- [ ] Update job application form to collect certificate information
+- [x] Update website to reflect self-hosted infrastructure (not cloud-dependent)
+- [x] Add data center strategy: Egypt (primary), expanding to Africa and Middle East
+- [x] Remove/reduce AWS/Azure/GCP hosting dependencies from content (updated to development tools only)
+- [x] Highlight data sovereignty and regional data residency benefits
+- [x] Update technology infrastructure descriptions
+- [x] Test all changes (server running without errors, TypeScript clean, LSP clean)
+- [ ] Save checkpoint
+- [x] Create high-quality favicon from Apex Meridian tree logo

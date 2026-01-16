@@ -46,8 +46,11 @@ export default function Technology() {
                 />
                 <p className="text-gray-300 mb-4">
                   The Meridian Engine is a comprehensive AI platform built on cutting-edge technologies 
-                  and designed for enterprise-scale deployment. It combines neural-symbolic reasoning, 
-                  distributed computing, and advanced security protocols to deliver unparalleled performance.
+                  and designed for enterprise-scale deployment. Our self-hosted infrastructure ensures complete 
+                  data sovereignty and regional compliance, with planned data centers in Egypt (primary hub), 
+                  expanding across Africa and the Middle East. The platform combines neural-symbolic reasoning, 
+                  distributed computing, and advanced security protocols to deliver unparalleled performance 
+                  while keeping data within regional boundaries.
                 </p>
               </div>
             </div>
@@ -67,8 +70,8 @@ export default function Technology() {
                 },
                 {
                   icon: Database,
-                  title: "Distributed Data Processing",
-                  description: "Scalable data pipeline handling petabytes of information across global data centers"
+                  title: "Self-Hosted Infrastructure",
+                  description: "Fully self-hosted data processing infrastructure with planned data centers across Egypt, Africa, and Middle East for data sovereignty and regional compliance"
                 },
                 {
                   icon: Cpu,
@@ -126,9 +129,9 @@ export default function Technology() {
                 </div>
 
                 <div className="bg-slate-900/50 rounded-lg p-6 border border-cyan-500/30">
-                  <h3 className="text-xl font-semibold text-cyan-400 mb-4">Cloud Platforms</h3>
+                  <h3 className="text-xl font-semibold text-cyan-400 mb-4">Infrastructure Strategy</h3>
                   <p className="text-gray-300">
-                    AWS, Google Cloud Platform, Microsoft Azure, Multi-cloud deployment
+                    Self-hosted production infrastructure, Regional data centers (Egypt, Africa, Middle East), Data sovereignty compliance, On-premises deployment options
                   </p>
                 </div>
 
