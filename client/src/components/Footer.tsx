@@ -110,26 +110,29 @@ export default function Footer() {
             <h4 className="text-white font-bold text-lg mb-4">Connect</h4>
             <div className="flex space-x-4 mb-6">
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/company/apex-meridian"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-cyan-500/20 p-3 rounded-full hover:bg-cyan-500/30 transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5 text-cyan-400" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/apex-meridian"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-cyan-500/20 p-3 rounded-full hover:bg-cyan-500/30 transition-colors"
+                aria-label="Twitter/X"
               >
                 <Twitter className="h-5 w-5 text-cyan-400" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@apex-meridian"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-cyan-500/20 p-3 rounded-full hover:bg-cyan-500/30 transition-colors"
+                aria-label="YouTube"
               >
                 <Youtube className="h-5 w-5 text-cyan-400" />
               </a>

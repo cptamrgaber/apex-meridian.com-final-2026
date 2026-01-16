@@ -42,6 +42,7 @@ export default function Careers() {
     { name: "Product Management", count: 5, color: "indigo" },
     { name: "Security & Safety", count: 6, color: "rose" },
     { name: "Quality Assurance", count: 5, color: "amber" },
+    { name: "Art & Design", count: 12, color: "fuchsia" },
   ];
 
   const allJobs: Job[] = [
@@ -513,7 +514,177 @@ export default function Careers() {
       available: true
     },
 
-    // Note: Due to file size constraints, remaining 62 positions (Marketing, Operations, HR, Finance, Legal, Customer Success, Product, Security, QA)
+    // Art & Design (12 positions)
+    {
+      title: "Art Director",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead creative vision and direct visual content creation across all media platforms and AI-powered production projects.",
+      requirements: {
+        education: ["Bachelor's or Master's degree in Fine Arts, Graphic Design, or related field from AUC, Cairo University, Ain Shams, or equivalent"],
+        experience: "7+ years in art direction with portfolio demonstrating excellence in visual storytelling",
+        skills: ["Creative direction", "Adobe Creative Suite mastery", "Brand development", "Team leadership", "AI art tools (Midjourney, DALL-E, Stable Diffusion)", "Video production oversight"],
+        certificates: ["Adobe Certified Expert (ACE)", "Certified Graphic Designer (CGD)", "Creative Leadership Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Creative Director",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Define and execute creative strategy for AI-powered media production, social media campaigns, and brand identity.",
+      requirements: {
+        education: ["Bachelor's or Master's degree in Design, Advertising, or related field"],
+        experience: "10+ years in creative leadership roles with proven track record",
+        skills: ["Strategic creative thinking", "Campaign conceptualization", "Multi-platform content strategy", "Team management", "Client presentation", "Trend forecasting"],
+        certificates: ["Certified Creative Director", "Brand Strategy Certification", "Digital Marketing Creative Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Senior Graphic Designer",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Create compelling visual designs for digital and print media, leveraging AI tools for enhanced creativity.",
+      requirements: {
+        education: ["Bachelor's degree in Graphic Design, Visual Arts, or related field from Cairo University, AUC, Ain Shams, or equivalent"],
+        experience: "5+ years in graphic design with strong portfolio",
+        skills: ["Adobe Photoshop, Illustrator, InDesign", "Typography", "Layout design", "Brand identity", "AI design tools", "Print and digital design"],
+        certificates: ["Adobe Certified Professional", "Certified Graphic Designer", "UI/UX Design Certification"]
+      },
+      available: true
+    },
+    {
+      title: "UI/UX Designer",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Design intuitive user interfaces and experiences for AI-powered applications and digital platforms.",
+      requirements: {
+        education: ["Bachelor's degree in Design, HCI, or related field"],
+        experience: "4+ years in UI/UX design with portfolio of digital products",
+        skills: ["Figma, Sketch, Adobe XD", "User research", "Wireframing and prototyping", "Interaction design", "Usability testing", "Design systems"],
+        certificates: ["Google UX Design Certificate", "Nielsen Norman Group UX Certification", "Interaction Design Foundation Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Motion Graphics Designer",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Create dynamic animations and motion graphics for videos, social media, and marketing content.",
+      requirements: {
+        education: ["Bachelor's degree in Animation, Motion Graphics, or related field"],
+        experience: "3+ years in motion graphics with showreel",
+        skills: ["After Effects", "Cinema 4D or Blender", "2D/3D animation", "Typography animation", "Compositing", "Video editing"],
+        certificates: ["Adobe Certified Expert in After Effects", "Motion Design Certification", "3D Animation Certificate"]
+      },
+      available: true
+    },
+    {
+      title: "Video Editor",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Edit and produce high-quality videos for YouTube, TikTok, social media, and marketing campaigns.",
+      requirements: {
+        education: ["Bachelor's degree in Film Production, Media, or related field"],
+        experience: "3+ years in video editing with portfolio of published work",
+        skills: ["Adobe Premiere Pro, Final Cut Pro", "Color grading (DaVinci Resolve)", "Audio editing", "Storytelling", "Multi-platform optimization", "AI video tools"],
+        certificates: ["Adobe Certified Professional in Premiere Pro", "DaVinci Resolve Certification", "YouTube Content Creator Certification"]
+      },
+      available: true
+    },
+    {
+      title: "3D Artist",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Create 3D models, environments, and assets for AI-powered media production and visual effects.",
+      requirements: {
+        education: ["Bachelor's degree in 3D Animation, Computer Graphics, or related field"],
+        experience: "4+ years in 3D modeling and rendering",
+        skills: ["Blender, Maya, or 3ds Max", "Texturing and shading", "Lighting and rendering", "Character modeling", "Environment design", "UV mapping"],
+        certificates: ["Autodesk Certified Professional", "Blender Certification", "ZBrush Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Visual Effects (VFX) Artist",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Create stunning visual effects for video content, including compositing, motion tracking, and CGI integration.",
+      requirements: {
+        education: ["Bachelor's degree in VFX, Film Production, or related field"],
+        experience: "4+ years in VFX production with showreel",
+        skills: ["After Effects", "Nuke or Fusion", "Motion tracking", "Rotoscoping", "Green screen compositing", "Particle effects"],
+        certificates: ["VFX Compositing Certification", "Adobe After Effects Certification", "Nuke Certified Professional"]
+      },
+      available: true
+    },
+    {
+      title: "Content Strategist",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Develop content strategies for social media, video platforms, and marketing campaigns aligned with business goals.",
+      requirements: {
+        education: ["Bachelor's degree in Marketing, Communications, or related field"],
+        experience: "5+ years in content strategy with proven results",
+        skills: ["Content planning", "Audience research", "SEO and analytics", "Platform optimization (YouTube, TikTok, Instagram)", "Trend analysis", "AI content tools"],
+        certificates: ["Content Marketing Certification", "HubSpot Content Marketing", "Google Analytics Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Social Media Manager",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage social media presence, create engaging content, and execute marketing campaigns across all platforms.",
+      requirements: {
+        education: ["Bachelor's degree in Marketing, Communications, or related field"],
+        experience: "4+ years in social media management with portfolio",
+        skills: ["Social media strategy", "Content creation", "Community management", "Analytics and reporting", "Paid social advertising", "Influencer partnerships"],
+        certificates: ["Facebook Blueprint Certification", "Hootsuite Social Marketing Certification", "Google Ads Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Script Writer",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Write compelling scripts for videos, ads, social media content, and marketing materials using AI-assisted tools.",
+      requirements: {
+        education: ["Bachelor's degree in Creative Writing, Journalism, Film, or related field"],
+        experience: "3+ years in scriptwriting or copywriting",
+        skills: ["Scriptwriting", "Storytelling", "Copywriting", "Video script formatting", "AI writing tools (GPT-4, Claude)", "SEO writing"],
+        certificates: ["Copywriting Certification", "Content Writing Certification", "Screenwriting Certificate"]
+      },
+      available: true
+    },
+    {
+      title: "Audio Engineer",
+      department: "Art & Design",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Produce and edit audio for videos, podcasts, voiceovers, and music using AI audio generation tools.",
+      requirements: {
+        education: ["Bachelor's degree in Audio Engineering, Music Production, or related field"],
+        experience: "4+ years in audio production",
+        skills: ["Pro Tools, Logic Pro, Ableton", "Audio mixing and mastering", "Sound design", "Voiceover recording", "AI audio tools (ElevenLabs, MusicGen)", "Podcast production"],
+        certificates: ["Avid Certified Pro Tools User", "Audio Engineering Society Certification", "Music Production Certification"]
+      },
+      available: true
+    },
+
+    // Note: Due to file size constraints, remaining positions (Marketing, Operations, HR, Finance, Legal, Customer Success, Product, Security, QA)
     // will be added in production version. Current file demonstrates the complete structure and requirements format.
   ];
 

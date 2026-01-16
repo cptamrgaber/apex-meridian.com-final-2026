@@ -14,6 +14,7 @@ import Manufacturing from "@/pages/solutions/manufacturing";
 import Retail from "@/pages/solutions/retail";
 import Transportation from "@/pages/solutions/transportation";
 import Energy from "@/pages/solutions/energy";
+import MediaProduction from "@/pages/solutions/media-production";
 import MachineLearning from "@/pages/technology/machine-learning";
 import NLP from "@/pages/technology/nlp";
 import ComputerVision from "@/pages/technology/computer-vision";
@@ -92,6 +93,7 @@ function Router() {
       <Route path={"/solutions/retail"} component={Retail} />
       <Route path={"/solutions/transportation"} component={Transportation} />
       <Route path={"/solutions/energy"} component={Energy} />
+      <Route path={"/solutions/media-production"} component={MediaProduction} />
       <Route path={"/technology/machine-learning"} component={MachineLearning} />
       <Route path={"/technology/nlp"} component={NLP} />
       <Route path={"/technology/computer-vision"} component={ComputerVision} />

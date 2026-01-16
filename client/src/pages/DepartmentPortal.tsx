@@ -223,6 +223,25 @@ const departmentData: Record<string, any> = {
       { name: "Performance Testing Suite", progress: 60, status: "in_progress" },
       { name: "Quality Standards Documentation", progress: 85, status: "in_progress" }
     ]
+  },
+  art: {
+    name: "Art & Design",
+    description: "Creating stunning visual content and AI-powered media production",
+    email: "art@apex-meridian.com",
+    policies: [
+      "All creative work must align with brand guidelines",
+      "Design reviews held every Tuesday and Thursday",
+      "Asset management system must be used for all files",
+      "Client feedback incorporated within 48 hours",
+      "Creative team meetings every Monday 9 AM",
+      "Portfolio updates required quarterly"
+    ],
+    projects: [
+      { name: "AI Video Generation Pipeline", progress: 80, status: "in_progress" },
+      { name: "Social Media Content Library", progress: 65, status: "in_progress" },
+      { name: "Brand Visual Identity Refresh", progress: 90, status: "in_progress" },
+      { name: "YouTube Channel Production", progress: 55, status: "in_progress" }
+    ]
   }
 };
 

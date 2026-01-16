@@ -2,14 +2,14 @@ import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Plane, Shield, GraduationCap, Brain, ArrowRight } from "lucide-react";
+import { Plane, Shield, GraduationCap, Brain, Video, ArrowRight } from "lucide-react";
 
 export default function Solutions() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
       <SEO 
-        title="AI Solutions - Aviation, Cybersecurity, Education & AGI"
-        description="Explore Apex Meridian's comprehensive AI solutions for aviation intelligence, cybersecurity defense, adaptive learning, and AGI research. Transform your industry with cutting-edge technology."
+        title="AI Solutions - Aviation, Cybersecurity, Education, Media Production & AGI"
+        description="Explore Apex Meridian's comprehensive AI solutions for aviation intelligence, cybersecurity defense, adaptive learning, AI-powered media production, and AGI research. Transform your industry with cutting-edge technology."
       />
       <Header />
       
@@ -31,7 +31,7 @@ export default function Solutions() {
             AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Solutions</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Transforming industries with cutting-edge artificial intelligence across aviation, cybersecurity, education, and AGI research
+            Transforming industries with cutting-edge artificial intelligence across aviation, cybersecurity, education, media production, and AGI research
           </p>
         </div>
       </section>
@@ -156,6 +156,46 @@ export default function Solutions() {
                   </div>
                   <span className="text-cyan-400 font-semibold group-hover:text-cyan-300 flex items-center">
                     Explore Education Solutions <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Media Production */}
+            <Link href="/solutions/media-production">
+              <div className="group cursor-pointer bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="/images/hero-media.jpg"
+                    alt="Media Production"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950 to-transparent" />
+                  <div className="absolute top-6 right-6 bg-cyan-500/20 backdrop-blur-sm rounded-full p-4">
+                    <Video className="h-8 w-8 text-cyan-400" />
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-3xl font-bold text-white mb-4">Media Production</h3>
+                  <p className="text-gray-300 mb-6">
+                    Transform content creation with AI-powered video, audio, and image generation. Automate social media production, create stunning visuals, and scale your creative output across all platforms.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3"></div>
+                      <p className="text-gray-300"><strong className="text-white">AI Video Generation:</strong> Automated video production for all platforms</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3"></div>
+                      <p className="text-gray-300"><strong className="text-white">Social Media Automation:</strong> Content creation and scheduling at scale</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3"></div>
+                      <p className="text-gray-300"><strong className="text-white">Visual Effects & Design:</strong> AI-powered graphics and animations</p>
+                    </div>
+                  </div>
+                  <span className="text-cyan-400 font-semibold group-hover:text-cyan-300 flex items-center">
+                    Explore Media Production <ArrowRight className="ml-2 h-5 w-5" />
                   </span>
                 </div>
               </div>
