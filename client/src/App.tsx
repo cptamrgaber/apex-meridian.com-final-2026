@@ -33,7 +33,8 @@ import Training from "@/pages/support/training";
 import OrganizationChart from "@/pages/OrganizationChart";
 import DepartmentPortal from "@/pages/DepartmentPortal";
 import EmployeeRequests from "@/pages/EmployeeRequests";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -50,9 +51,21 @@ import SiteMap from "./pages/SiteMap";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
+function ScrollToTop() {
+  const [location] = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
+  return null;
+}
+
 function Router() {
   return (
-    <Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/about"} component={About} />
       <Route path={"/solutions"} component={Solutions} />
@@ -101,7 +114,8 @@ function Router() {
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
-    </Switch>
+      </Switch>
+    </>
   );
 }
 
