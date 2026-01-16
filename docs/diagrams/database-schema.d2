@@ -1,0 +1,94 @@
+direction: right
+
+users: {
+  shape: sql_table
+  id: int PK
+  openId: varchar
+  name: varchar
+  email: varchar
+  role: enum
+  createdAt: timestamp
+}
+
+employees: {
+  shape: sql_table
+  id: int PK
+  userId: int FK
+  employeeId: varchar
+  department: varchar
+  position: varchar
+  salary: decimal
+  hireDate: date
+}
+
+employeeRequests: {
+  shape: sql_table
+  id: int PK
+  employeeId: int FK
+  type: enum
+  description: text
+  status: enum
+  startDate: date
+  endDate: date
+  reviewedBy: int FK
+  reviewedAt: timestamp
+  hrNotes: text
+}
+
+departments: {
+  shape: sql_table
+  id: int PK
+  name: varchar
+  description: text
+  headEmployeeId: int FK
+  budget: decimal
+}
+
+projects: {
+  shape: sql_table
+  id: int PK
+  departmentId: int FK
+  name: varchar
+  description: text
+  status: enum
+  startDate: date
+  endDate: date
+  progress: int
+}
+
+documents: {
+  shape: sql_table
+  id: int PK
+  title: varchar
+  category: varchar
+  fileUrl: varchar
+  uploadedBy: int FK
+  uploadedAt: timestamp
+}
+
+jobApplications: {
+  shape: sql_table
+  id: int PK
+  fullName: varchar
+  email: varchar
+  phone: varchar
+  position: varchar
+  department: varchar
+  resumeUrl: varchar
+  status: enum
+  appliedAt: timestamp
+}
+
+users -> employees: "1:1"
+employees -> employeeRequests: "1:N"
+users -> employeeRequests: "reviews (reviewedBy)"
+departments -> employees: "1:N (head)"
+departments -> projects: "1:N"
+users -> documents: "uploads"
+employees -> departments: "belongs to"
+
+style: {
+  fill: "#f0f9ff"
+  stroke: "#0284c7"
+  stroke-width: 2
+}

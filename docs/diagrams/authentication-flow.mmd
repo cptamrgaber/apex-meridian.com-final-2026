@@ -1,0 +1,51 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Frontend
+    participant Backend
+    participant OAuth as Manus OAuth
+    participant DB as Database
+    
+    User->>Browser: Click "Login"
+    Browser->>Frontend: Navigate to login
+    Frontend->>Frontend: Generate login URL
+    Frontend->>OAuth: Redirect to OAuth portal
+    
+    User->>OAuth: Enter credentials
+    OAuth->>OAuth: Validate credentials
+    OAuth->>Backend: Callback with auth code
+    
+    Backend->>OAuth: Exchange code for token
+    OAuth-->>Backend: Return access token
+    Backend->>OAuth: Fetch user profile
+    OAuth-->>Backend: Return user data
+    
+    Backend->>DB: Check if user exists
+    alt User exists
+        DB-->>Backend: Return user record
+    else New user
+        Backend->>DB: Create user record
+        DB-->>Backend: Return new user
+    end
+    
+    Backend->>Backend: Create session
+    Backend->>Backend: Sign JWT token
+    Backend-->>Browser: Set session cookie
+    Browser->>Frontend: Redirect to dashboard
+    
+    Frontend->>Backend: Request user data (with cookie)
+    Backend->>Backend: Verify JWT token
+    Backend->>DB: Fetch user details
+    DB-->>Backend: Return user data
+    Backend-->>Frontend: Return authenticated user
+    Frontend->>User: Show dashboard
+    
+    Note over User,Frontend: Subsequent Requests
+    Frontend->>Backend: API call (with cookie)
+    Backend->>Backend: Verify session
+    alt Valid session
+        Backend-->>Frontend: Return data
+    else Invalid/expired
+        Backend-->>Frontend: 401 Unauthorized
+        Frontend->>User: Redirect to login
+    end

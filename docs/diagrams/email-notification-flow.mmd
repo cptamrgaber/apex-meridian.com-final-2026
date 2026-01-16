@@ -1,0 +1,65 @@
+flowchart TD
+    Start([Trigger Event]) --> CheckType{Event Type?}
+    
+    CheckType -->|Request Approval| Approval[HR Approves Request]
+    CheckType -->|Request Rejection| Rejection[HR Rejects Request]
+    CheckType -->|New Request| NewReq[Employee Submits Request]
+    CheckType -->|Onboarding| Onboard[New Employee Onboarding]
+    
+    Approval --> GetEmpData1[Fetch Employee Data]
+    Rejection --> GetEmpData2[Fetch Employee Data]
+    NewReq --> GetHRData[Fetch HR Team Data]
+    Onboard --> GetEmpData3[Fetch Employee Data]
+    
+    GetEmpData1 --> BuildEmail1[Build Approval Email]
+    GetEmpData2 --> BuildEmail2[Build Rejection Email]
+    GetHRData --> BuildEmail3[Build New Request Alert]
+    GetEmpData3 --> BuildEmail4[Build Onboarding Email]
+    
+    BuildEmail1 --> Template1{Select Template}
+    BuildEmail2 --> Template2{Select Template}
+    BuildEmail3 --> Template3{Select Template}
+    BuildEmail4 --> Template4{Select Template}
+    
+    Template1 --> |Vacation| VacApproved[Vacation Approved Template]
+    Template1 --> |Duty| DutyApproved[Duty Assignment Approved]
+    Template1 --> |Report| ReportApproved[Report Accepted]
+    
+    Template2 --> |Vacation| VacRejected[Vacation Rejected Template]
+    Template2 --> |Duty| DutyRejected[Duty Assignment Rejected]
+    Template2 --> |Report| ReportRejected[Report Rejected]
+    
+    Template3 --> NewReqTemplate[New Request Alert Template]
+    Template4 --> OnboardTemplate[Welcome & Onboarding Template]
+    
+    VacApproved --> SendEmail1[Send via Resend API]
+    DutyApproved --> SendEmail1
+    ReportApproved --> SendEmail1
+    VacRejected --> SendEmail1
+    DutyRejected --> SendEmail1
+    ReportRejected --> SendEmail1
+    NewReqTemplate --> SendEmail1
+    OnboardTemplate --> SendEmail1
+    
+    SendEmail1 --> CheckResult{Send Successful?}
+    
+    CheckResult -->|Yes| LogSuccess[Log Success]
+    CheckResult -->|No| LogError[Log Error]
+    CheckResult -->|No| Retry{Retry Count < 3?}
+    
+    Retry -->|Yes| Wait[Wait 5 seconds]
+    Wait --> SendEmail1
+    Retry -->|No| NotifyAdmin[Notify System Admin]
+    
+    LogSuccess --> UpdateDB[Update Request Status]
+    LogError --> UpdateDB
+    NotifyAdmin --> UpdateDB
+    
+    UpdateDB --> End([Complete])
+    
+    style Start fill:#e1f5ff
+    style End fill:#e1f5ff
+    style SendEmail1 fill:#fff4e6
+    style CheckResult fill:#f3e5f5
+    style LogError fill:#ffebee
+    style LogSuccess fill:#e8f5e9

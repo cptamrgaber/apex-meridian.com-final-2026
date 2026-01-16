@@ -1,0 +1,47 @@
+stateDiagram-v2
+    [*] --> Draft: Employee starts request
+    
+    Draft --> Submitted: Employee submits
+    Draft --> [*]: Employee cancels
+    
+    Submitted --> UnderReview: HR opens request
+    
+    UnderReview --> NeedsInfo: HR requests clarification
+    UnderReview --> Approved: HR approves
+    UnderReview --> Rejected: HR rejects
+    
+    NeedsInfo --> Submitted: Employee provides info
+    NeedsInfo --> Withdrawn: Employee withdraws
+    
+    Approved --> Completed: Action completed
+    Approved --> [*]: Notification sent
+    
+    Rejected --> [*]: Notification sent
+    Withdrawn --> [*]: Request closed
+    Completed --> [*]: Request archived
+    
+    note right of Submitted
+        Status: pending
+        Email: Notify HR team
+        Visible in HR Dashboard
+    end note
+    
+    note right of UnderReview
+        Status: under_review
+        Assigned to HR reviewer
+        Notes can be added
+    end note
+    
+    note right of Approved
+        Status: approved
+        Email: Notify employee
+        Record reviewer & timestamp
+        Update employee calendar
+    end note
+    
+    note right of Rejected
+        Status: rejected
+        Email: Notify employee with reason
+        Record reviewer & timestamp
+        Allow resubmission
+    end note

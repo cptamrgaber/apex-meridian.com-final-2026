@@ -1,0 +1,72 @@
+graph TB
+    subgraph "Client Layer"
+        Browser[Web Browser]
+        Mobile[Mobile Browser]
+    end
+    
+    subgraph "Frontend - React 19"
+        UI[User Interface]
+        Router[Wouter Router]
+        TRPCClient[tRPC Client]
+        Auth[Auth Context]
+    end
+    
+    subgraph "Backend - Express 4"
+        Server[Express Server]
+        TRPCServer[tRPC Server]
+        Middleware[Auth Middleware]
+        OAuth[Manus OAuth]
+    end
+    
+    subgraph "Business Logic"
+        Routers[tRPC Routers]
+        DB[Database Layer]
+        Email[Email Service]
+        Storage[S3 Storage]
+    end
+    
+    subgraph "Data Layer"
+        MySQL[(MySQL/TiDB Database)]
+        S3[S3 Object Storage]
+        Sessions[Session Store]
+    end
+    
+    subgraph "External Services"
+        ManusOAuth[Manus OAuth Server]
+        Resend[Resend Email API]
+        ManusForge[Manus Forge APIs]
+    end
+    
+    Browser --> UI
+    Mobile --> UI
+    UI --> Router
+    Router --> TRPCClient
+    TRPCClient --> Auth
+    
+    TRPCClient -->|HTTP/JSON| TRPCServer
+    TRPCServer --> Server
+    Server --> Middleware
+    Middleware -->|Verify Session| OAuth
+    
+    OAuth -->|Authenticate| ManusOAuth
+    
+    TRPCServer --> Routers
+    Routers --> DB
+    Routers --> Email
+    Routers --> Storage
+    
+    DB --> MySQL
+    Email --> Resend
+    Storage --> S3
+    Middleware --> Sessions
+    
+    Routers -->|LLM/Notifications| ManusForge
+    
+    style Browser fill:#e1f5ff
+    style Mobile fill:#e1f5ff
+    style UI fill:#fff4e6
+    style Server fill:#f3e5f5
+    style MySQL fill:#e8f5e9
+    style S3 fill:#e8f5e9
+    style ManusOAuth fill:#fce4ec
+    style Resend fill:#fce4ec

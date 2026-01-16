@@ -391,7 +391,33 @@ export const appRouter = router({
         
         return { success: true };
       }),
+   }),
+
+  // System monitoring and health checks
+  monitoring: router({
+    getSystemHealth: publicProcedure
+      .query(async () => {
+        const { getSystemHealth } = await import("./monitoring");
+        return await getSystemHealth();
+      }),
+    
+    getDatabaseHealth: publicProcedure
+      .query(async () => {
+        const { checkDatabaseHealth } = await import("./monitoring");
+        return await checkDatabaseHealth();
+      }),
+    
+    getEmailHealth: publicProcedure
+      .query(async () => {
+        const { checkEmailHealth } = await import("./monitoring");
+        return await checkEmailHealth();
+      }),
+    
+    getServerHealth: publicProcedure
+      .query(async () => {
+        const { checkServerHealth } = await import("./monitoring");
+        return await checkServerHealth();
+      }),
   }),
 });
-
 export type AppRouter = typeof appRouter;
