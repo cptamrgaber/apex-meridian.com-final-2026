@@ -234,6 +234,17 @@ export const appRouter = router({
         const { employeeRequests } = await import("../drizzle/schema");
         const { eq } = await import("drizzle-orm");
 
+        // Get request details before updating
+        const [request] = await db.select().from(employeeRequests)
+          .where(eq(employeeRequests.id, input.requestId));
+
+        if (!request) throw new Error("Request not found");
+
+        // Get employee email
+        const { employees } = await import("../drizzle/schema");
+        const [employee] = await db.select().from(employees)
+          .where(eq(employees.id, request.employeeId));
+
         await db.update(employeeRequests)
           .set({
             status: "approved",
@@ -244,7 +255,17 @@ export const appRouter = router({
           })
           .where(eq(employeeRequests.id, input.requestId));
 
-        // TODO: Send notification email to employee
+        // Send notification email to employee
+        if (employee?.email) {
+          const { notifyRequestApproval } = await import("./notifications");
+          await notifyRequestApproval({
+            employeeEmail: employee.email,
+            employeeName: request.employeeName,
+            requestType: request.requestType,
+            requestDetails: request.description,
+            reviewerName: input.reviewedByName,
+          });
+        }
 
         return { success: true };
       }),
@@ -263,6 +284,17 @@ export const appRouter = router({
         const { employeeRequests } = await import("../drizzle/schema");
         const { eq } = await import("drizzle-orm");
 
+        // Get request details before updating
+        const [request] = await db.select().from(employeeRequests)
+          .where(eq(employeeRequests.id, input.requestId));
+
+        if (!request) throw new Error("Request not found");
+
+        // Get employee email
+        const { employees } = await import("../drizzle/schema");
+        const [employee] = await db.select().from(employees)
+          .where(eq(employees.id, request.employeeId));
+
         await db.update(employeeRequests)
           .set({
             status: "rejected",
@@ -273,7 +305,18 @@ export const appRouter = router({
           })
           .where(eq(employeeRequests.id, input.requestId));
 
-        // TODO: Send notification email to employee
+        // Send notification email to employee
+        if (employee?.email) {
+          const { notifyRequestRejection } = await import("./notifications");
+          await notifyRequestRejection({
+            employeeEmail: employee.email,
+            employeeName: request.employeeName,
+            requestType: request.requestType,
+            requestDetails: request.description,
+            reviewerName: input.reviewedByName,
+            reason: input.hrNotes,
+          });
+        }
 
         return { success: true };
       }),

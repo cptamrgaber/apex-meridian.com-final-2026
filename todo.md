@@ -420,3 +420,28 @@
   - [ ] Create tRPC procedures for onboarding system
 - [ ] Test all features
 - [ ] Save checkpoint
+
+
+## Phase 18: Email Notifications, Interactive Map, and Performance Dashboard
+- [x] Implement Email Notification System:
+  - [x] Create email service wrapper using Resend API (server/notifications.ts)
+  - [x] Add notification triggers for request approvals/rejections
+  - [x] Add onboarding milestone notifications
+  - [x] Add HR communication templates
+  - [ ] Write vitest tests for email service
+- [ ] Create Interactive Data Center Map:
+  - [ ] Integrate Google Maps into Data Center Roadmap page
+  - [ ] Add clickable markers for each facility
+  - [ ] Display capacity, status, and details in info windows
+  - [ ] Add map controls and styling
+- [ ] Build Employee Performance Dashboard:
+  - [ ] Create database schema for KPIs, goals, and reviews
+  - [ ] Build tRPC procedures for performance data
+  - [ ] Create Performance Dashboard UI
+  - [ ] Add KPI tracking widgets
+  - [ ] Add goal setting and progress tracking
+  - [ ] Add performance review scheduling
+  - [ ] Write vitest tests for performance features
+- [ ] Push all updates to GitHub repository
+- [ ] Test all features
+- [ ] Save checkpoint
