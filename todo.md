@@ -375,3 +375,21 @@
   - [ ] Create missing architecture image
   - [ ] Update footer company name format
 - [ ] Save checkpoint
+
+
+## Phase 16: Complete Remaining Audit Fixes and Job Requirements
+- [x] Generate Meridian Engine architecture diagram (`/images/meridian-engine-architecture.jpg`)
+- [x] Complete remaining 55 job positions with detailed requirements:
+  - [x] Marketing (6 positions)
+  - [x] Operations (8 positions)
+  - [x] HR (6 positions)
+  - [x] Finance (6 positions)
+  - [x] Legal (5 positions)
+  - [x] Customer Success (6 positions)
+  - [x] Product Management (7 positions)
+  - [x] Security & Safety (4 positions)
+  - [x] Quality Assurance (3 positions)
+- [x] Update footer company name to "A p e x - M e r i d i a n ® LLC" format (already correct)
+- [x] Test all changes (server running without errors, TypeScript clean, LSP clean)
+- [ ] Save checkpoint
+- [x] Fix About page mobile hero text - keep "About" on line 1, "Apex-Meridian" on line 2, reduce font size by 20%

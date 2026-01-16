@@ -24,8 +24,9 @@ export default function About() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">A p e x - M e r i d i a n ®</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            About<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">A p e x - M e r i d i a n ®</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl">
             We are pioneers in artificial intelligence, transforming industries through innovative solutions that enhance safety, security, and human potential.

@@ -684,8 +684,739 @@ export default function Careers() {
       available: true
     },
 
-    // Note: Due to file size constraints, remaining positions (Marketing, Operations, HR, Finance, Legal, Customer Success, Product, Security, QA)
-    // will be added in production version. Current file demonstrates the complete structure and requirements format.
+
+    // Marketing & Communications (6 positions)
+    {
+      title: "Chief Marketing Officer (CMO)",
+      department: "Marketing & Communications",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead global marketing strategy and brand positioning for Apex Meridian across Egypt, North Africa, Middle East, and Africa markets.",
+      requirements: {
+        education: ["MBA in Marketing or related field", "Bachelor's in Marketing, Business, Communications from AUC, Cairo University, Ain Shams, or equivalent"],
+        experience: "10+ years in marketing leadership roles, preferably in tech/AI industry",
+        skills: ["Strategic marketing planning", "Brand management", "Digital marketing", "Team leadership", "Budget management", "Market analysis", "Regional market expertise (MENA/Africa)"],
+        certificates: ["Google Analytics Certification", "HubSpot Inbound Marketing Certification", "Digital Marketing Institute Certified Digital Marketing Professional"]
+      },
+      available: true
+    },
+    {
+      title: "Digital Marketing Manager",
+      department: "Marketing & Communications",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage digital marketing campaigns across social media, SEO, SEM, and content marketing to drive brand awareness and lead generation.",
+      requirements: {
+        education: ["Bachelor's degree in Marketing, Communications, or related field"],
+        experience: "5+ years in digital marketing with proven ROI results",
+        skills: ["SEO/SEM", "Google Ads, Facebook Ads", "Marketing automation", "Analytics and reporting", "Content strategy", "Social media management"],
+        certificates: ["Google Ads Certification", "Facebook Blueprint Certification", "HubSpot Content Marketing Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Content Marketing Specialist",
+      department: "Marketing & Communications",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Create compelling content for blogs, whitepapers, case studies, and social media to establish thought leadership in AI industry.",
+      requirements: {
+        education: ["Bachelor's in Marketing, Journalism, Communications, or English"],
+        experience: "3+ years in content marketing or technical writing",
+        skills: ["Content creation and editing", "SEO writing", "Technical writing", "CMS platforms", "Social media content", "Analytics"],
+        certificates: ["HubSpot Content Marketing Certification", "Google Analytics Individual Qualification", "Copyblogger Certified Content Marketer"]
+      },
+      available: true
+    },
+    {
+      title: "Brand Manager",
+      department: "Marketing & Communications",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Develop and maintain Apex Meridian brand identity, ensuring consistent messaging across all channels and markets.",
+      requirements: {
+        education: ["Bachelor's or Master's in Marketing, Brand Management, or Business Administration"],
+        experience: "4+ years in brand management or marketing",
+        skills: ["Brand strategy", "Market research", "Creative direction", "Stakeholder management", "Budget management", "Brand guidelines development"],
+        certificates: ["Brand Management Certification", "Market Research Certification", "Digital Marketing Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Social Media Manager",
+      department: "Marketing & Communications",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage Apex Meridian's social media presence across LinkedIn, Twitter, YouTube, and regional platforms to engage audiences.",
+      requirements: {
+        education: ["Bachelor's in Marketing, Communications, or related field"],
+        experience: "3+ years managing social media for B2B tech companies",
+        skills: ["Social media strategy", "Community management", "Content creation", "Analytics and reporting", "Paid social advertising", "Crisis management"],
+        certificates: ["Facebook Blueprint Certification", "Hootsuite Social Marketing Certification", "Twitter Flight School Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Marketing Analytics Specialist",
+      department: "Marketing & Communications",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Analyze marketing campaign performance, customer behavior, and ROI to optimize marketing strategies and budget allocation.",
+      requirements: {
+        education: ["Bachelor's in Marketing, Statistics, Data Science, or related field"],
+        experience: "3+ years in marketing analytics or data analysis",
+        skills: ["Google Analytics", "Data visualization (Tableau, Power BI)", "SQL", "Python/R", "A/B testing", "Statistical analysis", "Marketing attribution modeling"],
+        certificates: ["Google Analytics Individual Qualification", "Google Data Analytics Professional Certificate", "Tableau Desktop Specialist"]
+      },
+      available: true
+    },
+
+    // Operations & Project Management (8 positions)
+    {
+      title: "Chief Operating Officer (COO)",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Oversee all operational aspects of Apex Meridian including data center operations, project delivery, and process optimization.",
+      requirements: {
+        education: ["MBA or Master's in Operations Management, Engineering, or related field", "Bachelor's from AUC, Cairo University, or equivalent"],
+        experience: "12+ years in operations leadership, preferably in tech/AI industry",
+        skills: ["Strategic planning", "Operations management", "Process optimization", "Team leadership", "Budget management", "Data center operations", "Vendor management"],
+        certificates: ["PMP (Project Management Professional)", "Six Sigma Black Belt", "ITIL Foundation"]
+      },
+      available: true
+    },
+    {
+      title: "Senior Project Manager",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead complex AI implementation projects for enterprise clients, ensuring on-time delivery and stakeholder satisfaction.",
+      requirements: {
+        education: ["Bachelor's in Engineering, Computer Science, Business, or related field"],
+        experience: "7+ years in project management, preferably in AI/tech projects",
+        skills: ["Project planning and execution", "Agile/Scrum methodologies", "Risk management", "Stakeholder communication", "Budget management", "Team coordination"],
+        certificates: ["PMP (Project Management Professional)", "Certified Scrum Master (CSM)", "PRINCE2 Practitioner"]
+      },
+      available: true
+    },
+    {
+      title: "Operations Manager",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage day-to-day operations including resource allocation, process improvement, and operational efficiency.",
+      requirements: {
+        education: ["Bachelor's in Business Administration, Operations Management, or related field"],
+        experience: "5+ years in operations management",
+        skills: ["Process optimization", "Resource management", "KPI tracking", "Vendor management", "Team coordination", "Problem-solving"],
+        certificates: ["Six Sigma Green Belt", "Certified Manager (CM)", "ITIL Foundation"]
+      },
+      available: true
+    },
+    {
+      title: "Data Center Operations Manager",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Oversee self-hosted data center operations in Egypt, ensuring 99.99% uptime, security, and infrastructure scalability.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Information Technology, Engineering, or related field"],
+        experience: "6+ years in data center operations or infrastructure management",
+        skills: ["Data center infrastructure", "Server management", "Network operations", "Disaster recovery", "Security protocols", "Capacity planning", "Vendor management"],
+        certificates: ["CDCP (Certified Data Centre Professional)", "CCNA (Cisco Certified Network Associate)", "CompTIA Server+"]
+      },
+      available: true
+    },
+    {
+      title: "Business Process Analyst",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Analyze and optimize business processes across departments to improve efficiency and reduce operational costs.",
+      requirements: {
+        education: ["Bachelor's in Business Administration, Industrial Engineering, or related field"],
+        experience: "4+ years in business process analysis or improvement",
+        skills: ["Process mapping", "Data analysis", "Lean Six Sigma", "Workflow optimization", "Documentation", "Stakeholder interviews"],
+        certificates: ["Six Sigma Green Belt", "Certified Business Analysis Professional (CBAP)", "Lean Six Sigma Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Supply Chain Manager",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage procurement of hardware, software licenses, and data center equipment for regional operations.",
+      requirements: {
+        education: ["Bachelor's in Supply Chain Management, Business, Engineering, or related field"],
+        experience: "5+ years in supply chain or procurement management",
+        skills: ["Procurement strategy", "Vendor negotiation", "Inventory management", "Logistics", "Contract management", "Cost optimization"],
+        certificates: ["CSCP (Certified Supply Chain Professional)", "CPSM (Certified Professional in Supply Management)", "APICS CPIM"]
+      },
+      available: true
+    },
+    {
+      title: "Facilities Manager",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage office facilities, data center physical infrastructure, and expansion planning across Egypt and regional sites.",
+      requirements: {
+        education: ["Bachelor's in Facilities Management, Engineering, Business Administration, or related field"],
+        experience: "5+ years in facilities or property management",
+        skills: ["Facilities planning", "Vendor management", "Budget management", "Safety compliance", "Space planning", "Maintenance coordination"],
+        certificates: ["CFM (Certified Facility Manager)", "FMP (Facility Management Professional)", "LEED Green Associate"]
+      },
+      available: true
+    },
+    {
+      title: "Quality Control Manager",
+      department: "Operations & Project Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Establish and maintain quality standards across all operations, ensuring consistent service delivery and compliance.",
+      requirements: {
+        education: ["Bachelor's in Quality Management, Engineering, or related field"],
+        experience: "6+ years in quality management or assurance",
+        skills: ["Quality management systems", "ISO standards", "Audit management", "Process improvement", "Statistical analysis", "Documentation"],
+        certificates: ["ASQ Certified Quality Manager (CQM)", "ISO 9001 Lead Auditor", "Six Sigma Black Belt"]
+      },
+      available: true
+    },
+
+    // Human Resources (6 positions)
+    {
+      title: "Chief Human Resources Officer (CHRO)",
+      department: "Human Resources",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead HR strategy, talent acquisition, employee development, and organizational culture for Apex Meridian's growing team.",
+      requirements: {
+        education: ["Master's in Human Resources, Business Administration, or related field", "Bachelor's from AUC, Cairo University, or equivalent"],
+        experience: "10+ years in HR leadership roles",
+        skills: ["Strategic HR planning", "Talent management", "Organizational development", "Employee relations", "Compensation and benefits", "Labor law compliance", "Change management"],
+        certificates: ["SHRM-SCP (Senior Certified Professional)", "CIPD Level 7", "Global Professional in Human Resources (GPHR)"]
+      },
+      available: true
+    },
+    {
+      title: "Talent Acquisition Manager",
+      department: "Human Resources",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead recruitment efforts to attract top AI talent across Egypt, North Africa, Middle East, and Africa regions.",
+      requirements: {
+        education: ["Bachelor's in Human Resources, Business, Psychology, or related field"],
+        experience: "5+ years in talent acquisition or recruitment management",
+        skills: ["Recruitment strategy", "Candidate sourcing", "Interviewing techniques", "Employer branding", "ATS systems", "Regional talent market knowledge"],
+        certificates: ["AIRS Certified Diversity and Inclusion Recruiter", "LinkedIn Certified Professional - Recruiter", "SHRM Talent Acquisition Specialty Credential"]
+      },
+      available: true
+    },
+    {
+      title: "HR Business Partner",
+      department: "Human Resources",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Partner with department leaders to align HR strategies with business objectives and support organizational growth.",
+      requirements: {
+        education: ["Bachelor's in Human Resources, Business Administration, or related field"],
+        experience: "5+ years in HR business partnering or generalist roles",
+        skills: ["Strategic HR consulting", "Employee relations", "Performance management", "Organizational development", "Change management", "Data analysis"],
+        certificates: ["SHRM-CP (Certified Professional)", "CIPD Level 5", "HR Business Partner Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Learning & Development Manager",
+      department: "Human Resources",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Design and implement training programs to upskill employees in AI technologies and professional development.",
+      requirements: {
+        education: ["Bachelor's in Education, Human Resources, Organizational Development, or related field"],
+        experience: "4+ years in learning and development or training management",
+        skills: ["Training program design", "E-learning platforms", "Instructional design", "Performance assessment", "Leadership development", "Technical training"],
+        certificates: ["CPTD (Certified Professional in Talent Development)", "ATD Master Trainer", "Certified Training and Development Professional"]
+      },
+      available: true
+    },
+    {
+      title: "Compensation & Benefits Specialist",
+      department: "Human Resources",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage compensation structures, benefits programs, and ensure competitive packages to attract and retain talent.",
+      requirements: {
+        education: ["Bachelor's in Human Resources, Business Administration, Finance, or related field"],
+        experience: "3+ years in compensation and benefits management",
+        skills: ["Compensation analysis", "Benefits administration", "Market benchmarking", "Payroll systems", "Regulatory compliance", "Data analysis"],
+        certificates: ["Certified Compensation Professional (CCP)", "Certified Benefits Professional (CBP)", "WorldatWork Total Rewards Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Employee Relations Specialist",
+      department: "Human Resources",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Handle employee relations issues, workplace conflicts, and ensure positive employee experience and engagement.",
+      requirements: {
+        education: ["Bachelor's in Human Resources, Psychology, Business, or related field"],
+        experience: "3+ years in employee relations or HR generalist role",
+        skills: ["Conflict resolution", "Employee counseling", "Labor law compliance", "Investigation techniques", "Communication", "Mediation"],
+        certificates: ["SHRM-CP", "Employee Relations Certification", "Workplace Mediation Certification"]
+      },
+      available: true
+    },
+
+    // Finance & Accounting (6 positions)
+    {
+      title: "Chief Financial Officer (CFO)",
+      department: "Finance & Accounting",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead financial strategy, planning, and operations for Apex Meridian including regional expansion funding and investor relations.",
+      requirements: {
+        education: ["MBA in Finance or Master's in Accounting", "Bachelor's in Finance, Accounting, Economics from AUC, Cairo University, or equivalent"],
+        experience: "12+ years in finance leadership roles, preferably in tech industry",
+        skills: ["Financial strategy", "Budgeting and forecasting", "Investor relations", "Risk management", "Financial reporting", "Team leadership", "Regulatory compliance"],
+        certificates: ["CPA (Certified Public Accountant)", "CFA (Chartered Financial Analyst)", "ACCA (Association of Chartered Certified Accountants)"]
+      },
+      available: true
+    },
+    {
+      title: "Financial Controller",
+      department: "Finance & Accounting",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Oversee accounting operations, financial reporting, and internal controls to ensure accuracy and compliance.",
+      requirements: {
+        education: ["Bachelor's or Master's in Accounting, Finance, or related field"],
+        experience: "7+ years in accounting with controller experience",
+        skills: ["Financial reporting", "GAAP/IFRS standards", "Internal controls", "Audit management", "ERP systems", "Team management"],
+        certificates: ["CPA", "CMA (Certified Management Accountant)", "CIA (Certified Internal Auditor)"]
+      },
+      available: true
+    },
+    {
+      title: "Senior Financial Analyst",
+      department: "Finance & Accounting",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Conduct financial analysis, forecasting, and modeling to support strategic business decisions and investment planning.",
+      requirements: {
+        education: ["Bachelor's in Finance, Economics, Accounting, or related field"],
+        experience: "5+ years in financial analysis or FP&A",
+        skills: ["Financial modeling", "Forecasting", "Data analysis", "Excel (advanced)", "SQL", "Business intelligence tools", "Presentation skills"],
+        certificates: ["CFA Level I or higher", "Financial Modeling & Valuation Analyst (FMVA)", "Certified Corporate FP&A Professional"]
+      },
+      available: true
+    },
+    {
+      title: "Accounts Manager",
+      department: "Finance & Accounting",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage accounts payable, receivable, and general ledger operations ensuring accurate and timely financial transactions.",
+      requirements: {
+        education: ["Bachelor's in Accounting, Finance, or related field"],
+        experience: "4+ years in accounting or finance roles",
+        skills: ["Accounts payable/receivable", "General ledger", "Reconciliation", "ERP systems (SAP, Oracle)", "Financial reporting", "Team coordination"],
+        certificates: ["CPA", "Certified Bookkeeper", "QuickBooks Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Tax Manager",
+      department: "Finance & Accounting",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage tax compliance, planning, and strategy across Egypt and regional operations ensuring regulatory adherence.",
+      requirements: {
+        education: ["Bachelor's or Master's in Accounting, Tax, Finance, or related field"],
+        experience: "6+ years in tax accounting or planning",
+        skills: ["Tax compliance", "Tax planning", "Egyptian tax law", "International tax", "Transfer pricing", "Tax software", "Audit support"],
+        certificates: ["CPA", "Enrolled Agent (EA)", "Certified Tax Advisor"]
+      },
+      available: true
+    },
+    {
+      title: "Payroll Specialist",
+      department: "Finance & Accounting",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Process payroll accurately and timely for all employees, ensuring compliance with Egyptian labor laws and tax regulations.",
+      requirements: {
+        education: ["Bachelor's in Accounting, Finance, Human Resources, or related field"],
+        experience: "3+ years in payroll processing",
+        skills: ["Payroll processing", "Payroll software", "Egyptian labor law", "Tax compliance", "Benefits administration", "Data accuracy"],
+        certificates: ["Certified Payroll Professional (CPP)", "Fundamental Payroll Certification (FPC)", "ADP Payroll Certification"]
+      },
+      available: true
+    },
+
+    // Legal & Compliance (5 positions)
+    {
+      title: "General Counsel / Chief Legal Officer",
+      department: "Legal & Compliance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead legal strategy, contract negotiations, regulatory compliance, and intellectual property protection for Apex Meridian.",
+      requirements: {
+        education: ["Law degree (LLB or JD) from accredited university", "Master's in Law (LLM) preferred"],
+        experience: "10+ years legal experience, preferably in tech/AI industry",
+        skills: ["Corporate law", "Contract negotiation", "Regulatory compliance", "Intellectual property", "Risk management", "Litigation management", "Regional legal frameworks (Egypt, MENA, Africa)"],
+        certificates: ["Licensed to practice law in Egypt", "Data Protection Certification", "Corporate Governance Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Corporate Lawyer",
+      department: "Legal & Compliance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Handle corporate legal matters including contracts, partnerships, M&A activities, and corporate governance.",
+      requirements: {
+        education: ["Law degree (LLB or JD)", "Specialization in corporate law preferred"],
+        experience: "5+ years in corporate law practice",
+        skills: ["Contract drafting and review", "Corporate governance", "M&A transactions", "Due diligence", "Negotiation", "Legal research"],
+        certificates: ["Licensed to practice law", "Corporate Law Certification", "Contract Management Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Compliance Manager",
+      department: "Legal & Compliance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Ensure Apex Meridian complies with all regulatory requirements including data protection, AI ethics, and industry standards.",
+      requirements: {
+        education: ["Bachelor's in Law, Business, or related field", "Law degree preferred"],
+        experience: "5+ years in compliance or risk management",
+        skills: ["Regulatory compliance", "Risk assessment", "Policy development", "Audit management", "Training and awareness", "Reporting"],
+        certificates: ["Certified Compliance & Ethics Professional (CCEP)", "Certified Regulatory Compliance Manager (CRCM)", "ISO 27001 Lead Auditor"]
+      },
+      available: true
+    },
+    {
+      title: "Data Privacy Officer",
+      department: "Legal & Compliance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Oversee data protection compliance including GDPR, regional data privacy laws, and internal data governance policies.",
+      requirements: {
+        education: ["Bachelor's in Law, Information Technology, or related field"],
+        experience: "4+ years in data privacy or information security",
+        skills: ["GDPR compliance", "Data protection laws", "Privacy impact assessments", "Data governance", "Policy development", "Training"],
+        certificates: ["CIPP/E (Certified Information Privacy Professional/Europe)", "CIPM (Certified Information Privacy Manager)", "CDPSE (Certified Data Privacy Solutions Engineer)"]
+      },
+      available: true
+    },
+    {
+      title: "Intellectual Property Specialist",
+      department: "Legal & Compliance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage IP portfolio including patents, trademarks, copyrights, and trade secrets for AI innovations and technologies.",
+      requirements: {
+        education: ["Law degree with specialization in intellectual property", "Technical background in AI/Computer Science preferred"],
+        experience: "4+ years in IP law or management",
+        skills: ["Patent prosecution", "Trademark management", "IP strategy", "Technology licensing", "IP litigation support", "Prior art research"],
+        certificates: ["Patent Agent License", "Certified Licensing Professional (CLP)", "IP Law Certification"]
+      },
+      available: true
+    },
+
+    // Customer Success & Support (6 positions)
+    {
+      title: "VP of Customer Success",
+      department: "Customer Success & Support",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead customer success strategy ensuring client satisfaction, retention, and expansion across all markets.",
+      requirements: {
+        education: ["Bachelor's or Master's in Business, Engineering, or related field"],
+        experience: "8+ years in customer success leadership, preferably in B2B tech/SaaS",
+        skills: ["Customer success strategy", "Team leadership", "Account management", "Customer analytics", "Stakeholder management", "Process optimization"],
+        certificates: ["Certified Customer Success Manager (CCSM)", "Customer Success Leadership Certification", "Gainsight Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Senior Customer Success Manager",
+      department: "Customer Success & Support",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage strategic enterprise accounts ensuring successful AI implementation, adoption, and measurable business outcomes.",
+      requirements: {
+        education: ["Bachelor's in Business, Engineering, Computer Science, or related field"],
+        experience: "5+ years in customer success or account management",
+        skills: ["Account management", "Relationship building", "Technical consultation", "Project coordination", "Data analysis", "Presentation skills"],
+        certificates: ["Certified Customer Success Manager", "Salesforce Administrator", "Project Management Professional (PMP)"]
+      },
+      available: true
+    },
+    {
+      title: "Technical Support Engineer",
+      department: "Customer Success & Support",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Provide technical support for AI platform users, troubleshoot issues, and ensure smooth system operations.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Information Technology, or related field"],
+        experience: "3+ years in technical support or customer-facing technical role",
+        skills: ["Troubleshooting", "System administration", "API integration", "SQL", "Ticketing systems", "Customer communication", "Documentation"],
+        certificates: ["CompTIA A+", "ITIL Foundation", "AWS Certified Solutions Architect - Associate"]
+      },
+      available: true
+    },
+    {
+      title: "Customer Training Specialist",
+      department: "Customer Success & Support",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Develop and deliver training programs to help customers maximize value from Apex Meridian AI solutions.",
+      requirements: {
+        education: ["Bachelor's in Education, Computer Science, or related field"],
+        experience: "3+ years in customer training or technical education",
+        skills: ["Training program design", "Technical presentation", "E-learning platforms", "Documentation", "Customer engagement", "Product knowledge"],
+        certificates: ["Certified Technical Trainer (CTT+)", "CPTD", "Instructional Design Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Customer Support Representative",
+      department: "Customer Success & Support",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Provide first-line support to customers via email, chat, and phone, resolving inquiries and technical issues.",
+      requirements: {
+        education: ["Bachelor's in any field", "Technical background preferred"],
+        experience: "2+ years in customer support or help desk",
+        skills: ["Customer communication", "Problem-solving", "Ticketing systems", "Basic technical knowledge", "Multi-tasking", "Empathy"],
+        certificates: ["HDI Customer Service Representative", "ITIL Foundation", "Zendesk Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Customer Success Analyst",
+      department: "Customer Success & Support",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Analyze customer data, usage patterns, and feedback to identify opportunities for improving customer experience and retention.",
+      requirements: {
+        education: ["Bachelor's in Business Analytics, Data Science, or related field"],
+        experience: "3+ years in customer analytics or business intelligence",
+        skills: ["Data analysis", "SQL", "Tableau/Power BI", "Customer metrics (NPS, CSAT, churn)", "Excel", "Reporting"],
+        certificates: ["Google Data Analytics Professional Certificate", "Tableau Desktop Specialist", "Customer Analytics Certification"]
+      },
+      available: true
+    },
+
+    // Product Management (7 positions)
+    {
+      title: "VP of Product",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead product strategy and roadmap for all AI solutions ensuring market fit and competitive advantage.",
+      requirements: {
+        education: ["Bachelor's or Master's in Computer Science, Engineering, Business, or related field"],
+        experience: "10+ years in product management with leadership experience in AI/tech products",
+        skills: ["Product strategy", "Roadmap planning", "Market analysis", "Team leadership", "Stakeholder management", "Technical understanding of AI"],
+        certificates: ["Certified Scrum Product Owner (CSPO)", "Pragmatic Marketing Certification", "Product Management Certificate"]
+      },
+      available: true
+    },
+    {
+      title: "Senior Product Manager",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Own product lifecycle for specific AI solutions from ideation to launch, working with engineering and design teams.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Engineering, Business, or related field"],
+        experience: "5+ years in product management, preferably in AI/ML products",
+        skills: ["Product lifecycle management", "User research", "Data-driven decision making", "Agile methodologies", "Technical specifications", "Go-to-market strategy"],
+        certificates: ["Certified Scrum Product Owner", "Product Management Certification", "AI Product Management Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Product Owner",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Manage product backlog, prioritize features, and work with development teams to deliver value to customers.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Business, or related field"],
+        experience: "3+ years as product owner or in product management",
+        skills: ["Backlog management", "User story writing", "Sprint planning", "Stakeholder communication", "Agile/Scrum", "Requirements gathering"],
+        certificates: ["Certified Scrum Product Owner (CSPO)", "Professional Scrum Product Owner (PSPO)", "SAFe Product Owner/Product Manager"]
+      },
+      available: true
+    },
+    {
+      title: "Technical Product Manager",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Bridge technical and business teams, defining technical requirements and ensuring feasibility of product features.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Software Engineering, or related field"],
+        experience: "5+ years combining technical and product management experience",
+        skills: ["Technical architecture understanding", "API design", "System integration", "Technical documentation", "Engineering collaboration", "Product strategy"],
+        certificates: ["Certified Scrum Product Owner", "AWS Solutions Architect", "Technical Product Management Certification"]
+      },
+      available: true
+    },
+    {
+      title: "Product Marketing Manager",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Develop go-to-market strategies, positioning, and messaging for AI products to drive adoption and revenue.",
+      requirements: {
+        education: ["Bachelor's in Marketing, Business, or related field"],
+        experience: "4+ years in product marketing, preferably in B2B tech",
+        skills: ["Go-to-market strategy", "Product positioning", "Competitive analysis", "Sales enablement", "Content creation", "Launch planning"],
+        certificates: ["Pragmatic Marketing Certification", "Product Marketing Alliance Certification", "HubSpot Content Marketing Certification"]
+      },
+      available: true
+    },
+    {
+      title: "UX Researcher",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Conduct user research to understand customer needs, behaviors, and pain points to inform product decisions.",
+      requirements: {
+        education: ["Bachelor's in Psychology, Human-Computer Interaction, Design, or related field"],
+        experience: "3+ years in UX research or user research",
+        skills: ["User interviews", "Usability testing", "Survey design", "Data analysis", "Research methodologies", "Persona development"],
+        certificates: ["Nielsen Norman Group UX Certification", "Google UX Design Certificate", "Certified Usability Analyst (CUA)"]
+      },
+      available: true
+    },
+    {
+      title: "Product Analyst",
+      department: "Product Management",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Analyze product usage data, metrics, and user behavior to provide insights for product improvements and strategy.",
+      requirements: {
+        education: ["Bachelor's in Data Science, Statistics, Business Analytics, or related field"],
+        experience: "3+ years in product analytics or data analysis",
+        skills: ["SQL", "Python/R", "Data visualization (Tableau, Looker)", "A/B testing", "Product metrics", "Statistical analysis"],
+        certificates: ["Google Data Analytics Professional Certificate", "Product Analytics Certification", "Mixpanel Certification"]
+      },
+      available: true
+    },
+
+    // Security & Safety (4 positions)
+    {
+      title: "Chief Information Security Officer (CISO)",
+      department: "Security & Safety",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead cybersecurity strategy and operations protecting Apex Meridian's infrastructure, data, and AI systems.",
+      requirements: {
+        education: ["Bachelor's or Master's in Cybersecurity, Computer Science, Information Security, or related field"],
+        experience: "10+ years in information security with leadership experience",
+        skills: ["Security strategy", "Risk management", "Incident response", "Compliance (ISO 27001, SOC 2)", "Team leadership", "Security architecture"],
+        certificates: ["CISSP (Certified Information Systems Security Professional)", "CISM (Certified Information Security Manager)", "CRISC (Certified in Risk and Information Systems Control)"]
+      },
+      available: true
+    },
+    {
+      title: "Senior Security Engineer",
+      department: "Security & Safety",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Design and implement security controls for self-hosted infrastructure, AI systems, and applications.",
+      requirements: {
+        education: ["Bachelor's in Cybersecurity, Computer Science, or related field"],
+        experience: "5+ years in security engineering or architecture",
+        skills: ["Network security", "Application security", "Cloud security", "Penetration testing", "Security tools (SIEM, IDS/IPS)", "Scripting (Python, Bash)"],
+        certificates: ["CISSP", "CEH (Certified Ethical Hacker)", "OSCP (Offensive Security Certified Professional)"]
+      },
+      available: true
+    },
+    {
+      title: "Security Operations Center (SOC) Analyst",
+      department: "Security & Safety",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Monitor security events, detect threats, and respond to security incidents in real-time to protect infrastructure.",
+      requirements: {
+        education: ["Bachelor's in Cybersecurity, Information Technology, or related field"],
+        experience: "3+ years in SOC or security monitoring",
+        skills: ["SIEM platforms", "Threat detection", "Incident response", "Log analysis", "Security tools", "Threat intelligence"],
+        certificates: ["CompTIA Security+", "GIAC Security Essentials (GSEC)", "Certified SOC Analyst (CSA)"]
+      },
+      available: true
+    },
+    {
+      title: "AI Safety Researcher",
+      department: "Security & Safety",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Research and implement AI safety measures, ethical guidelines, and bias mitigation strategies for AI systems.",
+      requirements: {
+        education: ["Master's or PhD in AI, Machine Learning, Computer Science, or related field"],
+        experience: "3+ years in AI research with focus on safety, ethics, or fairness",
+        skills: ["AI/ML algorithms", "Bias detection and mitigation", "Explainable AI", "Research methodology", "Python", "Ethics frameworks"],
+        certificates: ["AI Ethics Certification", "Responsible AI Certification", "Research publications in AI safety"]
+      },
+      available: true
+    },
+
+    // Quality Assurance (3 positions)
+    {
+      title: "QA Manager",
+      department: "Quality Assurance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Lead QA strategy, processes, and team to ensure high-quality AI products and services.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Software Engineering, or related field"],
+        experience: "7+ years in QA with management experience",
+        skills: ["QA strategy", "Test planning", "Automation frameworks", "Team leadership", "CI/CD", "Quality metrics"],
+        certificates: ["ISTQB Advanced Level Test Manager", "Certified Manager of Software Quality (CMSQ)", "ASQ Certified Software Quality Engineer"]
+      },
+      available: true
+    },
+    {
+      title: "Senior QA Engineer",
+      department: "Quality Assurance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Design and execute comprehensive test plans for AI systems, ensuring functionality, performance, and reliability.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Software Engineering, or related field"],
+        experience: "5+ years in software QA or testing",
+        skills: ["Test automation (Selenium, Cypress)", "API testing", "Performance testing", "Python/Java", "CI/CD pipelines", "Bug tracking"],
+        certificates: ["ISTQB Advanced Level", "Certified Software Quality Analyst (CSQA)", "Selenium Certification"]
+      },
+      available: true
+    },
+    {
+      title: "QA Automation Engineer",
+      department: "Quality Assurance",
+      location: "Cairo, Egypt",
+      type: "Full-time",
+      description: "Develop and maintain automated test frameworks to improve testing efficiency and coverage.",
+      requirements: {
+        education: ["Bachelor's in Computer Science, Software Engineering, or related field"],
+        experience: "4+ years in test automation",
+        skills: ["Test automation frameworks", "Python/Java", "Selenium, Cypress, or similar", "CI/CD integration", "API testing", "Version control (Git)"],
+        certificates: ["ISTQB Test Automation Engineer", "Selenium WebDriver Certification", "Certified Automation Professional"]
+      },
+      available: true
+    },
+
   ];
 
   const filteredJobs = selectedDepartment
