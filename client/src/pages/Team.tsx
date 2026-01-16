@@ -1,4 +1,4 @@
-import { Users } from "lucide-react";
+import { Users, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,28 +6,44 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function Team() {
   const leadership = [
     {
-      name: "Dr. Sarah Chen",
-      role: "Chief Executive Officer",
-      bio: "Former AI Research Director at Google with 15+ years in machine learning and enterprise AI solutions.",
-      image: "/images/team-placeholder.jpg"
+      role: "Chief Executive Officer (CEO)",
+      qualifications: "PhD in Artificial Intelligence, 15+ years in machine learning and enterprise AI solutions",
+      email: "ceo@apex-meridian.com"
     },
     {
-      name: "Michael Rodriguez",
-      role: "Chief Technology Officer",
-      bio: "Ex-Tesla Autopilot Lead Engineer, specializing in autonomous systems and neural architectures.",
-      image: "/images/team-placeholder.jpg"
+      role: "Chief Technology Officer (CTO)",
+      qualifications: "MS in Computer Science, 12+ years specializing in autonomous systems and neural architectures",
+      email: "cto@apex-meridian.com"
     },
     {
-      name: "Dr. Emily Watson",
-      role: "Chief Science Officer",
-      bio: "PhD in Cognitive Science from MIT, pioneering research in AGI and human-AI collaboration.",
-      image: "/images/team-placeholder.jpg"
+      role: "Chief Science Officer (CSO)",
+      qualifications: "PhD in Cognitive Science, pioneering research in AGI and human-AI collaboration",
+      email: "cso@apex-meridian.com"
     },
     {
-      name: "David Kim",
-      role: "Chief Operating Officer",
-      bio: "Former VP of Operations at Amazon Web Services, expert in scaling AI infrastructure globally.",
-      image: "/images/team-placeholder.jpg"
+      role: "Chief Operating Officer (COO)",
+      qualifications: "MBA, 10+ years experience scaling AI infrastructure globally",
+      email: "coo@apex-meridian.com"
+    },
+    {
+      role: "Chief Financial Officer (CFO)",
+      qualifications: "CPA, MBA in Finance, 15+ years in corporate finance and strategic planning",
+      email: "cfo@apex-meridian.com"
+    },
+    {
+      role: "VP of Engineering",
+      qualifications: "MS in Software Engineering, 10+ years leading engineering teams",
+      email: "engineering@apex-meridian.com"
+    },
+    {
+      role: "VP of Research & Development",
+      qualifications: "PhD in Machine Learning, 8+ years in AI research and development",
+      email: "research@apex-meridian.com"
+    },
+    {
+      role: "VP of Sales",
+      qualifications: "MBA, 12+ years in enterprise software sales and business development",
+      email: "sales@apex-meridian.com"
     }
   ];
 
@@ -35,27 +51,62 @@ export default function Team() {
     {
       name: "Engineering",
       count: 45,
-      description: "Building cutting-edge AI systems and scalable infrastructure"
+      description: "Building cutting-edge AI systems and scalable infrastructure",
+      email: "engineering@apex-meridian.com"
     },
     {
-      name: "Research",
+      name: "Research & Development",
       count: 28,
-      description: "Advancing the frontiers of artificial general intelligence"
+      description: "Advancing the frontiers of artificial general intelligence",
+      email: "research@apex-meridian.com"
     },
     {
-      name: "Product",
-      count: 18,
-      description: "Designing intuitive AI solutions for complex industry challenges"
-    },
-    {
-      name: "Operations",
+      name: "Sales & Business Development",
       count: 22,
-      description: "Ensuring seamless delivery and support for our global clients"
+      description: "Expanding our reach across aviation, cybersecurity, and education sectors",
+      email: "sales@apex-meridian.com"
     },
     {
-      name: "Business Development",
+      name: "Marketing & Communications",
       count: 14,
-      description: "Expanding our reach across aviation, cybersecurity, and education sectors"
+      description: "Building brand awareness and thought leadership in AI",
+      email: "marketing@apex-meridian.com"
+    },
+    {
+      name: "Operations & Project Management",
+      count: 18,
+      description: "Ensuring seamless delivery and support for our global clients",
+      email: "operations@apex-meridian.com"
+    },
+    {
+      name: "Human Resources",
+      count: 8,
+      description: "Attracting and developing world-class talent",
+      email: "hr@apex-meridian.com"
+    },
+    {
+      name: "Finance & Accounting",
+      count: 10,
+      description: "Managing financial operations and strategic planning",
+      email: "finance@apex-meridian.com"
+    },
+    {
+      name: "Legal & Compliance",
+      count: 6,
+      description: "Ensuring regulatory compliance and protecting intellectual property",
+      email: "legal@apex-meridian.com"
+    },
+    {
+      name: "Security & Safety",
+      count: 12,
+      description: "Protecting systems, data, and ensuring operational safety",
+      email: "security@apex-meridian.com"
+    },
+    {
+      name: "Quality Assurance",
+      count: 15,
+      description: "Maintaining highest standards in AI system quality and reliability",
+      email: "quality@apex-meridian.com"
     }
   ];
 
@@ -65,7 +116,7 @@ export default function Team() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
+        <section className="relative pt-32 pb-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-500/20 rounded-full mb-6">
@@ -75,7 +126,7 @@ export default function Team() {
                 Our Team
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Meet the brilliant minds behind A p e x - M e r i d i a n ®'s groundbreaking AI solutions. 
+                Meet the leadership and departments behind A p e x - M e r i d i a n ®'s groundbreaking AI solutions. 
                 Our diverse team of experts brings together decades of experience in artificial intelligence, 
                 aerospace engineering, cybersecurity, and cognitive science.
               </p>
@@ -87,21 +138,22 @@ export default function Team() {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">Leadership Team</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {leadership.map((leader, index) => (
                 <Card key={index} className="bg-blue-900/50 backdrop-blur-sm border-cyan-500/20 hover:border-cyan-400/50 transition-all">
                   <CardContent className="p-6">
-                    <div className="flex gap-6">
-                      <div className="w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-3xl font-bold text-white">
-                          {leader.name.split(' ').map(n => n[0]).join('')}
-                        </span>
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2">{leader.role}</h3>
+                        <p className="text-gray-300 text-sm leading-relaxed mb-3">{leader.qualifications}</p>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-1">{leader.name}</h3>
-                        <p className="text-cyan-400 font-semibold mb-3">{leader.role}</p>
-                        <p className="text-gray-300 text-sm leading-relaxed">{leader.bio}</p>
-                      </div>
+                      <a 
+                        href={`mailto:${leader.email}`}
+                        className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm transition-colors"
+                      >
+                        <Mail className="h-4 w-4" />
+                        {leader.email}
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -124,7 +176,14 @@ export default function Team() {
                         {dept.count}
                       </span>
                     </div>
-                    <p className="text-gray-300 text-sm">{dept.description}</p>
+                    <p className="text-gray-300 text-sm mb-4">{dept.description}</p>
+                    <a 
+                      href={`mailto:${dept.email}`}
+                      className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm transition-colors"
+                    >
+                      <Mail className="h-4 w-4" />
+                      {dept.email}
+                    </a>
                   </CardContent>
                 </Card>
               ))}

@@ -93,6 +93,26 @@ export default function OrganizationChart() {
       ]
     },
     {
+      name: "Security & Safety",
+      email: "security@apex-meridian.com",
+      positions: [
+        { title: "VP of Security", email: "vp-security@apex-meridian.com" },
+        { title: "Director of Cybersecurity", email: "cybersecurity@apex-meridian.com" },
+        { title: "Director of Safety & Risk Management", email: "safety@apex-meridian.com" },
+        { title: "Director of Information Security", email: "infosec@apex-meridian.com" }
+      ]
+    },
+    {
+      name: "Quality Assurance",
+      email: "quality@apex-meridian.com",
+      positions: [
+        { title: "VP of Quality Assurance", email: "vp-quality@apex-meridian.com" },
+        { title: "Director of QA Engineering", email: "qa-engineering@apex-meridian.com" },
+        { title: "Director of Testing & Validation", email: "testing@apex-meridian.com" },
+        { title: "Director of Quality Standards", email: "quality-standards@apex-meridian.com" }
+      ]
+    },
+    {
       name: "Research & Innovation",
       email: "research@apex-meridian.com",
       positions: [

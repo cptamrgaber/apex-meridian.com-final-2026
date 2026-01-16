@@ -10,7 +10,7 @@ export default function Whitepapers() {
     {
       title: "Hybrid Neuro-Symbolic Architecture for Explainable AI in Financial Services",
       abstract: "This whitepaper presents a novel hybrid architecture combining deep neural networks with symbolic reasoning systems to achieve both high accuracy and full explainability in financial AI applications. We demonstrate how this approach addresses regulatory requirements while maintaining competitive performance.",
-      authors: ["Dr. Mohamed Farid", "Dr. Sarah Chen", "Ahmed Hassan"],
+      authors: ["Director of Financial AI", "Chief Science Officer", "VP of Aviation Solutions"],
       date: "December 2025",
       pages: 42,
       category: "Financial Technology",
@@ -33,7 +33,7 @@ export default function Whitepapers() {
     {
       title: "Predictive Maintenance in Aviation: A Machine Learning Approach",
       abstract: "Comprehensive analysis of machine learning techniques for aircraft predictive maintenance, including sensor data processing, failure prediction models, and operational integration strategies. Based on 18 months of deployment data from major Middle Eastern carriers.",
-      authors: ["Ahmed Hassan", "Dr. Youssef Mansour", "Captain Hany El-Sayed"],
+      authors: ["VP of Aviation Solutions", "Senior Research Scientist", "Aviation Safety Consultant"],
       date: "November 2025",
       pages: 56,
       category: "Aviation Technology",
@@ -57,7 +57,7 @@ export default function Whitepapers() {
     {
       title: "Transfer Learning and Meta-Learning for AGI Development",
       abstract: "This technical paper explores advanced transfer learning and meta-learning techniques as pathways toward Artificial General Intelligence. We present our research on cross-domain knowledge transfer, few-shot learning, and adaptive reasoning systems.",
-      authors: ["Dr. Sarah Chen", "Dr. Amira Khalil", "Dr. Mohamed Farid"],
+      authors: ["Chief Science Officer", "Senior AGI Researcher", "Director of Financial AI"],
       date: "October 2025",
       pages: 68,
       category: "AGI Research",
@@ -81,7 +81,7 @@ export default function Whitepapers() {
     {
       title: "Real-Time Behavioral Analytics for Fraud Detection at Scale",
       abstract: "Detailed examination of real-time behavioral analytics systems for fraud detection in high-volume transaction environments. Covers architecture design, machine learning models, and operational considerations for processing millions of transactions daily.",
-      authors: ["Dr. Mohamed Farid", "Eng. Layla Mostafa", "Dr. Karim Abdel-Rahman"],
+      authors: ["Director of Financial AI", "Senior ML Engineer", "Fraud Detection Specialist"],
       date: "September 2025",
       pages: 51,
       category: "Cybersecurity",

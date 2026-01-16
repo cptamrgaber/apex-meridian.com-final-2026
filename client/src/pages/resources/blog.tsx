@@ -11,7 +11,7 @@ export default function Blog() {
     {
       title: "The Future of AGI: Progress, Challenges, and Ethical Considerations",
       excerpt: "Artificial General Intelligence represents the next frontier in AI development. We explore the current state of AGI research, technical hurdles, and the critical importance of ethical frameworks in development.",
-      author: "Dr. Sarah Chen, Chief Science Officer",
+      author: "Chief Science Officer",
       date: "January 12, 2026",
       readTime: "8 min read",
       category: "AGI Research",
@@ -37,7 +37,7 @@ export default function Blog() {
     {
       title: "Transforming Middle East Aviation with Predictive AI",
       excerpt: "How AI-powered predictive maintenance is revolutionizing aircraft operations across the region, reducing costs and improving safety for millions of passengers.",
-      author: "Ahmed Hassan, VP of Aviation Solutions",
+      author: "VP of Aviation Solutions",
       date: "January 8, 2026",
       category: "Industry Insights",
       readTime: "6 min read",
@@ -63,7 +63,7 @@ export default function Blog() {
     {
       title: "Building Trust in AI: Explainability and Transparency in Financial Services",
       excerpt: "Why explainable AI is critical for financial institutions and how we're making black-box algorithms transparent and auditable for regulatory compliance.",
-      author: "Dr. Mohamed Farid, Director of Financial AI",
+      author: "Director of Financial AI",
       date: "January 5, 2026",
       readTime: "7 min read",
       category: "Financial Technology",
