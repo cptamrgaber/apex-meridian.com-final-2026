@@ -204,6 +204,81 @@ export const appRouter = router({
       }),
   }),
 
+  // Employee Requests Management (HR)
+  employeeRequests: router({ 
+    getAll: publicProcedure
+      .query(async () => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) return [];
+        const { employeeRequests } = await import("../drizzle/schema");
+        const { desc } = await import("drizzle-orm");
+
+        const requests = await db.select().from(employeeRequests)
+          .orderBy(desc(employeeRequests.createdAt));
+
+        return requests;
+      }),
+
+    approve: publicProcedure
+      .input(z.object({
+        requestId: z.number(),
+        hrNotes: z.string().optional(),
+        reviewedBy: z.number(),
+        reviewedByName: z.string(),
+      }))
+      .mutation(async ({ input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { employeeRequests } = await import("../drizzle/schema");
+        const { eq } = await import("drizzle-orm");
+
+        await db.update(employeeRequests)
+          .set({
+            status: "approved",
+            hrNotes: input.hrNotes || null,
+            reviewedBy: input.reviewedBy,
+            reviewedByName: input.reviewedByName,
+            reviewedAt: new Date(),
+          })
+          .where(eq(employeeRequests.id, input.requestId));
+
+        // TODO: Send notification email to employee
+
+        return { success: true };
+      }),
+
+    reject: publicProcedure
+      .input(z.object({
+        requestId: z.number(),
+        hrNotes: z.string(),
+        reviewedBy: z.number(),
+        reviewedByName: z.string(),
+      }))
+      .mutation(async ({ input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { employeeRequests } = await import("../drizzle/schema");
+        const { eq } = await import("drizzle-orm");
+
+        await db.update(employeeRequests)
+          .set({
+            status: "rejected",
+            hrNotes: input.hrNotes,
+            reviewedBy: input.reviewedBy,
+            reviewedByName: input.reviewedByName,
+            reviewedAt: new Date(),
+          })
+          .where(eq(employeeRequests.id, input.requestId));
+
+        // TODO: Send notification email to employee
+
+        return { success: true };
+      }),
+  }),
+
   // Contact form
   contact: router({
     submit: publicProcedure

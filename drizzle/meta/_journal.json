@@ -29,6 +29,13 @@
       "when": 1768542772290,
       "tag": "0003_high_tempest",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1768559496731,
+      "tag": "0004_lean_colossus",
+      "breakpoints": true
     }
   ]
 }

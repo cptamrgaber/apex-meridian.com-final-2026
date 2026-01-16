@@ -82,6 +82,9 @@ export const employeeRequests = mysqlTable("employeeRequests", {
   endDate: timestamp("endDate"),
   status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
   hrNotes: text("hrNotes"),
+  reviewedBy: int("reviewedBy"), // Employee ID of HR who reviewed
+  reviewedByName: varchar("reviewedByName", { length: 200 }),
+  reviewedAt: timestamp("reviewedAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

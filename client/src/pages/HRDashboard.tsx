@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Users, UserPlus, LogOut, Trash2, Edit, Key, CheckCircle, XCircle, Briefcase } from "lucide-react";
+import { Users, UserPlus, LogOut, Trash2, Edit, Key, CheckCircle, XCircle, Briefcase, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -177,6 +177,14 @@ function HRDashboardContent() {
                 </p>
               </div>
               <div className="flex gap-3">
+                <Button
+                  onClick={() => setLocation("/hr-requests")}
+                  variant="outline"
+                  className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  Employee Requests
+                </Button>
                 <Button
                   onClick={() => setLocation("/applications")}
                   variant="outline"

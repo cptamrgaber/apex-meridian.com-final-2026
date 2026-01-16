@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import Login from "@/pages/Login";
 import EmployeePortal from "@/pages/EmployeePortal";
 import HRDashboard from "@/pages/HRDashboard";
+import HRRequests from "@/pages/HRRequests";
 import Team from "@/pages/Team";
 import Careers from "@/pages/Careers";
 import CareerApply from "@/pages/CareerApply";
@@ -82,7 +83,8 @@ function Router() {
       <Route path={"/terms"} component={Terms} />
       <Route path={"/login"} component={Login} />
       <Route path={"/employee"} component={EmployeePortal} />
-      <Route path={"/hr"} component={HRDashboard} />
+      <Route path={"/hr-dashboard"} component={HRDashboard} />
+      <Route path={"/hr-requests"} component={HRRequests} />
       <Route path={"/team"} component={Team} />
       <Route path={"/careers"} component={Careers} />
       <Route path={"/careers/apply"} component={CareerApply} />

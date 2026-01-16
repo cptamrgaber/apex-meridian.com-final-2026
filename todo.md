@@ -393,3 +393,30 @@
 - [x] Test all changes (server running without errors, TypeScript clean, LSP clean)
 - [ ] Save checkpoint
 - [x] Fix About page mobile hero text - keep "About" on line 1, "Apex-Meridian" on line 2, reduce font size by 20%
+
+
+## Phase 17: HR Dashboard, Data Center Roadmap, and Employee Onboarding
+- [ ] Build HR Request Approval Dashboard:
+  - [ ] Create database schema for request approvals and status tracking
+  - [ ] Build HR dashboard page with pending requests list
+  - [ ] Add approve/reject actions with reason/notes
+  - [ ] Implement notification system (email to employee on status change)
+  - [ ] Add request filtering and search
+  - [ ] Create tRPC procedures for approval workflow
+  - [ ] Write vitest tests for approval system
+- [ ] Create Data Center Roadmap Page:
+  - [ ] Design interactive map showing regional expansion
+  - [ ] Add timeline visualization (Egypt → North Africa → Middle East → Rest of Africa → Europe)
+  - [ ] Include infrastructure specifications for each location
+  - [ ] Add data sovereignty and compliance information
+  - [ ] Create route in App.tsx
+- [ ] Implement Employee Onboarding Portal:
+  - [ ] Create database schema for onboarding documents and training modules
+  - [ ] Build onboarding dashboard for new hires
+  - [ ] Add document library (employee handbook, policies, forms)
+  - [ ] Create department-specific orientation modules
+  - [ ] Add training progress tracking
+  - [ ] Implement completion certificates
+  - [ ] Create tRPC procedures for onboarding system
+- [ ] Test all features
+- [ ] Save checkpoint
