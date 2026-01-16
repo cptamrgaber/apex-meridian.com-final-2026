@@ -35,6 +35,8 @@ import Training from "@/pages/support/training";
 import OrganizationChart from "@/pages/OrganizationChart";
 import DepartmentPortal from "@/pages/DepartmentPortal";
 import EmployeeRequests from "@/pages/EmployeeRequests";
+import DataCenterRoadmap from "@/pages/DataCenterRoadmap";
+import OnboardingPortal from "@/pages/OnboardingPortal";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -85,6 +87,8 @@ function Router() {
       <Route path={"/employee"} component={EmployeePortal} />
       <Route path={"/hr-dashboard"} component={HRDashboard} />
       <Route path={"/hr-requests"} component={HRRequests} />
+      <Route path={"/data-center-roadmap"} component={DataCenterRoadmap} />
+      <Route path={"/onboarding"} component={OnboardingPortal} />
       <Route path={"/team"} component={Team} />
       <Route path={"/careers"} component={Careers} />
       <Route path={"/careers/apply"} component={CareerApply} />
