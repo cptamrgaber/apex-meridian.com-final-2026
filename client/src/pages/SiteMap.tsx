@@ -78,6 +78,8 @@ export default function SiteMap() {
               <h2 className="text-2xl font-bold text-cyan-400 mb-4">Resources</h2>
               <ul className="space-y-2">
                 <li><Link href="/resources/blog" className="text-gray-300 hover:text-cyan-400 transition-colors">Blog & News</Link></li>
+                <li><Link href="/news" className="text-gray-300 hover:text-cyan-400 transition-colors">Technology News</Link></li>
+                <li><Link href="/library" className="text-gray-300 hover:text-cyan-400 transition-colors">AI Library</Link></li>
                 <li><Link href="/resources/case-studies" className="text-gray-300 hover:text-cyan-400 transition-colors">Case Studies</Link></li>
                 <li><Link href="/resources/whitepapers" className="text-gray-300 hover:text-cyan-400 transition-colors">Whitepapers</Link></li>
                 <li><Link href="/resources/research" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Papers</Link></li>

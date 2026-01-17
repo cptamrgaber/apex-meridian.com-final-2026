@@ -764,3 +764,18 @@
 - [ ] Add comment notifications
 - [ ] Test comment posting and moderation
 - [ ] Save final checkpoint
+
+## Phase 33: AI Library System
+- [x] Research high-quality AI books in English (Machine Learning, Deep Learning, NLP, Computer Vision, etc.)
+- [x] Research AI books and resources in Arabic
+- [x] Find research papers and whitepapers from reputable sources
+- [x] Compile links to free online resources and courses
+- [x] Create library page with categorization by subject
+- [x] Add language filtering (Arabic, English, and other languages)
+- [x] Implement search and filter functionality
+- [x] Add PDF viewer or external link handling
+- [x] Update sitemap with library page
+- [x] Add navigation links to library from relevant pages
+- [x] Test library page functionality
+- [ ] Push all changes to GitHub
+- [ ] Save final checkpoint

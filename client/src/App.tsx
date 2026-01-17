@@ -47,7 +47,8 @@ import Researchers from "@/pages/research/Researchers";
 import ResearcherProfile from "@/pages/research/ResearcherProfile";
 import ResearchBlog from "@/pages/research/Blog";
 import BlogPost from "@/pages/research/BlogPost";
-import CollaborationForm from "@/pages/research/CollaborationForm";
+import CollaborationForm from '@/pages/research/CollaborationForm';
+import Library from '@/pages/Library';
 import News from "@/pages/News";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
@@ -100,6 +101,7 @@ function Router() {
       <Route path={"/research/blog/:id"} component={BlogPost} />
       <Route path={"/research/collaboration"} component={CollaborationForm} />
       <Route path={"/news"} component={News} />
+      <Route path={"/library"} component={Library} />
       <Route path={"/technology"} component={Technology} />
       <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />
