@@ -43,6 +43,7 @@ export default function SiteMap() {
                 <li><Link href="/solutions/cybersecurity" className="text-gray-300 hover:text-cyan-400 transition-colors">Cybersecurity Shield</Link></li>
                 <li><Link href="/solutions/education" className="text-gray-300 hover:text-cyan-400 transition-colors">Education & Cognitive Enhancement</Link></li>
                 <li><Link href="/solutions/agi" className="text-gray-300 hover:text-cyan-400 transition-colors">AGI Research</Link></li>
+                <li><Link href="/solutions/media-production" className="text-gray-300 hover:text-cyan-400 transition-colors">Media Production</Link></li>
               </ul>
             </div>
 
@@ -105,6 +106,16 @@ export default function SiteMap() {
                 <li><Link href="/support/faq" className="text-gray-300 hover:text-cyan-400 transition-colors">FAQ</Link></li>
                 <li><Link href="/support/documentation" className="text-gray-300 hover:text-cyan-400 transition-colors">Documentation</Link></li>
                 <li><Link href="/support/training" className="text-gray-300 hover:text-cyan-400 transition-colors">Training & Certification</Link></li>
+              </ul>
+            </div>
+
+            {/* Employee & HR Portals */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Employee & HR</h2>
+              <ul className="space-y-2">
+                <li><Link href="/login" className="text-gray-300 hover:text-cyan-400 transition-colors">Employee Login</Link></li>
+                <li><Link href="/employee" className="text-gray-300 hover:text-cyan-400 transition-colors">Employee Portal</Link></li>
+                <li><Link href="/hr-dashboard" className="text-gray-300 hover:text-cyan-400 transition-colors">HR Dashboard</Link></li>
               </ul>
             </div>
 
