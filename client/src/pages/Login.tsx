@@ -28,9 +28,11 @@ export default function Login() {
         toast.success(`Welcome back, ${result.employee.name}!`);
         
         // Redirect based on role
-        if (result.employee.role === 'hr') {
+        if (result.employee.role === 'admin' || result.employee.role === 'hr') {
+          // Admins and HR go to HR Dashboard
           window.location.href = "/hr-dashboard";
         } else {
+          // Regular employees go to Employee Portal
           window.location.href = "/employee";
         }
       }
