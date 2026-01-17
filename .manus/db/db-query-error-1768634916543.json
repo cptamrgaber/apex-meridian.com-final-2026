@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO employees (username, email, password, name, department, position, role, status) \nVALUES ('admin', 'admin@apex-meridian.com', '$2b$10$E.L5/vKQVH83ESo9yTmGk.VPcSIaKV9zpfpadnXIdPb8EsRbZkpLO', 'System Administrator', 'IT', 'System Administrator', 'admin', 'active')\nON DUPLICATE KEY UPDATE password='$2b$10$E.L5/vKQVH83ESo9yTmGk.VPcSIaKV9zpfpadnXIdPb8EsRbZkpLO';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user PV4WpLZ9ss5aece.cbd0fd679354 --database eVkqz4AKzNzJoRDSPXy4aQ --execute INSERT INTO employees (username, email, password, name, department, position, role, status) \nVALUES ('admin', 'admin@apex-meridian.com', '$2b$10$E.L5/vKQVH83ESo9yTmGk.VPcSIaKV9zpfpadnXIdPb8EsRbZkpLO', 'System Administrator', 'IT', 'System Administrator', 'admin', 'active')\nON DUPLICATE KEY UPDATE password='$2b$10$E.L5/vKQVH83ESo9yTmGk.VPcSIaKV9zpfpadnXIdPb8EsRbZkpLO';",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'position' in 'field list'"
+  ]
+}

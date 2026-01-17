@@ -482,5 +482,26 @@
   - [x] Add tRPC procedures for all health checks
   - [ ] Write vitest tests for monitoring
 - [x] Test all features (server running, TypeScript clean, LSP clean)
-- [ ] Save checkpoint
-- [ ] Push to GitHub
+- [x] Save checkpoint (version 5b11b00f)
+- [x] Push to GitHub (already synced)
+
+
+## Phase 21: Fix 404 Errors and Add Navigation Links
+- [ ] Investigate 404 errors on /hr-dashboard and /employee routes
+- [ ] Check routing configuration in App.tsx
+- [ ] Verify authentication flow and redirects
+- [ ] Add navigation links to header for new features:
+  - [ ] HR Dashboard
+  - [ ] Employee Portal
+  - [ ] Data Center Roadmap
+  - [ ] Onboarding Portal
+  - [ ] System Monitoring
+  - [ ] HR Requests
+- [x] Add links to footer
+- [x] Create admin/dashboard dropdown menu (Portal dropdown in header)
+- [x] Create admin credentials for accessing both Employee Portal and HR Dashboard (username: admin, password: admin123)
+- [x] Update Login page to show admin credentials
+- [x] Add Portal dropdown menu to header with all portal links
+- [x] Insert admin user into database
+- [ ] Test all navigation and page access with admin login
+- [ ] Save checkpoint and push to GitHub

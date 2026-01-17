@@ -9,6 +9,7 @@ export default function Header() {
   const [technologyOpen, setTechnologyOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
+  const [portalOpen, setPortalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-blue-950/95 backdrop-blur-sm border-b border-cyan-500/20">
@@ -205,6 +206,45 @@ export default function Header() {
                   </Link>
                   <Link href="/investors" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
                     Investors
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Portal Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setPortalOpen(true)}
+                onMouseLeave={() => setPortalOpen(false)}
+                className="flex items-center text-gray-200 hover:text-cyan-400 transition-colors font-medium"
+              >
+                Portal
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              {portalOpen && (
+                <div
+                  onMouseEnter={() => setPortalOpen(true)}
+                  onMouseLeave={() => setPortalOpen(false)}
+                  className="absolute top-full left-0 mt-2 w-64 bg-blue-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-cyan-500/20 py-2"
+                >
+                  <Link href="/employee" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    Employee Portal
+                  </Link>
+                  <Link href="/hr-dashboard" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    HR Dashboard
+                  </Link>
+                  <Link href="/hr-requests" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    HR Requests
+                  </Link>
+                  <Link href="/onboarding" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    Onboarding Portal
+                  </Link>
+                  <Link href="/data-center-roadmap" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    Data Center Roadmap
+                  </Link>
+                  <Link href="/system-monitoring" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+                    System Monitoring
                   </Link>
                 </div>
               )}

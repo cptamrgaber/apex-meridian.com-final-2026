@@ -30,9 +30,10 @@ export default function Login() {
         toast.success(`Welcome back, ${result.employee.name}!`);
         
         // Redirect based on role
-        if (result.employee.role === 'admin' || result.employee.role === 'hr') {
-          setLocation("/hr");
+        if (result.employee.role === 'hr') {
+          setLocation("/hr-dashboard");
         } else {
+          // Admin and employees go to employee portal
           setLocation("/employee");
         }
       }
@@ -113,6 +114,7 @@ export default function Login() {
               <div className="mt-6 p-4 bg-cyan-500/10 rounded border border-cyan-500/20">
                 <p className="text-sm text-gray-300 font-semibold mb-2">Demo Credentials:</p>
                 <div className="space-y-1 text-xs text-gray-400">
+                  <p><strong>Admin:</strong> admin / admin123</p>
                   <p><strong>Employee:</strong> employee@apex-meridian.com / employee123</p>
                   <p><strong>HR:</strong> hr@apex-meridian.com / hr123</p>
                 </div>
