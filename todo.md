@@ -725,3 +725,42 @@
 - [x] Create 4-6 new blog posts based on real partner projects (created 8 posts)
 - [x] Add video embeds and technical details to blog posts
 - [x] Test updated blog and save checkpoint
+
+## Phase 29: Technology News Page and Homepage Dynamic Cards
+- [x] Copy news images to project public folder
+- [x] Fetch latest technology/AI news from reliable sources
+- [x] Create news page with articles, images, graphs, and videos
+- [x] Implement news categories (AI, Machine Learning, Microchips, Tech Companies, etc.)
+- [x] Add search and filter functionality to news page
+- [x] Create auto-scrolling news card for homepage
+- [x] Create auto-scrolling blog topics card for homepage
+- [x] Add news page link to navigation and sitemap
+- [ ] Test news page and homepage cards
+
+## Phase 30: Newsletter Subscription System
+- [x] Create newsletter subscription form component
+- [x] Set up database schema for newsletter subscribers
+- [x] Implement tRPC procedures for subscription management
+- [ ] Integrate Resend API for email sending (backend ready, needs testing)
+- [ ] Create automated monthly digest generation
+- [ ] Add subscription form to blog and news pages
+- [ ] Test email subscription flow
+
+## Phase 31: Research Metrics Dashboard
+- [ ] Install Chart.js library
+- [ ] Create metrics dashboard page
+- [ ] Build publication trends chart (by year)
+- [ ] Build citation growth chart
+- [ ] Create geographic collaboration heatmap
+- [ ] Add interactive filters and data export
+- [ ] Link dashboard from AGI research page
+- [ ] Test all visualizations
+
+## Phase 32: Blog Comment System
+- [ ] Create database schema for comments
+- [ ] Implement tRPC procedures for comment CRUD operations
+- [ ] Add comment section to blog post pages
+- [ ] Create moderation dashboard for admins
+- [ ] Add comment notifications
+- [ ] Test comment posting and moderation
+- [ ] Save final checkpoint

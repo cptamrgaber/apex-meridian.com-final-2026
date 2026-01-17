@@ -394,6 +394,47 @@ export const appRouter = router({
       }),
    }),
 
+  // Newsletter subscription management
+  newsletter: router({
+    subscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email("Valid email is required"),
+        name: z.string().optional(),
+        interests: z.array(z.string()).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const { subscribeToNewsletter } = await import("./newsletterDb");
+        const result = await subscribeToNewsletter(input);
+        
+        if (!result.success) {
+          throw new Error(result.error || "Failed to subscribe");
+        }
+        
+        return { success: true };
+      }),
+    
+    unsubscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email(),
+      }))
+      .mutation(async ({ input }) => {
+        const { unsubscribeFromNewsletter } = await import("./newsletterDb");
+        const result = await unsubscribeFromNewsletter(input.email);
+        
+        if (!result.success) {
+          throw new Error(result.error || "Failed to unsubscribe");
+        }
+        
+        return { success: true };
+      }),
+    
+    getSubscribers: publicProcedure
+      .query(async () => {
+        const { getAllSubscribers } = await import("./newsletterDb");
+        return await getAllSubscribers();
+      }),
+  }),
+
   // System monitoring and health checks
   monitoring: router({
     getSystemHealth: publicProcedure

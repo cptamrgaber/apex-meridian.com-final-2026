@@ -48,6 +48,7 @@ import ResearcherProfile from "@/pages/research/ResearcherProfile";
 import ResearchBlog from "@/pages/research/Blog";
 import BlogPost from "@/pages/research/BlogPost";
 import CollaborationForm from "@/pages/research/CollaborationForm";
+import News from "@/pages/News";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -98,6 +99,7 @@ function Router() {
       <Route path={"/research/blog"} component={ResearchBlog} />
       <Route path={"/research/blog/:id"} component={BlogPost} />
       <Route path={"/research/collaboration"} component={CollaborationForm} />
+      <Route path={"/news"} component={News} />
       <Route path={"/technology"} component={Technology} />
       <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />

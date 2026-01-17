@@ -131,3 +131,20 @@ export const companyDocuments = mysqlTable("companyDocuments", {
 
 export type CompanyDocument = typeof companyDocuments.$inferSelect;
 export type InsertCompanyDocument = typeof companyDocuments.$inferInsert;
+
+/**
+ * Newsletter subscribers table for research updates and blog notifications
+ */
+export const newsletterSubscribers = mysqlTable("newsletterSubscribers", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  name: varchar("name", { length: 200 }),
+  interests: text("interests"), // JSON array of topics (AI, ML, Quantum, etc.)
+  isActive: int("isActive").default(1).notNull(), // 1 = subscribed, 0 = unsubscribed
+  subscribedAt: timestamp("subscribedAt").defaultNow().notNull(),
+  unsubscribedAt: timestamp("unsubscribedAt"),
+  lastEmailSent: timestamp("lastEmailSent"),
+});
+
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;

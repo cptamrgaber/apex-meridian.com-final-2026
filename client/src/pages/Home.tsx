@@ -171,6 +171,141 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Dynamic News and Blog Cards */}
+      <section className="py-24 bg-gradient-to-b from-blue-950 to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Latest News Card */}
+            <div className="bg-gradient-to-br from-slate-900/90 to-blue-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-white">Latest Tech News</h3>
+                <Link href="/news">
+                  <Button variant="outline" size="sm" className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10">
+                    View All
+                  </Button>
+                </Link>
+              </div>
+              <div className="space-y-4 max-h-96 overflow-hidden">
+                <div className="animate-scroll-up">
+                  <Link href="/news">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">AI at Scale: 2025 Set the Stage for Agent-Driven Transformation</h4>
+                          <p className="text-gray-400 text-sm mb-2">KPMG report reveals 82% of leaders agree their industry will look different in 24 months...</p>
+                          <span className="text-cyan-400 text-xs">Jan 15, 2025 • KPMG</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link href="/news">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">Gartner Unveils Top 10 Strategic Technology Trends for 2025</h4>
+                          <p className="text-gray-400 text-sm mb-2">Agentic AI leads Gartner's strategic technology trends, alongside quantum computing...</p>
+                          <span className="text-cyan-400 text-xs">Jan 14, 2025 • Gartner</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link href="/news">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">Quantum Microchip Breakthrough Accelerates Computing Future</h4>
+                          <p className="text-gray-400 text-sm mb-2">Microchip-sized device controls laser frequencies with extreme precision...</p>
+                          <span className="text-cyan-400 text-xs">Jan 12, 2025 • ScienceDaily</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link href="/news">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">Machine Learning 2025: Autonomous Decision-Making Era</h4>
+                          <p className="text-gray-400 text-sm mb-2">ML evolves from predictive models to autonomous systems driving operations...</p>
+                          <span className="text-cyan-400 text-xs">Jan 10, 2025 • The Tech Whale</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Research Blog Card */}
+            <div className="bg-gradient-to-br from-slate-900/90 to-blue-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-white">Research Insights</h3>
+                <Link href="/research/blog">
+                  <Button variant="outline" size="sm" className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10">
+                    View All
+                  </Button>
+                </Link>
+              </div>
+              <div className="space-y-4 max-h-96 overflow-hidden">
+                <div className="animate-scroll-up">
+                  <Link href="/research/blog/arabert-arabic-nlp">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">From 60M Tweets to Production: How AraBERT Revolutionized Arabic NLP</h4>
+                          <p className="text-gray-400 text-sm mb-2">AUB MIND Lab's transformer models achieve state-of-the-art Arabic NLP...</p>
+                          <span className="text-cyan-400 text-xs">Jan 15, 2025 • Dr. Ahmed Hassan</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link href="/research/blog/photonic-quantum-computing">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">Light-Speed Computing: Zewail City's Photonic Quantum Breakthrough</h4>
+                          <p className="text-gray-400 text-sm mb-2">Muhammad AbuGhanem's research on encoding information in photons...</p>
+                          <span className="text-cyan-400 text-xs">Jan 10, 2025 • Dr. Yasmine Khalil</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link href="/research/blog/cairo-5g-iot-security">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">Cairo University's 5G and IoT Security Research</h4>
+                          <p className="text-gray-400 text-sm mb-2">CAMPIE project transforms campus into living IoT laboratory...</p>
+                          <span className="text-cyan-400 text-xs">Jan 5, 2025 • Prof. Dr. Mohamed El-Sayed</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link href="/research/blog/hybrid-quantum-classical-ml">
+                    <div className="p-4 bg-blue-900/30 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-colors cursor-pointer mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-white font-semibold mb-1">Hybrid Quantum-Classical Machine Learning with PennyLane</h4>
+                          <p className="text-gray-400 text-sm mb-2">Seamless integration of quantum circuits with PyTorch and TensorFlow...</p>
+                          <span className="text-cyan-400 text-xs">Dec 28, 2024 • Dr. Layla Ibrahim</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Statistics Section */}
       <section className="py-24 bg-blue-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
