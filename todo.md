@@ -606,5 +606,47 @@
 - [x] Update sitemap page with all current pages
 - [x] Add Media Production solution to sitemap
 - [x] Add Employee Portal and HR Dashboard to sitemap
-- [ ] Test sitemap links
-- [ ] Save checkpoint
+- [x] Test sitemap links (sitemap updated and working)
+- [x] Save checkpoint (version 6a4ab38e)
+
+
+## Phase 32: Fix 404 Errors and Update AGI Research Partnership
+- [ ] Test "Our Team" page for 404 error
+- [ ] Check if OurTeam component exists and is properly routed
+- [ ] Fix Our Team page routing or create missing component
+- [ ] Test "Careers" page for 404 error (user reports it's broken again)
+- [ ] Check Careers page routing and component
+- [ ] Fix Careers page if broken
+- [ ] Update AGI Research Partnership page with Egyptian institutions
+- [ ] Add African research institutions to AGI Partnership page
+- [ ] Add Middle Eastern research institutions to AGI Partnership page
+- [ ] Test all three pages after fixes
+- [ ] Save checkpoint with all updates
+
+
+## Phase 32: Fix 404 Errors and Update AGI Research Partnership
+- [x] Test HR Dashboard for 404 error (✅ NOT 404 - working perfectly)
+- [x] Test "Our Team" page for 404 error (❌ REAL 404 - page doesn't exist)
+- [ ] Check if OurTeam component exists and is properly routed
+- [ ] Create Our Team page with team members and organizational structure
+- [x] Test "Careers" page for 404 error (✅ NOT 404 - working perfectly with 96 jobs)
+- [x] Check Careers page routing and component (working correctly)
+- [ ] Update AGI Research Partnership page with Egyptian institutions
+- [ ] Add African research institutions to AGI Partnership page
+- [ ] Add Middle Eastern research institutions to AGI Partnership page
+- [ ] Test all pages after fixes
+- [ ] Save checkpoint with all updates
+
+## Phase 21: Footer Links and AGI Partnership Updates
+- [x] Fix footer navigation link: /about/team → /our-team
+- [x] Fix footer navigation link: /about/careers → /careers
+- [x] Fix footer navigation link: /hr → /hr-dashboard
+- [x] Update AGI Research Partnership page with Egyptian institutions (8 institutions)
+- [x] Update AGI Research Partnership page with African institutions (8 institutions)
+- [x] Update AGI Research Partnership page with Middle Eastern institutions (8 institutions)
+- [x] Organize partnerships by region with separate sections
+- [x] Update partnership description to mention Egypt, Africa, Middle East, and global reach
+- [x] Test all footer links work correctly
+- [x] Test AGI Research page displays all partnerships correctly
+- [x] Verify Our Team page loads correctly
+- [x] Verify Careers page loads with compact 3-column layout

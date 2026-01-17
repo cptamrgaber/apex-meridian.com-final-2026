@@ -78,12 +78,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about/team" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">
+                <Link href="/our-team" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">
                   Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/about/careers" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">
+                <Link href="/careers" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">
                   Careers
                 </Link>
               </li>
@@ -146,7 +146,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hr" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">
+                  <Link href="/hr-dashboard" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">
                     HR Dashboard
                   </Link>
                 </li>

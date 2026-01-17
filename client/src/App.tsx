@@ -92,6 +92,7 @@ function Router() {
       <Route path="/onboarding" component={OnboardingPortal} />
       <Route path="/system-monitoring" component={SystemMonitoring} />
       <Route path={"/team"} component={Team} />
+      <Route path={"/our-team"} component={Team} />
       <Route path={"/careers"} component={Careers} />
       <Route path={"/careers/apply"} component={CareerApply} />
       <Route path={"/applications"} component={Applications} />

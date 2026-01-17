@@ -181,17 +181,96 @@ export default function AGI() {
 
       {/* Partnerships */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Research Partnerships</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            We collaborate with leading universities, research institutions, and industry partners to advance AGI research responsibly
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {["MIT", "Stanford", "Oxford", "Carnegie Mellon", "Berkeley", "Cambridge", "ETH Zurich", "Toronto"].map((partner, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
-                <p className="text-white font-bold">{partner}</p>
-              </div>
-            ))}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-6">Research Partnerships</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We collaborate with leading universities, research institutions, and industry partners across Egypt, Africa, the Middle East, and globally to advance AGI research responsibly
+            </p>
+          </div>
+          
+          {/* Egyptian Institutions */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Egyptian Research Institutions</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                "American University in Cairo (AUC)",
+                "Cairo University",
+                "Ain Shams University",
+                "Alexandria University",
+                "Nile University",
+                "Egypt-Japan University (E-JUST)",
+                "Zewail City of Science",
+                "Information Technology Industry Development Agency (ITIDA)"
+              ].map((partner, index) => (
+                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                  <p className="text-white font-semibold text-sm">{partner}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* African Institutions */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">African Research Institutions</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                "University of Cape Town",
+                "University of the Witwatersrand",
+                "Stellenbosch University",
+                "University of Nairobi",
+                "Makerere University",
+                "University of Lagos",
+                "Mohammed VI Polytechnic University",
+                "African Institute for Mathematical Sciences (AIMS)"
+              ].map((partner, index) => (
+                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                  <p className="text-white font-semibold text-sm">{partner}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Middle Eastern Institutions */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Middle Eastern Research Institutions</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                "King Abdullah University (KAUST)",
+                "Khalifa University",
+                "American University of Beirut",
+                "Technion - Israel Institute of Technology",
+                "Qatar Computing Research Institute",
+                "United Arab Emirates University",
+                "King Saud University",
+                "Tel Aviv University"
+              ].map((partner, index) => (
+                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                  <p className="text-white font-semibold text-sm">{partner}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Global Institutions */}
+          <div>
+            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Global Research Institutions</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                "MIT",
+                "Stanford University",
+                "University of Oxford",
+                "Carnegie Mellon University",
+                "UC Berkeley",
+                "University of Cambridge",
+                "ETH Zurich",
+                "University of Toronto"
+              ].map((partner, index) => (
+                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                  <p className="text-white font-semibold text-sm">{partner}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
