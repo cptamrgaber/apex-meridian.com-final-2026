@@ -194,6 +194,12 @@ export default function Publications() {
   const [selectedArea, setSelectedArea] = useState('All Research Areas');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'year' | 'citations'>('year');
+  const [selectedCoAuthor, setSelectedCoAuthor] = useState('All Co-Authors');
+  const [citationRange, setCitationRange] = useState('all');
+
+  // Extract unique co-authors
+  const allCoAuthors = Array.from(new Set(publications.flatMap(pub => pub.authors))).sort();
+  const coAuthorOptions = ['All Co-Authors', ...allCoAuthors];
 
   const filteredPublications = publications
     .filter(pub => {
@@ -204,8 +210,15 @@ export default function Publications() {
         pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         pub.authors.some(author => author.toLowerCase().includes(searchQuery.toLowerCase())) ||
         pub.abstract.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCoAuthor = selectedCoAuthor === 'All Co-Authors' || pub.authors.includes(selectedCoAuthor);
       
-      return matchesInstitution && matchesYear && matchesArea && matchesSearch;
+      let matchesCitationRange = true;
+      if (citationRange === '0-50') matchesCitationRange = pub.citations >= 0 && pub.citations <= 50;
+      else if (citationRange === '51-100') matchesCitationRange = pub.citations >= 51 && pub.citations <= 100;
+      else if (citationRange === '101-150') matchesCitationRange = pub.citations >= 101 && pub.citations <= 150;
+      else if (citationRange === '151-plus') matchesCitationRange = pub.citations >= 151;
+      
+      return matchesInstitution && matchesYear && matchesArea && matchesSearch && matchesCoAuthor && matchesCitationRange;
     })
     .sort((a, b) => {
       if (sortBy === 'year') return b.year - a.year;
@@ -279,7 +292,7 @@ export default function Publications() {
 
         {/* Filters */}
         <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">Search</label>
               <input
@@ -335,6 +348,32 @@ export default function Publications() {
               >
                 <option value="year">Year (Newest First)</option>
                 <option value="citations">Citations (Most First)</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Co-Author</label>
+              <select
+                value={selectedCoAuthor}
+                onChange={(e) => setSelectedCoAuthor(e.target.value)}
+                className="w-full px-4 py-2 bg-blue-950/50 border border-cyan-500/30 rounded-lg text-white focus:outline-none focus:border-cyan-400"
+              >
+                {coAuthorOptions.map(author => (
+                  <option key={author} value={author}>{author}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Citations</label>
+              <select
+                value={citationRange}
+                onChange={(e) => setCitationRange(e.target.value)}
+                className="w-full px-4 py-2 bg-blue-950/50 border border-cyan-500/30 rounded-lg text-white focus:outline-none focus:border-cyan-400"
+              >
+                <option value="all">All Citations</option>
+                <option value="0-50">0-50</option>
+                <option value="51-100">51-100</option>
+                <option value="101-150">101-150</option>
+                <option value="151-plus">151+</option>
               </select>
             </div>
           </div>

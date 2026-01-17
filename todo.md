@@ -504,7 +504,7 @@
 - [x] Add Portal dropdown menu to header with all portal links
 - [x] Insert admin user into database
 - [ ] Test all navigation and page access with admin login
-- [ ] Save checkpoint and push to GitHub
+- [x] Save checkpoint and push to GitHub
 
 
 ## Phase 22: Fix 404 Errors on Portal Pages
@@ -683,4 +683,20 @@
 - [x] Test Researchers directory page on desktop and mobile
 - [x] Test individual researcher profile pages
 - [x] Verify all links from AGI page to research pages work correctly
-- [ ] Save checkpoint and push to GitHub
+- [x] Save checkpoint and push to GitHub
+
+## Phase 25: Research Collaboration Features
+- [x] Create research collaboration form page with multi-step wizard
+- [x] Add research area selection to collaboration form
+- [x] Implement file upload for research proposals (PDF, DOCX)
+- [x] Add form validation and submission handling
+- [x] Enhance publication search with full-text search across abstracts
+- [x] Add co-author filter to publications page
+- [x] Add citation range filter to publications page
+- [x] Create research blog page with post listing
+- [x] Create individual blog post page template
+- [x] Add 6-8 sample blog posts with categories
+- [x] Add blog categories filter
+- [x] Update AGI page with links to collaboration form and blog
+- [x] Update App.tsx routing for new pages
+- [x] Test all features and save checkpoint

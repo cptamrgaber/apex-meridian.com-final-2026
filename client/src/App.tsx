@@ -45,6 +45,9 @@ import Publications from "@/pages/research/Publications";
 import Timeline from "@/pages/research/Timeline";
 import Researchers from "@/pages/research/Researchers";
 import ResearcherProfile from "@/pages/research/ResearcherProfile";
+import ResearchBlog from "@/pages/research/Blog";
+import BlogPost from "@/pages/research/BlogPost";
+import CollaborationForm from "@/pages/research/CollaborationForm";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -92,6 +95,9 @@ function Router() {
       <Route path={"/research/timeline"} component={Timeline} />
       <Route path={"/researchers"} component={Researchers} />
       <Route path={"/researchers/:id"} component={ResearcherProfile} />
+      <Route path={"/research/blog"} component={ResearchBlog} />
+      <Route path={"/research/blog/:id"} component={BlogPost} />
+      <Route path={"/research/collaboration"} component={CollaborationForm} />
       <Route path={"/technology"} component={Technology} />
       <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />

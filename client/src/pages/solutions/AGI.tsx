@@ -547,6 +547,30 @@ export default function AGI() {
               </div>
             </Link>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <Link href="/research/blog">
+              <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all cursor-pointer group">
+                <FileText className="h-12 w-12 text-cyan-400 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Research Blog</h3>
+                <p className="text-gray-300 text-sm mb-4">Read insights, stories, and updates from our research partnerships. Behind-the-scenes looks at our projects.</p>
+                <span className="text-cyan-400 text-sm font-semibold flex items-center">
+                  Read Blog
+                  <ArrowRight className="h-4 w-4 ml-1" />
+                </span>
+              </div>
+            </Link>
+            <Link href="/research/collaboration">
+              <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all cursor-pointer group">
+                <Users className="h-12 w-12 text-cyan-400 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Collaborate With Us</h3>
+                <p className="text-gray-300 text-sm mb-4">Partner with Apex Meridian on research. Submit your proposal and join our global research network.</p>
+                <span className="text-cyan-400 text-sm font-semibold flex items-center">
+                  Submit Proposal
+                  <ArrowRight className="h-4 w-4 ml-1" />
+                </span>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 
