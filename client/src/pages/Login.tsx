@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,7 +10,6 @@ import { useEmployeeAuth } from "@/hooks/useEmployeeAuth";
 import { toast } from "sonner";
 
 export default function Login() {
-  const [, setLocation] = useLocation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -22,6 +20,7 @@ export default function Login() {
     e.preventDefault();
     setError("");
     setLoading(true);
+    
     try {
       const result = await login(username, password);
       
@@ -30,10 +29,9 @@ export default function Login() {
         
         // Redirect based on role
         if (result.employee.role === 'hr') {
-          setLocation("/hr-dashboard");
+          window.location.href = "/hr-dashboard";
         } else {
-          // Admin and employees go to employee portal
-          setLocation("/employee");
+          window.location.href = "/employee";
         }
       }
     } catch (err: any) {
@@ -109,8 +107,6 @@ export default function Login() {
               >
                 {loading ? "Signing in..." : "Sign In"}
               </Button>
-
-
             </form>
           </CardContent>
         </Card>

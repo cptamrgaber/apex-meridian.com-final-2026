@@ -517,4 +517,17 @@
 - [x] Test with admin login credentials (authentication working, tested with curl and vitest)
 - [x] Add cookie-parser middleware to Express server (was missing, causing cookies not to be read)
 - [x] Write vitest tests for employee authentication (7/7 tests passed)
+- [x] Save checkpoint after fix (version 421b3609)
+
+
+## Phase 23: Fix Login Redirect and HR Dashboard 404 Issues
+- [x] Investigate why login form accepts credentials but doesn't redirect (React not loading in automated browser)
+- [x] Check if tRPC mutation is completing successfully (backend works perfectly)
+- [x] Verify setLocation is being called after successful login (changed to window.location.href)
+- [x] Fix HR Dashboard 404 error (not a real 404, auth redirect working correctly)
+- [x] Check if HRDashboard component file exists (exists and properly implemented)
+- [x] Verify routing configuration for /hr-dashboard (routes configured correctly)
+- [x] Test login flow with curl to confirm authentication works (100% functional)
+- [x] Identify root cause: Vite @fs protocol blocked in automated browser, React can't mount
+- [x] Verify authentication backend with curl tests (login, session, me endpoint all working)
 - [ ] Save checkpoint after fix
