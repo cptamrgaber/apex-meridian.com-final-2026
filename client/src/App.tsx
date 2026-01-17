@@ -38,6 +38,9 @@ import EmployeeRequests from "@/pages/EmployeeRequests";
 import DataCenterRoadmap from "@/pages/DataCenterRoadmap";
 import OnboardingPortal from "@/pages/OnboardingPortal";
 import SystemMonitoring from "@/pages/SystemMonitoring";
+import AUCPartnership from "@/pages/partnerships/AUC";
+import CairoUniversityPartnership from "@/pages/partnerships/CairoUniversity";
+import ZewailCityPartnership from "@/pages/partnerships/ZewailCity";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -78,6 +81,9 @@ function Router() {
       <Route path={"/solutions/cybersecurity"} component={Cybersecurity} />
       <Route path={"/solutions/education"} component={Education} />
       <Route path={"/solutions/agi"} component={AGI} />
+      <Route path={"/partnerships/auc"} component={AUCPartnership} />
+      <Route path={"/partnerships/cairo-university"} component={CairoUniversityPartnership} />
+      <Route path={"/partnerships/zewail-city"} component={ZewailCityPartnership} />
       <Route path={"/technology"} component={Technology} />
       <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />

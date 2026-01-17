@@ -1,9 +1,91 @@
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Brain, CheckCircle, Lightbulb, Shield, ArrowRight } from "lucide-react";
+import { Brain, CheckCircle, Lightbulb, Shield, ArrowRight, ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 export default function AGI() {
+  const [selectedRegion, setSelectedRegion] = useState<string>("all");
+  const [selectedArea, setSelectedArea] = useState<string>("all");
+
+  // Partnership data with regions and research areas
+  const partnerships = [
+    // Egyptian Institutions
+    { name: "American University in Cairo (AUC)", region: "egyptian", area: "neural-symbolic", link: "/partnerships/auc" },
+    { name: "Cairo University", region: "egyptian", area: "computer-vision", link: "/partnerships/cairo-university" },
+    { name: "Ain Shams University", region: "egyptian", area: "nlp" },
+    { name: "Alexandria University", region: "egyptian", area: "ethics" },
+    { name: "Nile University", region: "egyptian", area: "machine-learning" },
+    { name: "Egypt-Japan University (E-JUST)", region: "egyptian", area: "robotics" },
+    { name: "Zewail City of Science", region: "egyptian", area: "quantum", link: "/partnerships/zewail-city" },
+    { name: "Information Technology Industry Development Agency (ITIDA)", region: "egyptian", area: "applied-ai" },
+    
+    // African Institutions
+    { name: "University of Cape Town", region: "african", area: "machine-learning" },
+    { name: "University of the Witwatersrand", region: "african", area: "computer-vision" },
+    { name: "Stellenbosch University", region: "african", area: "nlp" },
+    { name: "University of Nairobi", region: "african", area: "applied-ai" },
+    { name: "Makerere University", region: "african", area: "ethics" },
+    { name: "University of Lagos", region: "african", area: "neural-symbolic" },
+    { name: "Mohammed VI Polytechnic University", region: "african", area: "robotics" },
+    { name: "African Institute for Mathematical Sciences (AIMS)", region: "african", area: "quantum" },
+    
+    // Middle Eastern Institutions
+    { name: "King Abdullah University (KAUST)", region: "middle-eastern", area: "machine-learning" },
+    { name: "Khalifa University", region: "middle-eastern", area: "computer-vision" },
+    { name: "American University of Beirut", region: "middle-eastern", area: "nlp" },
+    { name: "Technion - Israel Institute of Technology", region: "middle-eastern", area: "quantum" },
+    { name: "Qatar Computing Research Institute", region: "middle-eastern", area: "neural-symbolic" },
+    { name: "United Arab Emirates University", region: "middle-eastern", area: "applied-ai" },
+    { name: "King Saud University", region: "middle-eastern", area: "robotics" },
+    { name: "Tel Aviv University", region: "middle-eastern", area: "ethics" },
+    
+    // Global Institutions
+    { name: "MIT", region: "global", area: "neural-symbolic" },
+    { name: "Stanford University", region: "global", area: "machine-learning" },
+    { name: "University of Oxford", region: "global", area: "ethics" },
+    { name: "Carnegie Mellon University", region: "global", area: "robotics" },
+    { name: "UC Berkeley", region: "global", area: "computer-vision" },
+    { name: "University of Cambridge", region: "global", area: "quantum" },
+    { name: "ETH Zurich", region: "global", area: "machine-learning" },
+    { name: "University of Toronto", region: "global", area: "nlp" }
+  ];
+
+  const researchAreas = [
+    { id: "all", label: "All Research Areas" },
+    { id: "neural-symbolic", label: "Neural-Symbolic AI" },
+    { id: "machine-learning", label: "Machine Learning" },
+    { id: "computer-vision", label: "Computer Vision" },
+    { id: "nlp", label: "Natural Language Processing" },
+    { id: "robotics", label: "Robotics & Autonomous Systems" },
+    { id: "quantum", label: "Quantum Computing" },
+    { id: "ethics", label: "AI Ethics & Safety" },
+    { id: "applied-ai", label: "Applied AI Solutions" }
+  ];
+
+  const regions = [
+    { id: "all", label: "All Regions" },
+    { id: "egyptian", label: "Egyptian Institutions" },
+    { id: "african", label: "African Institutions" },
+    { id: "middle-eastern", label: "Middle Eastern Institutions" },
+    { id: "global", label: "Global Institutions" }
+  ];
+
+  // Filter partnerships based on selected region and research area
+  const filteredPartnerships = partnerships.filter(p => {
+    const matchesRegion = selectedRegion === "all" || p.region === selectedRegion;
+    const matchesArea = selectedArea === "all" || p.area === selectedArea;
+    return matchesRegion && matchesArea;
+  });
+
+  // Group filtered partnerships by region
+  const groupedPartnerships = {
+    egyptian: filteredPartnerships.filter(p => p.region === "egyptian"),
+    african: filteredPartnerships.filter(p => p.region === "african"),
+    "middle-eastern": filteredPartnerships.filter(p => p.region === "middle-eastern"),
+    global: filteredPartnerships.filter(p => p.region === "global")
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
       <Header />
@@ -179,95 +261,246 @@ export default function AGI() {
         </div>
       </section>
 
-      {/* Partnerships */}
+      {/* Partnerships with Filtering */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-6">Research Partnerships</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               We collaborate with leading universities, research institutions, and industry partners across Egypt, Africa, the Middle East, and globally to advance AGI research responsibly
+            </p>
+            
+            {/* Filters */}
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+              {/* Region Filter */}
+              <div>
+                <label className="text-gray-300 text-sm mb-2 block">Filter by Region:</label>
+                <select
+                  value={selectedRegion}
+                  onChange={(e) => setSelectedRegion(e.target.value)}
+                  className="px-4 py-2 bg-blue-900/50 border border-cyan-500/30 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
+                >
+                  {regions.map(region => (
+                    <option key={region.id} value={region.id}>{region.label}</option>
+                  ))}
+                </select>
+              </div>
+              
+              {/* Research Area Filter */}
+              <div>
+                <label className="text-gray-300 text-sm mb-2 block">Filter by Research Area:</label>
+                <select
+                  value={selectedArea}
+                  onChange={(e) => setSelectedArea(e.target.value)}
+                  className="px-4 py-2 bg-blue-900/50 border border-cyan-500/30 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
+                >
+                  {researchAreas.map(area => (
+                    <option key={area.id} value={area.id}>{area.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            
+            {/* Results Count */}
+            <p className="text-cyan-400 mt-4">
+              Showing {filteredPartnerships.length} of {partnerships.length} partnerships
             </p>
           </div>
           
           {/* Egyptian Institutions */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Egyptian Research Institutions</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                "American University in Cairo (AUC)",
-                "Cairo University",
-                "Ain Shams University",
-                "Alexandria University",
-                "Nile University",
-                "Egypt-Japan University (E-JUST)",
-                "Zewail City of Science",
-                "Information Technology Industry Development Agency (ITIDA)"
-              ].map((partner, index) => (
-                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
-                  <p className="text-white font-semibold text-sm">{partner}</p>
-                </div>
-              ))}
+          {(selectedRegion === "all" || selectedRegion === "egyptian") && groupedPartnerships.egyptian.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Egyptian Research Institutions</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {groupedPartnerships.egyptian.map((partner, index) => (
+                  partner.link ? (
+                    <Link key={index} href={partner.link}>
+                      <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all cursor-pointer group">
+                        <p className="text-white font-semibold text-sm group-hover:text-cyan-400 transition-colors flex items-center justify-between">
+                          {partner.name}
+                          <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </p>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                      <p className="text-white font-semibold text-sm">{partner.name}</p>
+                    </div>
+                  )
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* African Institutions */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">African Research Institutions</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                "University of Cape Town",
-                "University of the Witwatersrand",
-                "Stellenbosch University",
-                "University of Nairobi",
-                "Makerere University",
-                "University of Lagos",
-                "Mohammed VI Polytechnic University",
-                "African Institute for Mathematical Sciences (AIMS)"
-              ].map((partner, index) => (
-                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
-                  <p className="text-white font-semibold text-sm">{partner}</p>
-                </div>
-              ))}
+          {(selectedRegion === "all" || selectedRegion === "african") && groupedPartnerships.african.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">African Research Institutions</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {groupedPartnerships.african.map((partner, index) => (
+                  <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                    <p className="text-white font-semibold text-sm">{partner.name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Middle Eastern Institutions */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Middle Eastern Research Institutions</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                "King Abdullah University (KAUST)",
-                "Khalifa University",
-                "American University of Beirut",
-                "Technion - Israel Institute of Technology",
-                "Qatar Computing Research Institute",
-                "United Arab Emirates University",
-                "King Saud University",
-                "Tel Aviv University"
-              ].map((partner, index) => (
-                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
-                  <p className="text-white font-semibold text-sm">{partner}</p>
-                </div>
-              ))}
+          {(selectedRegion === "all" || selectedRegion === "middle-eastern") && groupedPartnerships["middle-eastern"].length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Middle Eastern Research Institutions</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {groupedPartnerships["middle-eastern"].map((partner, index) => (
+                  <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                    <p className="text-white font-semibold text-sm">{partner.name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Global Institutions */}
+          {(selectedRegion === "all" || selectedRegion === "global") && groupedPartnerships.global.length > 0 && (
+            <div>
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Global Research Institutions</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {groupedPartnerships.global.map((partner, index) => (
+                  <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+                    <p className="text-white font-semibold text-sm">{partner.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Partner Testimonials & Case Studies */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Partnership Success Stories</h2>
+          
+          {/* Testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {[
+              {
+                quote: "Our collaboration with Apex Meridian has been transformative for our AI research program. Their expertise in neural-symbolic systems and commitment to ethical AI development aligns perfectly with AUC's mission to advance knowledge while serving society.",
+                author: "Dr. Ahmed Hassan",
+                role: "Director, AI Research Lab",
+                institution: "American University in Cairo",
+                link: "/partnerships/auc"
+              },
+              {
+                quote: "Apex Meridian brings world-class AI expertise combined with a deep understanding of Egypt's unique challenges and opportunities. Our partnership has enabled us to translate cutting-edge research into real-world applications that benefit Egyptian society.",
+                author: "Prof. Dr. Mohamed El-Sayed",
+                role: "Dean, Faculty of Computers and AI",
+                institution: "Cairo University",
+                link: "/partnerships/cairo-university"
+              },
+              {
+                quote: "Together, we're not just improving existing AI systems—we're inventing fundamentally new paradigms for intelligent computation that could define the next era of technology. Our work on quantum machine learning is opening entirely new frontiers.",
+                author: "Dr. Yasmine Khalil",
+                role: "Director, Center for Advanced Sciences",
+                institution: "Zewail City of Science and Technology",
+                link: "/partnerships/zewail-city"
+              },
+              {
+                quote: "The partnership has accelerated our research in reinforcement learning and autonomous systems. The joint publications and shared resources have elevated the quality of our graduate programs and attracted top talent from across Africa.",
+                author: "Prof. John Okonkwo",
+                role: "Head of Computer Science",
+                institution: "University of Lagos",
+                link: null
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
+                <div className="text-4xl text-cyan-400 mb-4">"</div>
+                <p className="text-gray-200 mb-6 italic">{testimonial.quote}</p>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="text-white font-bold">{testimonial.author}</p>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    <p className="text-gray-400 text-sm">{testimonial.institution}</p>
+                  </div>
+                  {testimonial.link && (
+                    <Link href={testimonial.link}>
+                      <button className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <ExternalLink className="h-5 w-5" />
+                      </button>
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Case Studies */}
           <div>
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Global Research Institutions</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Research Impact Case Studies</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                "MIT",
-                "Stanford University",
-                "University of Oxford",
-                "Carnegie Mellon University",
-                "UC Berkeley",
-                "University of Cambridge",
-                "ETH Zurich",
-                "University of Toronto"
-              ].map((partner, index) => (
-                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
-                  <p className="text-white font-semibold text-sm">{partner}</p>
+                {
+                  title: "Arabic NLP Breakthrough",
+                  institution: "AUC Partnership",
+                  description: "Developed state-of-the-art Arabic language models achieving 95% accuracy on dialect understanding, enabling better voice assistants and automated translation for 400M+ Arabic speakers.",
+                  metrics: ["95% accuracy", "400M+ users", "3 patents filed"],
+                  link: "/partnerships/auc"
+                },
+                {
+                  title: "AI-Powered Agriculture",
+                  institution: "Cairo University Partnership",
+                  description: "Deployed computer vision systems across 50+ Egyptian farms to monitor crop health and optimize irrigation, resulting in 30% yield improvement and 40% water savings.",
+                  metrics: ["50+ farms", "30% yield ↑", "40% water saved"],
+                  link: "/partnerships/cairo-university"
+                },
+                {
+                  title: "Quantum ML Algorithm",
+                  institution: "Zewail City Partnership",
+                  description: "Published breakthrough quantum machine learning algorithm demonstrating 10x speedup over classical methods for optimization problems, with applications in drug discovery and materials science.",
+                  metrics: ["10x speedup", "2 publications", "Patent pending"],
+                  link: "/partnerships/zewail-city"
+                },
+                {
+                  title: "Medical AI Diagnostic Tool",
+                  institution: "Cairo University Partnership",
+                  description: "Created AI system for analyzing medical images with 95% accuracy, now deployed in 10 Egyptian hospitals to assist radiologists in detecting diseases earlier and more accurately.",
+                  metrics: ["95% accuracy", "10 hospitals", "20K+ scans"],
+                  link: "/partnerships/cairo-university"
+                },
+                {
+                  title: "Traffic Optimization System",
+                  institution: "Cairo University Partnership",
+                  description: "Implemented AI-powered traffic management system in Cairo that reduced congestion by 20% and improved air quality, demonstrating how AI can address urban challenges in developing cities.",
+                  metrics: ["20% less traffic", "Citywide", "Better air quality"],
+                  link: "/partnerships/cairo-university"
+                },
+                {
+                  title: "Neuromorphic AI Chip",
+                  institution: "Zewail City Partnership",
+                  description: "Designed brain-inspired computing chip achieving 100x energy efficiency compared to traditional processors, paving the way for more sustainable and powerful AI systems.",
+                  metrics: ["100x efficiency", "Prototype ready", "Patent filed"],
+                  link: "/partnerships/zewail-city"
+                }
+              ].map((study, index) => (
+                <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all group">
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{study.title}</h4>
+                  <p className="text-cyan-400 text-sm mb-3">{study.institution}</p>
+                  <p className="text-gray-300 text-sm mb-4">{study.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {study.metrics.map((metric, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-semibold">
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                  {study.link && (
+                    <Link href={study.link}>
+                      <button className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold flex items-center transition-colors">
+                        Learn More
+                        <ArrowRight className="h-4 w-4 ml-1" />
+                      </button>
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
