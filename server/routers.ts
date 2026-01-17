@@ -53,8 +53,9 @@ export const appRouter = router({
         // Set cookie with employee session
         ctx.res.cookie('employee_session', JSON.stringify(sessionData), {
           httpOnly: true,
-          secure: ctx.req.protocol === 'https',
+          secure: false, // Allow in development/sandbox
           sameSite: 'lax',
+          path: '/',
           maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
 

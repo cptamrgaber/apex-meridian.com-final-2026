@@ -22,7 +22,6 @@ export default function Login() {
     e.preventDefault();
     setError("");
     setLoading(true);
-
     try {
       const result = await login(username, password);
       
@@ -111,14 +110,7 @@ export default function Login() {
                 {loading ? "Signing in..." : "Sign In"}
               </Button>
 
-              <div className="mt-6 p-4 bg-cyan-500/10 rounded border border-cyan-500/20">
-                <p className="text-sm text-gray-300 font-semibold mb-2">Demo Credentials:</p>
-                <div className="space-y-1 text-xs text-gray-400">
-                  <p><strong>Admin:</strong> admin / admin123</p>
-                  <p><strong>Employee:</strong> employee@apex-meridian.com / employee123</p>
-                  <p><strong>HR:</strong> hr@apex-meridian.com / hr123</p>
-                </div>
-              </div>
+
             </form>
           </CardContent>
         </Card>

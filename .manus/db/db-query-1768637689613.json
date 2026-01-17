@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, username, name, email, department, role, password, isActive FROM employees WHERE username = 'admin';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user PV4WpLZ9ss5aece.cbd0fd679354 --database eVkqz4AKzNzJoRDSPXy4aQ --execute SELECT id, username, name, email, department, role, password, isActive FROM employees WHERE username = 'admin';",
+  "rows": [
+    {
+      "id": "1",
+      "username": "admin",
+      "name": "System Administrator",
+      "email": "admin@apex-meridian.com",
+      "department": "IT",
+      "role": "admin",
+      "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "isActive": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tusername\tname\temail\tdepartment\trole\tpassword\tisActive\n1\tadmin\tSystem Administrator\tadmin@apex-meridian.com\tIT\tadmin\t240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9\t1\n",
+  "stderr": "",
+  "execution_time_ms": 1520
+}

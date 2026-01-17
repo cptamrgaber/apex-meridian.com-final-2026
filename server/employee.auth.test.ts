@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
+import { authenticateEmployee } from "./employeeDb";
 
 function createMockContext(): TrpcContext {
   return {
@@ -56,5 +57,26 @@ describe("Employee Authentication System", () => {
 
     const result = await caller.employee.list();
     expect(Array.isArray(result)).toBe(true);
+  });
+
+  it("should authenticate admin user with correct credentials", async () => {
+    const employee = await authenticateEmployee('admin', 'admin123');
+    
+    expect(employee).not.toBeNull();
+    expect(employee?.username).toBe('admin');
+    expect(employee?.role).toBe('admin');
+    expect(employee?.name).toBe('System Administrator');
+  });
+
+  it("should reject authentication with incorrect password", async () => {
+    const employee = await authenticateEmployee('admin', 'wrongpassword');
+    
+    expect(employee).toBeNull();
+  });
+
+  it("should reject authentication with non-existent user", async () => {
+    const employee = await authenticateEmployee('nonexistent', 'password');
+    
+    expect(employee).toBeNull();
   });
 });
