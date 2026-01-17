@@ -163,20 +163,20 @@ function HRDashboardContent() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-900">
       <Header />
       
-      <main className="flex-1 container mx-auto px-4 py-20">
+      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <div className="flex justify-between items-start mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
               <div>
-                <h1 className="text-4xl font-bold text-white mb-4">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
                   HR Dashboard
                 </h1>
-                <p className="text-xl text-gray-300">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-300">
                   Welcome, {employee?.name} • Manage employees and operations
                 </p>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3 w-full sm:w-auto">
                 <Button
                   onClick={() => setLocation("/hr-requests")}
                   variant="outline"
@@ -348,7 +348,7 @@ function HRDashboardContent() {
                 {employees?.map((emp) => (
                   <div
                     key={emp.id}
-                    className="flex items-center justify-between p-4 bg-blue-950/30 rounded-lg border border-cyan-500/10 hover:border-cyan-500/30 transition-colors"
+                    className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-blue-950/30 rounded-lg border border-cyan-500/10 hover:border-cyan-500/30 transition-colors gap-4"
                   >
                     <div className="flex-1">
                       <div className="flex items-center gap-3">
@@ -369,7 +369,7 @@ function HRDashboardContent() {
                       <p className="text-gray-400 text-sm">{emp.email}</p>
                       <p className="text-gray-500 text-xs">{emp.department || 'No department'} • @{emp.username}</p>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 w-full sm:w-auto">
                       <Button
                         size="sm"
                         variant="outline"

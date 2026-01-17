@@ -660,3 +660,27 @@
 - [x] Add navigation links from AGI page to individual partner pages
 - [x] Test all partnership pages and filtering functionality
 - [x] Update routing in App.tsx for new partnership pages
+
+## Phase 23: Research Publications & Profiles
+- [ ] Create publications repository page with searchable database
+- [ ] Add filters for institution, year, research area, and citation count
+- [ ] Include PDF links and citation metrics for each publication
+- [ ] Create interactive partnership timeline page (2022-2026)
+- [ ] Add major milestones and research breakthroughs to timeline
+- [ ] Build researcher directory page with grid layout
+- [ ] Create individual researcher profile pages
+- [ ] Add researcher expertise, publications, and ongoing projects
+- [ ] Link researchers to their partnerships and publications
+- [ ] Update AGI page with links to publications and timeline
+- [ ] Test all new pages and functionality
+- [ ] Update routing in App.tsx for new pages
+
+## Phase 24: HR Dashboard Mobile Fix and Research Pages Testing
+- [x] Fix HR Dashboard mobile layout (right side black/empty issue)
+- [x] Ensure HR Dashboard is fully responsive on mobile devices
+- [x] Test Publications Repository page on desktop and mobile
+- [x] Test Partnership Timeline page on desktop and mobile
+- [x] Test Researchers directory page on desktop and mobile
+- [x] Test individual researcher profile pages
+- [x] Verify all links from AGI page to research pages work correctly
+- [ ] Save checkpoint and push to GitHub

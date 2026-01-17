@@ -41,6 +41,10 @@ import SystemMonitoring from "@/pages/SystemMonitoring";
 import AUCPartnership from "@/pages/partnerships/AUC";
 import CairoUniversityPartnership from "@/pages/partnerships/CairoUniversity";
 import ZewailCityPartnership from "@/pages/partnerships/ZewailCity";
+import Publications from "@/pages/research/Publications";
+import Timeline from "@/pages/research/Timeline";
+import Researchers from "@/pages/research/Researchers";
+import ResearcherProfile from "@/pages/research/ResearcherProfile";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -84,6 +88,10 @@ function Router() {
       <Route path={"/partnerships/auc"} component={AUCPartnership} />
       <Route path={"/partnerships/cairo-university"} component={CairoUniversityPartnership} />
       <Route path={"/partnerships/zewail-city"} component={ZewailCityPartnership} />
+      <Route path={"/research/publications"} component={Publications} />
+      <Route path={"/research/timeline"} component={Timeline} />
+      <Route path={"/researchers"} component={Researchers} />
+      <Route path={"/researchers/:id"} component={ResearcherProfile} />
       <Route path={"/technology"} component={Technology} />
       <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />
