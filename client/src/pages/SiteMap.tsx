@@ -84,6 +84,28 @@ export default function SiteMap() {
               </ul>
             </div>
 
+            {/* Research Platform */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Research Platform</h2>
+              <ul className="space-y-2">
+                <li><Link href="/research/publications" className="text-gray-300 hover:text-cyan-400 transition-colors">Publications Repository</Link></li>
+                <li><Link href="/research/timeline" className="text-gray-300 hover:text-cyan-400 transition-colors">Partnership Timeline</Link></li>
+                <li><Link href="/researchers" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Team</Link></li>
+                <li><Link href="/research/blog" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Blog</Link></li>
+                <li><Link href="/research/collaboration" className="text-gray-300 hover:text-cyan-400 transition-colors">Collaboration Form</Link></li>
+              </ul>
+            </div>
+
+            {/* Research Partnerships */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Research Partnerships</h2>
+              <ul className="space-y-2">
+                <li><Link href="/partnerships/auc" className="text-gray-300 hover:text-cyan-400 transition-colors">American University in Cairo</Link></li>
+                <li><Link href="/partnerships/cairo-university" className="text-gray-300 hover:text-cyan-400 transition-colors">Cairo University</Link></li>
+                <li><Link href="/partnerships/zewail-city" className="text-gray-300 hover:text-cyan-400 transition-colors">Zewail City of Science</Link></li>
+              </ul>
+            </div>
+
             {/* Company */}
             <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
               <h2 className="text-2xl font-bold text-cyan-400 mb-4">Company</h2>

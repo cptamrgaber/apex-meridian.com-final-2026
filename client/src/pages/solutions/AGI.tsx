@@ -34,11 +34,9 @@ export default function AGI() {
     { name: "King Abdullah University (KAUST)", region: "middle-eastern", area: "machine-learning" },
     { name: "Khalifa University", region: "middle-eastern", area: "computer-vision" },
     { name: "American University of Beirut", region: "middle-eastern", area: "nlp" },
-    { name: "Technion - Israel Institute of Technology", region: "middle-eastern", area: "quantum" },
     { name: "Qatar Computing Research Institute", region: "middle-eastern", area: "neural-symbolic" },
     { name: "United Arab Emirates University", region: "middle-eastern", area: "applied-ai" },
     { name: "King Saud University", region: "middle-eastern", area: "robotics" },
-    { name: "Tel Aviv University", region: "middle-eastern", area: "ethics" },
     
     // Global Institutions
     { name: "MIT", region: "global", area: "neural-symbolic" },

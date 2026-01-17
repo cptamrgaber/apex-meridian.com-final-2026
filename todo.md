@@ -700,3 +700,28 @@
 - [x] Update AGI page with links to collaboration form and blog
 - [x] Update App.tsx routing for new pages
 - [x] Test all features and save checkpoint
+
+## Phase 26: Remove Israeli Institutions
+- [x] Remove Technion and Tel Aviv University from AGI partnerships page
+- [x] Remove any Israeli institution references from all pages
+- [x] Update partnership counts after removal (now 30 total partnerships)
+- [x] Test AGI page after changes
+- [ ] Save checkpoint
+
+## Phase 27: Update Sitemap and Navigation
+- [x] Add research platform pages to sitemap (Publications, Timeline, Researchers, Blog, Collaboration)
+- [x] Add partnership pages to sitemap (AUC, Cairo University, Zewail City)
+- [x] Verify all navigation links are working
+- [x] Test sitemap page
+- [ ] Save checkpoint
+
+## Phase 28: Enhance Research Blog with Real Projects
+- [x] Research cutting-edge AI projects from Hugging Face (AraBERT found)
+- [x] Research AI research projects from GitHub (PennyLane, Quantum ML found)
+- [x] Find educational YouTube videos for blog posts
+- [x] Research actual AI projects from AUC official website
+- [x] Research actual AI projects from Cairo University official website
+- [x] Research actual AI projects from Zewail City official website
+- [x] Create 4-6 new blog posts based on real partner projects (created 8 posts)
+- [x] Add video embeds and technical details to blog posts
+- [x] Test updated blog and save checkpoint
