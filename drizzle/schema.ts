@@ -12,10 +12,30 @@ export const users = mysqlTable("users", {
    */
   id: int("id").autoincrement().primaryKey(),
   /** Manus OAuth identifier (openId) returned from the OAuth callback. Unique per user. */
-  openId: varchar("openId", { length: 64 }).notNull().unique(),
+  openId: varchar("openId", { length: 64 }).unique(),
   name: text("name"),
   email: varchar("email", { length: 320 }),
+  profilePicture: text("profilePicture"),
   loginMethod: varchar("loginMethod", { length: 64 }),
+  
+  // OAuth provider IDs
+  googleId: varchar("googleId", { length: 255 }).unique(),
+  microsoftId: varchar("microsoftId", { length: 255 }).unique(),
+  githubId: varchar("githubId", { length: 255 }).unique(),
+  
+  // Contact verification
+  phoneNumber: varchar("phoneNumber", { length: 20 }),
+  whatsappNumber: varchar("whatsappNumber", { length: 20 }),
+  isEmailVerified: int("isEmailVerified").default(0).notNull(),
+  isPhoneVerified: int("isPhoneVerified").default(0).notNull(),
+  isWhatsappVerified: int("isWhatsappVerified").default(0).notNull(),
+  
+  // Verification codes (temporary storage)
+  emailVerificationCode: varchar("emailVerificationCode", { length: 10 }),
+  phoneVerificationCode: varchar("phoneVerificationCode", { length: 10 }),
+  whatsappVerificationCode: varchar("whatsappVerificationCode", { length: 10 }),
+  verificationCodeExpiry: timestamp("verificationCodeExpiry"),
+  
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),

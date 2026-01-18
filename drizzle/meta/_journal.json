@@ -43,6 +43,13 @@
       "when": 1768691251126,
       "tag": "0005_aberrant_doctor_octopus",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1768716625122,
+      "tag": "0006_orange_the_anarchist",
+      "breakpoints": true
     }
   ]
 }

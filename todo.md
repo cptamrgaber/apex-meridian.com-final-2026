@@ -809,3 +809,23 @@
 - [ ] Implement comment threading/replies
 - [ ] Test comment posting, moderation, and notifications
 - [ ] Save final checkpoint and push to GitHub
+
+## Phase 37: OAuth Authentication System
+- [x] Update user database schema to support OAuth providers
+- [x] Add fields for Google, Microsoft, GitHub OAuth IDs
+- [x] Add fields for phone number, WhatsApp, verification status
+- [x] Install OAuth libraries (passport, passport-google-oauth20, passport-microsoft, passport-github2)
+- [x] Create Auth page with OAuth provider buttons
+- [x] Create comprehensive setup guide for OAuth and Twilio
+- [ ] Configure OAuth strategies for Google, Microsoft, GitHub
+- [ ] Implement OAuth callback routes
+- [ ] Auto-collect user data from OAuth providers (name, email, profile picture)
+- [ ] Create user profile management page
+- [ ] Implement email verification system
+- [ ] Implement phone number verification (SMS)
+- [ ] Implement WhatsApp verification
+- [ ] Add multi-factor authentication flow
+- [ ] Implement account recovery using OAuth providers
+- [ ] Create user dashboard showing verification status
+- [ ] Test all OAuth providers and verification flows
+- [ ] Save checkpoint
