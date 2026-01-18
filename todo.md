@@ -779,3 +779,33 @@
 - [x] Test library page functionality
 - [ ] Push all changes to GitHub
 - [ ] Save final checkpoint
+
+## Phase 34: Research Metrics Dashboard
+- [x] Install Chart.js and react-chartjs-2 libraries
+- [x] Create metrics dashboard page component
+- [x] Build publication trends chart (publications by year)
+- [x] Build citation growth chart (citations over time)
+- [x] Create geographic collaboration heatmap/map
+- [x] Add interactive filters for date ranges and categories
+- [x] Add data export functionality (CSV/PDF)
+- [x] Link dashboard from AGI research page and navigation
+- [ ] Test all visualizations and interactions
+
+## Phase 35: Newsletter Automation with Resend
+- [x] Add NewsletterForm component to blog and news pages
+- [x] Create email templates for welcome and monthly digest
+- [x] Implement Resend API integration for sending emails
+- [x] Create automated digest generation logic (fetch recent posts)
+- [x] Add unsubscribe functionality
+- [ ] Test email subscription and sending flow
+- [ ] Add newsletter management to admin dashboard
+
+## Phase 36: Blog Comment System
+- [ ] Create database schema for comments (with user relation)
+- [ ] Implement tRPC procedures for comment CRUD operations
+- [ ] Add comment section UI to blog post pages
+- [ ] Create moderation dashboard for admins
+- [ ] Add email notifications for new comments
+- [ ] Implement comment threading/replies
+- [ ] Test comment posting, moderation, and notifications
+- [ ] Save final checkpoint and push to GitHub

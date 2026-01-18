@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import NewsletterForm from '@/components/NewsletterForm';
 
 type BlogPost = {
   id: string;
@@ -298,6 +299,13 @@ export default function ResearchBlog() {
           </div>
         )}
       </main>
+
+      {/* Newsletter Subscription */}
+      <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="container max-w-4xl">
+          <NewsletterForm variant="card" interests={['Research', 'AI', 'Technology']} />
+        </div>
+      </section>
 
       <Footer />
     </div>

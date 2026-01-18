@@ -510,7 +510,7 @@ export default function AGI() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Explore Our Research</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Link href="/research/publications">
               <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all cursor-pointer group">
                 <FileText className="h-12 w-12 text-cyan-400 mb-4" />
@@ -545,7 +545,7 @@ export default function AGI() {
               </div>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             <Link href="/research/blog">
               <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all cursor-pointer group">
                 <FileText className="h-12 w-12 text-cyan-400 mb-4" />
@@ -564,6 +564,17 @@ export default function AGI() {
                 <p className="text-gray-300 text-sm mb-4">Partner with Apex Meridian on research. Submit your proposal and join our global research network.</p>
                 <span className="text-cyan-400 text-sm font-semibold flex items-center">
                   Submit Proposal
+                  <ArrowRight className="h-4 w-4 ml-1" />
+                </span>
+              </div>
+            </Link>
+            <Link href="/research/metrics">
+              <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all cursor-pointer group">
+                <FileText className="h-12 w-12 text-cyan-400 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Research Metrics</h3>
+                <p className="text-gray-300 text-sm mb-4">Interactive visualizations showing publication trends, citation growth, and geographic collaboration heatmap.</p>
+                <span className="text-cyan-400 text-sm font-semibold flex items-center">
+                  View Dashboard
                   <ArrowRight className="h-4 w-4 ml-1" />
                 </span>
               </div>

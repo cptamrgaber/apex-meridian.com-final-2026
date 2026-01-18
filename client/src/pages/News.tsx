@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import NewsletterForm from '@/components/NewsletterForm';
 import {
   Select,
   SelectContent,
@@ -321,6 +322,13 @@ export default function News() {
           </div>
         )}
       </main>
+
+      {/* Newsletter Subscription */}
+      <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="container max-w-4xl">
+          <NewsletterForm variant="card" interests={['Tech News', 'AI', 'Innovation']} />
+        </div>
+      </section>
 
       <Footer />
     </div>

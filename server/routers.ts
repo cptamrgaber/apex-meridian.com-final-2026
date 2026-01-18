@@ -404,11 +404,18 @@ export const appRouter = router({
       }))
       .mutation(async ({ input }) => {
         const { subscribeToNewsletter } = await import("./newsletterDb");
+        const { sendWelcomeEmail } = await import("./newsletterEmail");
+        
         const result = await subscribeToNewsletter(input);
         
         if (!result.success) {
           throw new Error(result.error || "Failed to subscribe");
         }
+        
+        // Send welcome email (don't block on this)
+        sendWelcomeEmail(input.email, input.name).catch(err => {
+          console.error("Failed to send welcome email:", err);
+        });
         
         return { success: true };
       }),
