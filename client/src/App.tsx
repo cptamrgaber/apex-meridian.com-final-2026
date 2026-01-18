@@ -48,6 +48,7 @@ import ResearcherProfile from "@/pages/research/ResearcherProfile";
 import ResearchBlog from "@/pages/research/Blog";
 import BlogPost from "@/pages/research/BlogPost";
 import CollaborationForm from '@/pages/research/CollaborationForm';
+import Pricing from '@/pages/Pricing';
 import MetricsDashboard from '@/pages/research/MetricsDashboard';
 import Library from '@/pages/Library';
 import News from "@/pages/News";
@@ -104,8 +105,8 @@ function Router() {
       <Route path={"/research/metrics"} component={MetricsDashboard} />
       <Route path={"/news"} component={News} />
       <Route path={"/library"} component={Library} />
-      <Route path={"/technology"} component={Technology} />
-      <Route path={"/investors"} component={Investors} />
+      <Route path={"/pricing"} component={Pricing} />
+      <Route path={"/technology"} component={Technology} />      <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />
       <Route path={"/sitemap"} component={SiteMap} />
       <Route path={"/privacy"} component={Privacy} />

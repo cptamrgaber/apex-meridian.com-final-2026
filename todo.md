@@ -845,10 +845,23 @@
 - [x] Create service level agreements (SLAs)
 - [x] Write terms and conditions
 - [x] Create refund and cancellation policy
-- [ ] Build pricing page with all categories and plans
-- [ ] Integrate Stripe payment system
-- [ ] Integrate Egyptian payment providers (Fawry, mobile wallets)
-- [ ] Add payment method selection UI
-- [ ] Test all payment flows
+- [x] Build pricing page with all service categories
+- [x] Add plan comparison tables with features
+- [x] Implement real-time currency conversion (EGP/USD)
+- [x] Add FAQ section to pricing page
+- [x] Add "Contact Sales" CTAs for enterprise plans
+- [ ] Install and configure Stripe
+- [ ] Create Stripe checkout for subscriptions
+- [ ] Implement Stripe webhook handlers
+- [ ] Create customer portal for subscription management
+- [ ] Integrate Fawry API for local payments
+- [ ] Add Instapay support
+- [ ] Add Sahl payment support
+- [ ] Add Flash payment support
+- [ ] Add mobile wallet support (Vodafone Cash, Orange Money)
+- [ ] Add card payment support (Visa, Mastercard, AMEX, Apple Pay)
+- [ ] Create payment method selection UI
+- [ ] Add Egyptian bank transfer instructions
+- [ ] Test all payment flows (Stripe + Egyptian providers)
 - [ ] Update sitemap and navigation
 - [ ] Save checkpoint and push to GitHub
