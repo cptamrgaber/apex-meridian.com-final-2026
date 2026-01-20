@@ -80,8 +80,10 @@ export default function SiteMap() {
               <ul className="space-y-2">
                 <li><Link href="/resources/blog" className="text-gray-300 hover:text-cyan-400 transition-colors">Blog & News</Link></li>
                 <li><Link href="/news" className="text-gray-300 hover:text-cyan-400 transition-colors">Technology News</Link></li>
+                <li><Link href="/news/am-av-occ-system-launch" className="text-gray-300 hover:text-cyan-400 transition-colors">AM-AV System Launch</Link></li>
                 <li><Link href="/library" className="text-gray-300 hover:text-cyan-400 transition-colors">AI Library</Link></li>
                 <li><Link href="/resources/case-studies" className="text-gray-300 hover:text-cyan-400 transition-colors">Case Studies</Link></li>
+                <li><Link href="/case-studies/am-av-regional-carrier" className="text-gray-300 hover:text-cyan-400 transition-colors">AM-AV Case Study</Link></li>
                 <li><Link href="/resources/whitepapers" className="text-gray-300 hover:text-cyan-400 transition-colors">Whitepapers</Link></li>
                 <li><Link href="/resources/research" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Papers</Link></li>
               </ul>
@@ -95,6 +97,8 @@ export default function SiteMap() {
                 <li><Link href="/research/timeline" className="text-gray-300 hover:text-cyan-400 transition-colors">Partnership Timeline</Link></li>
                 <li><Link href="/researchers" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Team</Link></li>
                 <li><Link href="/research/blog" className="text-gray-300 hover:text-cyan-400 transition-colors">Research Blog</Link></li>
+                <li><Link href="/research/blog/ai-compliance-nlp" className="text-gray-300 hover:text-cyan-400 transition-colors">AI Compliance Engine Research</Link></li>
+                <li><Link href="/research/am-av-project" className="text-gray-300 hover:text-cyan-400 transition-colors">AM-AV Research Project</Link></li>
                 <li><Link href="/research/collaboration" className="text-gray-300 hover:text-cyan-400 transition-colors">Collaboration Form</Link></li>
               </ul>
             </div>
@@ -134,10 +138,22 @@ export default function SiteMap() {
               </ul>
             </div>
 
-            {/* Employee & HR Portals */}
+            {/* Payment & Subscriptions */}
             <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Employee & HR</h2>
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Payment & Subscriptions</h2>
               <ul className="space-y-2">
+                <li><Link href="/pricing" className="text-gray-300 hover:text-cyan-400 transition-colors">Pricing Plans</Link></li>
+                <li><Link href="/checkout" className="text-gray-300 hover:text-cyan-400 transition-colors">Checkout</Link></li>
+                <li><Link href="/checkout/success" className="text-gray-300 hover:text-cyan-400 transition-colors">Payment Success</Link></li>
+                <li><Link href="/customer-portal" className="text-gray-300 hover:text-cyan-400 transition-colors">Customer Portal</Link></li>
+              </ul>
+            </div>
+
+            {/* Admin & Management */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Admin & Management</h2>
+              <ul className="space-y-2">
+                <li><Link href="/admin/settings" className="text-gray-300 hover:text-cyan-400 transition-colors">Admin Settings</Link></li>
                 <li><Link href="/login" className="text-gray-300 hover:text-cyan-400 transition-colors">Employee Login</Link></li>
                 <li><Link href="/employee" className="text-gray-300 hover:text-cyan-400 transition-colors">Employee Portal</Link></li>
                 <li><Link href="/hr-dashboard" className="text-gray-300 hover:text-cyan-400 transition-colors">HR Dashboard</Link></li>
