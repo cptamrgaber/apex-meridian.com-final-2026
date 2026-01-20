@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Plane, CheckCircle, TrendingUp, Shield, ArrowRight } from "lucide-react";
+import AMAVDashboardDemo from "@/components/AMAVDashboardDemo";
 
 export default function Aviation() {
   return (
@@ -137,6 +138,11 @@ export default function Aviation() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Interactive Demo Section */}
+          <div className="mt-16">
+            <AMAVDashboardDemo />
           </div>
         </div>
       </section>

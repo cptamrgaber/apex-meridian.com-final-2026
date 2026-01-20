@@ -58,6 +58,8 @@ import Library from '@/pages/Library';
 import News from "@/pages/News";
 import AMAVLaunch from "@/pages/news/AMAVLaunch";
 import AMAVProject from "@/pages/research/AMAVProject";
+import AIComplianceBlog from "@/pages/research/AIComplianceBlog";
+import AMAVCaseStudy from "@/pages/case-studies/AMAVCaseStudy";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -110,6 +112,8 @@ function Router() {
       <Route path={"/research/collaboration"} component={CollaborationForm} />
       <Route path={"/research/metrics"} component={MetricsDashboard} />
       <Route path={"/research/am-av-project"} component={AMAVProject} />
+      <Route path={"/research/blog/ai-compliance-nlp"} component={AIComplianceBlog} />
+      <Route path={"/case-studies/am-av-regional-carrier"} component={AMAVCaseStudy} />
       <Route path={"/news"} component={News} />
       <Route path={"/news/am-av-occ-system-launch"} component={AMAVLaunch} />
       <Route path={"/library"} component={Library} />

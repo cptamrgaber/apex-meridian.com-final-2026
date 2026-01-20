@@ -1028,3 +1028,29 @@
 - [ ] Create research blog post about AI compliance engine
 - [ ] Update research community page with AM-AV project
 - [ ] Add collaboration form for research partnerships
+
+## AM-AV System Enhancements
+
+### Interactive Dashboard Demo
+- [x] Create AMAVDashboardDemo component with interactive UI showcase
+- [x] Add crew scheduling interface mockup
+- [x] Include compliance monitoring dashboard
+- [x] Add flight operations overview panel
+- [x] Integrate demo into Aviation Intelligence page
+- [x] Add "Try Interactive Demo" CTA button
+
+### Research Blog Post
+- [x] Write comprehensive blog post on AI compliance engine
+- [x] Explain NLP techniques for regulatory text parsing
+- [x] Detail transformer models and fine-tuning approach
+- [x] Include rule extraction and validation logic
+- [x] Add technical diagrams and code examples
+- [x] Publish to research blog with proper routing
+
+### Anonymous Case Study
+- [x] Create case study page for pilot airline success story
+- [x] Include real metrics (70% time saved, zero violations, etc.)
+- [x] Keep client identity anonymous (Airline X, Regional Carrier, etc.)
+- [x] Add before/after comparison charts
+- [x] Include testimonial quotes (anonymized)
+- [x] Link from Aviation page and case studies section
