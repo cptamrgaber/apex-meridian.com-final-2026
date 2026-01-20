@@ -33,9 +33,118 @@ export default function Aviation() {
         </div>
       </section>
 
+      {/* AM-AV OCC System - Featured Section */}
+      <section className="py-20 bg-gradient-to-br from-cyan-900/30 to-blue-950/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Introducing <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">AM-AV OCC System</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Enterprise-grade Operations Control Center platform for airline crew management and regulatory compliance
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-12 border border-cyan-500/20 mb-8">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-3xl font-bold text-white mb-6">AI-Powered Crew Operations</h3>
+                <p className="text-gray-300 mb-6">
+                  The AM-AV OCC Web Dashboard revolutionizes airline operations management with intelligent crew scheduling, 
+                  real-time compliance monitoring, and zero-tolerance enforcement of aviation regulations through AI-driven 
+                  validation of Operations Manuals (OM-A through OM-G).
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-cyan-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Intelligent Crew Scheduling</h4>
+                      <p className="text-gray-400 text-sm">Automated roster generation based on pilot preferences, qualifications, and regulatory requirements</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-cyan-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">AI-Driven Compliance Engine</h4>
+                      <p className="text-gray-400 text-sm">Real-time validation against ICAO standards and operator-specific Operations Manuals</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-cyan-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Operations Manual Integration</h4>
+                      <p className="text-gray-400 text-sm">Automated ingestion and enforcement of OM-A through OM-G regulatory requirements</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-cyan-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Multi-Tenant Architecture</h4>
+                      <p className="text-gray-400 text-sm">Support for multiple airline operators with isolated data and customized rule sets</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Key Capabilities</h3>
+                <div className="space-y-6">
+                  <div className="bg-blue-950/50 rounded-lg p-6 border border-cyan-500/10">
+                    <h4 className="text-cyan-400 font-semibold mb-2">70% Reduction in Manual Scheduling</h4>
+                    <p className="text-gray-300 text-sm">Intelligent automation streamlines roster generation and crew assignment</p>
+                  </div>
+                  <div className="bg-blue-950/50 rounded-lg p-6 border border-cyan-500/10">
+                    <h4 className="text-cyan-400 font-semibold mb-2">Zero-Tolerance Compliance</h4>
+                    <p className="text-gray-300 text-sm">AI engine prevents violations of flight time limitations and duty periods</p>
+                  </div>
+                  <div className="bg-blue-950/50 rounded-lg p-6 border border-cyan-500/10">
+                    <h4 className="text-cyan-400 font-semibold mb-2">Real-Time Operations Monitoring</h4>
+                    <p className="text-gray-300 text-sm">Live flight tracking, crew duty status, and operational alerts</p>
+                  </div>
+                  <div className="bg-blue-950/50 rounded-lg p-6 border border-cyan-500/10">
+                    <h4 className="text-cyan-400 font-semibold mb-2">Complete Audit Trails</h4>
+                    <p className="text-gray-300 text-sm">Immutable logs of all scheduling decisions for regulatory inspections</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-cyan-500/20">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Technology Stack</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="bg-cyan-500/10 rounded-lg p-4 mb-2">
+                    <p className="text-cyan-400 font-bold">React 19</p>
+                  </div>
+                  <p className="text-gray-400 text-sm">Frontend</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-cyan-500/10 rounded-lg p-4 mb-2">
+                    <p className="text-cyan-400 font-bold">Node.js + tRPC</p>
+                  </div>
+                  <p className="text-gray-400 text-sm">Backend</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-cyan-500/10 rounded-lg p-4 mb-2">
+                    <p className="text-cyan-400 font-bold">MySQL/TiDB</p>
+                  </div>
+                  <p className="text-gray-400 text-sm">Database</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-cyan-500/10 rounded-lg p-4 mb-2">
+                    <p className="text-cyan-400 font-bold">AI/ML Engine</p>
+                  </div>
+                  <p className="text-gray-400 text-sm">Compliance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Features */}
       <section className="py-20 bg-blue-950/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Additional Aviation Solutions</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* Predictive Maintenance */}

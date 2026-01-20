@@ -29,6 +29,24 @@ type NewsArticle = {
 
 const newsArticles: NewsArticle[] = [
   {
+    id: 'am-av-occ-system-launch',
+    title: 'Apex Meridian Launches Revolutionary AM-AV OCC System for Aviation Operations',
+    excerpt: 'Enterprise-grade Operations Control Center platform transforms airline crew management with AI-driven compliance and intelligent scheduling',
+    content: [
+      'Apex Meridian, a leading provider of AI-powered solutions for critical industries, today announced the launch of the AM-AV OCC Web Dashboard, an enterprise-grade Operations Control Center platform designed specifically for airline operations management.',
+      'The AM-AV OCC System represents a paradigm shift in how airlines manage crew scheduling, regulatory compliance, and operational oversight. By leveraging advanced artificial intelligence and machine learning, the platform automates complex scheduling tasks while maintaining zero-tolerance enforcement of aviation safety regulations.',
+      'Key features include intelligent crew scheduling that reduces manual effort by 70%, AI-driven compliance engine for real-time validation against ICAO standards and Operations Manuals (OM-A through OM-G), real-time operations monitoring with live flight tracking and crew duty status, and multi-tenant architecture supporting multiple airline operators.',
+      'Early adopters have reported significant improvements: 70% reduction in manual scheduling time, zero-tolerance enforcement of flight time limitations, enhanced pilot satisfaction through preference-based scheduling, complete audit readiness with immutable logs, and cost reduction through optimized crew utilization.'
+    ],
+    category: 'Product Launch',
+    date: '2026-01-20',
+    source: 'Apex Meridian',
+    sourceUrl: '/news/am-av-occ-system-launch',
+    imageUrl: '/images/news-am-av-launch.jpg',
+    tags: ['Aviation', 'AI', 'Operations Management', 'Crew Scheduling', 'Compliance'],
+    views: 0
+  },
+  {
     id: 'ai-scale-2025',
     title: 'AI at Scale: How 2025 Set the Stage for Agent-Driven Transformation',
     excerpt: 'KPMG report reveals 82% of leaders agree their industry\'s competitive landscape will look fundamentally different in the next 24 months as AI agents reshape business operations.',

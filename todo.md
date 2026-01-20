@@ -1003,3 +1003,28 @@
 - [x] Build subscription metrics (MRR, churn rate)
 - [x] Add payment method breakdown charts
 - [ ] Create failed payment alerts system
+
+## AM-AV Aviation System Integration
+
+### Aviation Page Updates
+- [x] Update Aviation Intelligence page with AM-AV OCC system overview
+- [x] Add key capabilities section (crew management, compliance, monitoring)
+- [x] Create technology stack section
+- [x] Add AI-driven compliance engine details
+- [x] Include Operations Manual integration (OM-A to OM-G)
+- [x] Add user roles and features section
+
+### News Article Creation
+- [x] Create news article announcing AM-AV system launch
+- [x] Highlight key features and benefits
+- [x] Include technical specifications
+- [x] Add call-to-action for demos and inquiries
+- [x] Publish to news page with featured image
+
+### Research Project Setup
+- [x] Create dedicated research project page for AM-AV system
+- [x] Add technical documentation and architecture
+- [x] Include research opportunities and collaboration areas
+- [ ] Create research blog post about AI compliance engine
+- [ ] Update research community page with AM-AV project
+- [ ] Add collaboration form for research partnerships

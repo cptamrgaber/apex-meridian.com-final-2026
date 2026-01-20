@@ -56,6 +56,8 @@ import AdminSettings from '@/pages/AdminSettings';
 import MetricsDashboard from '@/pages/research/MetricsDashboard';
 import Library from '@/pages/Library';
 import News from "@/pages/News";
+import AMAVLaunch from "@/pages/news/AMAVLaunch";
+import AMAVProject from "@/pages/research/AMAVProject";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -107,7 +109,9 @@ function Router() {
       <Route path={"/research/blog/:id"} component={BlogPost} />
       <Route path={"/research/collaboration"} component={CollaborationForm} />
       <Route path={"/research/metrics"} component={MetricsDashboard} />
+      <Route path={"/research/am-av-project"} component={AMAVProject} />
       <Route path={"/news"} component={News} />
+      <Route path={"/news/am-av-occ-system-launch"} component={AMAVLaunch} />
       <Route path={"/library"} component={Library} />
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/checkout"} component={CheckoutPage} />
