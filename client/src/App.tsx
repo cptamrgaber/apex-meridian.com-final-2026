@@ -49,6 +49,10 @@ import ResearchBlog from "@/pages/research/Blog";
 import BlogPost from "@/pages/research/BlogPost";
 import CollaborationForm from '@/pages/research/CollaborationForm';
 import Pricing from '@/pages/Pricing';
+import CheckoutPage from '@/pages/CheckoutPage';
+import CheckoutSuccess from '@/pages/CheckoutSuccess';
+import CustomerPortal from '@/pages/CustomerPortal';
+import AdminSettings from '@/pages/AdminSettings';
 import MetricsDashboard from '@/pages/research/MetricsDashboard';
 import Library from '@/pages/Library';
 import News from "@/pages/News";
@@ -106,6 +110,10 @@ function Router() {
       <Route path={"/news"} component={News} />
       <Route path={"/library"} component={Library} />
       <Route path={"/pricing"} component={Pricing} />
+      <Route path={"/checkout"} component={CheckoutPage} />
+      <Route path={"/checkout/success"} component={CheckoutSuccess} />
+      <Route path={"/account/subscriptions"} component={CustomerPortal} />
+      <Route path={"/admin/settings"} component={AdminSettings} />
       <Route path={"/technology"} component={Technology} />      <Route path={"/investors"} component={Investors} />
       <Route path={"/contact"} component={Contact} />
       <Route path={"/sitemap"} component={SiteMap} />

@@ -928,3 +928,78 @@
 - [ ] Run final tests on all features
 - [ ] Push all changes to GitHub
 - [ ] Save final checkpoint
+
+## Payment System Implementation
+
+### Database & Infrastructure
+- [x] Add subscriptions table to database schema
+- [x] Add payment_transactions table for all payment methods
+- [x] Add stripe_customers table for Stripe customer mapping
+- [x] Add egyptian_payment_references table for offline payments
+- [x] Push database schema changes
+
+### Stripe Integration
+- [x] Create Stripe checkout session tRPC procedure
+- [x] Implement webhook endpoint for Stripe events
+- [x] Add subscription management procedures (cancel, update)
+- [x] Create customer portal session procedure
+- [x] Add Stripe webhook signature verification
+
+### Checkout & Portal UI
+- [x] Create CheckoutPage.tsx with plan selection
+- [x] Build payment method selector component
+- [x] Create CustomerPortal.tsx for subscription management
+- [x] Add success/cancel callback pages
+- [x] Implement loading states and error handling
+
+### Egyptian Payment Providers
+- [x] Integrate Fawry payment gateway
+- [x] Add Instapay bank transfer instructions
+- [x] Implement Vodafone Cash payment flow
+- [x] Add Orange Money payment option
+- [x] Create reference number generation system
+- [x] Build payment verification system
+
+### Unified Payment UI
+- [x] Create PaymentMethodSelector component
+- [x] Add international payment methods (Stripe, cards, Apple Pay)
+- [x] Add Egyptian payment methods UI
+- [x] Implement payment method switching
+- [x] Add payment instructions for offline methods
+
+## Admin Settings UI for Payment Management
+
+### Admin Dashboard
+- [x] Create AdminSettings.tsx main page with navigation tabs
+- [x] Add role-based access control (admin only)
+- [x] Build Stripe configuration panel with API key inputs
+- [x] Add webhook URL display with copy button
+- [x] Create test/live mode toggle switch
+
+### Egyptian Payment Configuration
+- [x] Build payment method enable/disable toggles
+- [x] Add bank account details editor for InstaPay
+- [x] Add mobile wallet number inputs (Vodafone Cash, Orange Money)
+- [x] Create Fawry merchant code configuration
+- [x] Add payment instructions template editor
+
+### Payment Verification Dashboard
+- [ ] Create pending payments table with filters
+- [ ] Add manual verification buttons for Egyptian payments
+- [ ] Build payment proof upload system
+- [ ] Add email notification system for payment confirmations
+- [ ] Create payment history export functionality
+
+### Pricing Plan Management
+- [ ] Build pricing plan editor with CRUD operations
+- [ ] Add plan feature list editor
+- [ ] Create currency conversion rate manager
+- [ ] Add plan visibility toggles (show/hide plans)
+- [ ] Build plan comparison preview
+
+### Transaction Monitoring
+- [ ] Create real-time transaction dashboard
+- [ ] Add revenue analytics charts
+- [ ] Build subscription metrics (MRR, churn rate)
+- [ ] Add payment method breakdown charts
+- [ ] Create failed payment alerts system

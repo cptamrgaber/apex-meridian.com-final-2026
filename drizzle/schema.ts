@@ -168,3 +168,100 @@ export const newsletterSubscribers = mysqlTable("newsletterSubscribers", {
 
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;
+
+/**
+ * Subscriptions table for tracking user subscriptions
+ */
+export const subscriptions = mysqlTable("subscriptions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  stripeCustomerId: varchar("stripeCustomerId", { length: 255 }),
+  stripeSubscriptionId: varchar("stripeSubscriptionId", { length: 255 }),
+  planCategory: varchar("planCategory", { length: 100 }).notNull(), // individual, small_business, enterprise, saas
+  planName: varchar("planName", { length: 100 }).notNull(), // starter, professional, expert, etc.
+  billingPeriod: mysqlEnum("billingPeriod", ["monthly", "annual"]).notNull(),
+  amount: int("amount").notNull(), // Amount in EGP cents
+  currency: varchar("currency", { length: 3 }).default("EGP").notNull(),
+  status: mysqlEnum("status", ["active", "canceled", "past_due", "unpaid", "trialing"]).default("active").notNull(),
+  currentPeriodStart: timestamp("currentPeriodStart").notNull(),
+  currentPeriodEnd: timestamp("currentPeriodEnd").notNull(),
+  cancelAtPeriodEnd: int("cancelAtPeriodEnd").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Subscription = typeof subscriptions.$inferSelect;
+export type InsertSubscription = typeof subscriptions.$inferInsert;
+
+/**
+ * Payment transactions table for all payment methods (Stripe, Fawry, Vodafone Cash, etc.)
+ */
+export const paymentTransactions = mysqlTable("paymentTransactions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  subscriptionId: int("subscriptionId"),
+  paymentMethod: mysqlEnum("paymentMethod", [
+    "stripe",
+    "fawry",
+    "instapay",
+    "vodafone_cash",
+    "orange_money",
+    "bank_transfer",
+    "cash"
+  ]).notNull(),
+  amount: int("amount").notNull(), // Amount in smallest currency unit (cents/piasters)
+  currency: varchar("currency", { length: 3 }).default("EGP").notNull(),
+  status: mysqlEnum("status", ["pending", "completed", "failed", "refunded"]).default("pending").notNull(),
+  transactionId: varchar("transactionId", { length: 255 }), // External transaction ID
+  referenceNumber: varchar("referenceNumber", { length: 100 }), // For offline payments
+  metadata: text("metadata"), // JSON for additional data
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type PaymentTransaction = typeof paymentTransactions.$inferSelect;
+export type InsertPaymentTransaction = typeof paymentTransactions.$inferInsert;
+
+/**
+ * Stripe customers table for mapping users to Stripe customer IDs
+ */
+export const stripeCustomers = mysqlTable("stripeCustomers", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().unique(),
+  stripeCustomerId: varchar("stripeCustomerId", { length: 255 }).notNull().unique(),
+  email: varchar("email", { length: 320 }).notNull(),
+  name: varchar("name", { length: 200 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type StripeCustomer = typeof stripeCustomers.$inferSelect;
+export type InsertStripeCustomer = typeof stripeCustomers.$inferInsert;
+
+/**
+ * Egyptian payment references table for offline payment tracking
+ */
+export const egyptianPaymentReferences = mysqlTable("egyptianPaymentReferences", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  referenceNumber: varchar("referenceNumber", { length: 100 }).notNull().unique(),
+  paymentMethod: mysqlEnum("paymentMethod", [
+    "fawry",
+    "instapay",
+    "vodafone_cash",
+    "orange_money",
+    "bank_transfer"
+  ]).notNull(),
+  amount: int("amount").notNull(), // Amount in EGP cents
+  planCategory: varchar("planCategory", { length: 100 }).notNull(),
+  planName: varchar("planName", { length: 100 }).notNull(),
+  status: mysqlEnum("status", ["pending", "verified", "expired"]).default("pending").notNull(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  verifiedAt: timestamp("verifiedAt"),
+  instructions: text("instructions"), // Payment instructions for user
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type EgyptianPaymentReference = typeof egyptianPaymentReferences.$inferSelect;
+export type InsertEgyptianPaymentReference = typeof egyptianPaymentReferences.$inferInsert;
