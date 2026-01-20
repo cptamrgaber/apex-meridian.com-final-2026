@@ -25,6 +25,273 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
+import { format } from 'date-fns';
+
+// Payment Verification Tab Component
+function PaymentVerificationTab() {
+  const { toast } = useToast();
+  const { data: pendingPayments, isLoading, refetch } = trpc.adminPayments.getPendingPayments.useQuery();
+  const verifyMutation = trpc.adminPayments.verifyPayment.useMutation({
+    onSuccess: () => {
+      toast({ title: 'Success', description: 'Payment verified successfully' });
+      refetch();
+    },
+    onError: (error) => {
+      toast({ title: 'Error', description: error.message, variant: 'destructive' });
+    },
+  });
+  const rejectMutation = trpc.adminPayments.rejectPayment.useMutation({
+    onSuccess: () => {
+      toast({ title: 'Success', description: 'Payment rejected' });
+      refetch();
+    },
+    onError: (error) => {
+      toast({ title: 'Error', description: error.message, variant: 'destructive' });
+    },
+  });
+
+  const handleVerify = (referenceId: number) => {
+    if (confirm('Are you sure you want to verify this payment?')) {
+      verifyMutation.mutate({ referenceId });
+    }
+  };
+
+  const handleReject = (referenceId: number) => {
+    const reason = prompt('Enter rejection reason:');
+    if (reason) {
+      rejectMutation.mutate({ referenceId, reason });
+    }
+  };
+
+  return (
+    <Card className="p-8 bg-slate-900/50 border-gray-700">
+      <h2 className="text-2xl font-bold text-white mb-6">Pending Payment Verifications</h2>
+      {isLoading ? (
+        <div className="text-center py-12">
+          <Loader2 className="w-8 h-8 animate-spin text-cyan-400 mx-auto mb-4" />
+          <p className="text-gray-400">Loading pending payments...</p>
+        </div>
+      ) : pendingPayments && pendingPayments.length > 0 ? (
+        <div className="space-y-4">
+          {pendingPayments.map((payment) => (
+            <div key={payment.id} className="bg-slate-800/50 rounded-lg p-6 border border-gray-700">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    {payment.planName} - {payment.planCategory.replace('_', ' ')}
+                  </h3>
+                  <p className="text-gray-400 text-sm capitalize">{payment.paymentMethod.replace('_', ' ')}</p>
+                </div>
+                <span className="px-3 py-1 rounded-full text-xs font-medium border bg-yellow-500/20 text-yellow-400 border-yellow-500/30">
+                  PENDING
+                </span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4 text-sm">
+                <div>
+                  <p className="text-gray-400 mb-1">Reference Number</p>
+                  <p className="text-white font-mono">{payment.referenceNumber}</p>
+                </div>
+                <div>
+                  <p className="text-gray-400 mb-1">Amount</p>
+                  <p className="text-white font-semibold">EGP {(payment.amount / 100).toLocaleString()}</p>
+                </div>
+                <div>
+                  <p className="text-gray-400 mb-1">Created</p>
+                  <p className="text-white">{new Date(payment.createdAt).toLocaleString()}</p>
+                </div>
+                <div>
+                  <p className="text-gray-400 mb-1">Expires</p>
+                  <p className="text-white">{new Date(payment.expiresAt).toLocaleString()}</p>
+                </div>
+              </div>
+              {payment.instructions && (
+                <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
+                  <p className="text-sm text-gray-300 whitespace-pre-wrap font-mono">{payment.instructions}</p>
+                </div>
+              )}
+              <div className="flex gap-3">
+                <Button
+                  onClick={() => handleVerify(payment.id)}
+                  disabled={verifyMutation.isPending}
+                  className="flex-1 bg-green-600 hover:bg-green-700"
+                >
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  Verify Payment
+                </Button>
+                <Button
+                  onClick={() => handleReject(payment.id)}
+                  disabled={rejectMutation.isPending}
+                  variant="destructive"
+                  className="flex-1"
+                >
+                  <AlertCircle className="w-4 h-4 mr-2" />
+                  Reject
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12">
+          <CheckCircle className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+          <p className="text-gray-400">No pending payments to verify</p>
+        </div>
+      )}
+    </Card>
+  );
+}
+
+// Analytics Tab Component
+function AnalyticsTab() {
+  const { data: analytics, isLoading } = trpc.adminPayments.getAnalytics.useQuery({});
+
+  if (isLoading) {
+    return (
+      <Card className="p-8 bg-slate-900/50 border-gray-700">
+        <div className="text-center py-12">
+          <Loader2 className="w-8 h-8 animate-spin text-cyan-400 mx-auto mb-4" />
+          <p className="text-gray-400">Loading analytics...</p>
+        </div>
+      </Card>
+    );
+  }
+
+  if (!analytics) {
+    return (
+      <Card className="p-8 bg-slate-900/50 border-gray-700">
+        <div className="text-center py-12">
+          <BarChart3 className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+          <p className="text-gray-400">No analytics data available</p>
+        </div>
+      </Card>
+    );
+  }
+
+  const paymentMethodData = Object.entries(analytics.paymentMethodBreakdown).map(([method, data]) => ({
+    method: method.replace('_', ' ').toUpperCase(),
+    count: data.count,
+    amount: data.amount / 100,
+  }));
+
+  return (
+    <div className="space-y-6">
+      {/* Key Metrics */}
+      <div className="grid md:grid-cols-4 gap-4">
+        <Card className="p-6 bg-slate-900/50 border-gray-700">
+          <div className="flex items-center gap-3 mb-2">
+            <DollarSign className="w-8 h-8 text-green-400" />
+            <div>
+              <p className="text-sm text-gray-400">MRR</p>
+              <p className="text-2xl font-bold text-white">EGP {analytics.mrr.toLocaleString()}</p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6 bg-slate-900/50 border-gray-700">
+          <div className="flex items-center gap-3 mb-2">
+            <BarChart3 className="w-8 h-8 text-cyan-400" />
+            <div>
+              <p className="text-sm text-gray-400">Total Revenue</p>
+              <p className="text-2xl font-bold text-white">EGP {analytics.totalRevenue.toLocaleString()}</p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6 bg-slate-900/50 border-gray-700">
+          <div className="flex items-center gap-3 mb-2">
+            <CheckCircle className="w-8 h-8 text-blue-400" />
+            <div>
+              <p className="text-sm text-gray-400">Active Subscriptions</p>
+              <p className="text-2xl font-bold text-white">{analytics.activeSubscriptions}</p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6 bg-slate-900/50 border-gray-700">
+          <div className="flex items-center gap-3 mb-2">
+            <CreditCard className="w-8 h-8 text-purple-400" />
+            <div>
+              <p className="text-sm text-gray-400">Total Transactions</p>
+              <p className="text-2xl font-bold text-white">{analytics.totalTransactions}</p>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      {/* Payment Method Breakdown */}
+      <Card className="p-8 bg-slate-900/50 border-gray-700">
+        <h2 className="text-2xl font-bold text-white mb-6">Payment Method Breakdown</h2>
+        {paymentMethodData.length > 0 ? (
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-gray-700">
+                  <th className="text-left py-3 px-4 text-gray-400 font-medium">Method</th>
+                  <th className="text-left py-3 px-4 text-gray-400 font-medium">Transactions</th>
+                  <th className="text-left py-3 px-4 text-gray-400 font-medium">Total Amount</th>
+                  <th className="text-left py-3 px-4 text-gray-400 font-medium">Percentage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paymentMethodData.map((item) => {
+                  const percentage = (item.amount / analytics.totalRevenue) * 100;
+                  return (
+                    <tr key={item.method} className="border-b border-gray-800">
+                      <td className="py-4 px-4 text-white font-semibold">{item.method}</td>
+                      <td className="py-4 px-4 text-gray-300">{item.count}</td>
+                      <td className="py-4 px-4 text-white">EGP {item.amount.toLocaleString()}</td>
+                      <td className="py-4 px-4">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 bg-slate-800 rounded-full h-2 max-w-[100px]">
+                            <div
+                              className="bg-cyan-500 h-2 rounded-full"
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                          <span className="text-gray-300 text-sm">{percentage.toFixed(1)}%</span>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p className="text-center text-gray-400 py-8">No payment data available</p>
+        )}
+      </Card>
+
+      {/* Revenue by Month */}
+      <Card className="p-8 bg-slate-900/50 border-gray-700">
+        <h2 className="text-2xl font-bold text-white mb-6">Revenue by Month</h2>
+        {Object.keys(analytics.revenueByMonth).length > 0 ? (
+          <div className="space-y-3">
+            {Object.entries(analytics.revenueByMonth)
+              .sort(([a], [b]) => b.localeCompare(a))
+              .slice(0, 12)
+              .map(([month, amount]) => (
+                <div key={month} className="flex items-center gap-4">
+                  <span className="text-gray-400 w-24">{month}</span>
+                  <div className="flex-1 bg-slate-800 rounded-full h-8 relative overflow-hidden">
+                    <div
+                      className="bg-gradient-to-r from-cyan-500 to-blue-500 h-8 rounded-full flex items-center px-4"
+                      style={{
+                        width: `${Math.min((amount / Math.max(...Object.values(analytics.revenueByMonth))) * 100, 100)}%`,
+                      }}
+                    >
+                      <span className="text-white text-sm font-semibold">
+                        EGP {(amount / 100).toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-400 py-8">No revenue data available</p>
+        )}
+      </Card>
+    </div>
+  );
+}
 
 export default function AdminSettings() {
   const [, navigate] = useLocation();
@@ -378,24 +645,12 @@ export default function AdminSettings() {
 
             {/* Payment Verification Tab */}
             <TabsContent value="verification">
-              <Card className="p-8 bg-slate-900/50 border-gray-700">
-                <h2 className="text-2xl font-bold text-white mb-6">Pending Payment Verifications</h2>
-                <div className="text-center py-12">
-                  <CheckCircle className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <p className="text-gray-400">No pending payments to verify</p>
-                </div>
-              </Card>
+              <PaymentVerificationTab />
             </TabsContent>
 
             {/* Analytics Tab */}
             <TabsContent value="analytics">
-              <Card className="p-8 bg-slate-900/50 border-gray-700">
-                <h2 className="text-2xl font-bold text-white mb-6">Payment Analytics</h2>
-                <div className="text-center py-12">
-                  <BarChart3 className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <p className="text-gray-400">Analytics dashboard coming soon</p>
-                </div>
-              </Card>
+              <AnalyticsTab />
             </TabsContent>
           </Tabs>
         </div>
