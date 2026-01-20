@@ -30,6 +30,7 @@ export default function SiteMap() {
                 <li><Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors">About Us</Link></li>
                 <li><Link href="/technology" className="text-gray-300 hover:text-cyan-400 transition-colors">Technology</Link></li>
                 <li><Link href="/investors" className="text-gray-300 hover:text-cyan-400 transition-colors">Investors</Link></li>
+                <li><Link href="/pricing" className="text-gray-300 hover:text-cyan-400 transition-colors">Pricing</Link></li>
                 <li><Link href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact</Link></li>
               </ul>
             </div>

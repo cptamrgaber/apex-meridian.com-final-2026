@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/accordion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { useLocation } from 'wouter';
 
 export default function Pricing() {
@@ -311,6 +312,10 @@ export default function Pricing() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <SEO
+        title="Pricing - Transparent Plans for Every Need"
+        description="Explore Apex Meridian's flexible pricing plans tailored to the Egyptian market. From individual developers to enterprise organizations, find the perfect AI solution with competitive pricing in EGP and USD."
+      />
       <Header />
 
       <main className="container mx-auto px-4 py-20">
@@ -326,11 +331,13 @@ export default function Pricing() {
         </div>
 
         {/* Currency & Billing Toggle */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12" role="group" aria-label="Pricing options">
           {/* Currency Toggle */}
-          <div className="flex items-center gap-2 bg-slate-900/50 rounded-lg p-1">
+          <div className="flex items-center gap-2 bg-slate-900/50 rounded-lg p-1" role="group" aria-label="Currency selector">
             <button
               onClick={() => setCurrency('EGP')}
+              aria-label="Switch to Egyptian Pounds"
+              aria-pressed={currency === 'EGP'}
               className={`px-4 py-2 rounded-md transition-colors ${
                 currency === 'EGP'
                   ? 'bg-cyan-500 text-white'
@@ -341,6 +348,8 @@ export default function Pricing() {
             </button>
             <button
               onClick={() => setCurrency('USD')}
+              aria-label="Switch to US Dollars"
+              aria-pressed={currency === 'USD'}
               className={`px-4 py-2 rounded-md transition-colors ${
                 currency === 'USD'
                   ? 'bg-cyan-500 text-white'
@@ -355,6 +364,8 @@ export default function Pricing() {
           <div className="flex items-center gap-2 bg-slate-900/50 rounded-lg p-1">
             <button
               onClick={() => setBillingPeriod('monthly')}
+              aria-label="Switch to monthly billing"
+              aria-pressed={billingPeriod === 'monthly'}
               className={`px-4 py-2 rounded-md transition-colors ${
                 billingPeriod === 'monthly'
                   ? 'bg-cyan-500 text-white'
@@ -365,6 +376,8 @@ export default function Pricing() {
             </button>
             <button
               onClick={() => setBillingPeriod('annual')}
+              aria-label="Switch to annual billing and save 17%"
+              aria-pressed={billingPeriod === 'annual'}
               className={`px-4 py-2 rounded-md transition-colors ${
                 billingPeriod === 'annual'
                   ? 'bg-cyan-500 text-white'

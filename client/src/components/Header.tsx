@@ -250,6 +250,10 @@ export default function Header() {
               )}
             </div>
 
+            <Link href="/pricing" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
+              Pricing
+            </Link>
+
             <Link href="/contact" className="text-gray-200 hover:text-cyan-400 transition-colors font-medium">
               Contact
             </Link>
@@ -368,6 +372,9 @@ export default function Header() {
             
             <Link href="/investors" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
               Investors
+            </Link>
+            <Link href="/pricing" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
+              Pricing
             </Link>
             <Link href="/contact" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
               Contact

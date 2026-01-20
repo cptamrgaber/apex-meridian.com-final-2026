@@ -874,6 +874,57 @@
 - [ ] Add architecture diagrams to documentation
 - [ ] Add API references to documentation
 - [ ] Add deployment guides to documentation
-- [ ] Update sitemap with pricing page
+## Phase 39: Navigation, Links, and Accessibility Updates
+- [ ] Add Pricing link to main navigation header
+- [ ] Add Pricing link to footer navigation
+- [ ] Update sitemap page with Pricing entry
+- [ ] Add aria-labels to all pricing page interactive elements
+- [ ] Ensure keyboard navigation works on pricing page
+- [ ] Test pricing page with screen readers
+- [ ] Add skip-to-content links
+- [ ] Verify all internal links work correctly
+
+## Phase 40: Complete Stripe Checkout Implementation
+- [ ] Create Stripe checkout page component
+- [ ] Add plan selection and billing cycle toggle
+- [ ] Create tRPC procedure for creating checkout sessions
+- [ ] Implement Stripe checkout redirect
+- [ ] Create webhook endpoint route
+- [ ] Handle checkout.session.completed event
+- [ ] Handle subscription events (created/updated/deleted)
+- [ ] Handle invoice payment events (succeeded/failed)
+- [ ] Create customer portal page
+- [ ] Add tRPC procedure for customer portal sessions
+- [ ] Test complete checkout flow
+
+## Phase 41: Build Unified Payment Method Selector
+- [ ] Create PaymentMethodSelector component
+- [ ] Add Stripe payment option (cards, Apple Pay)
+- [ ] Add Fawry payment option with instructions
+- [ ] Add Instapay option with alias display
+- [ ] Add mobile wallet options (Vodafone Cash, Orange Money)
+- [ ] Add bank transfer option with account details
+- [ ] Generate unique reference numbers for offline payments
+- [ ] Create payment confirmation page
+- [ ] Add payment status tracking
+- [ ] Test all payment method flows
+
+## Phase 42: Update Master Documentation
+- [ ] Merge pricing policy into master documentation
+- [ ] Add payment integration guide section
+- [ ] Add OAuth authentication system documentation
+- [ ] Add AI library system documentation
+- [ ] Add research platform documentation
+- [ ] Add news and blog system documentation
+- [ ] Create architecture diagrams
+- [ ] Add API reference section
+- [ ] Add deployment guide
+- [ ] Create table of contents with page numbers
+
+## Phase 43: Final Updates and Publishing
+- [ ] Update sitemap with all new pages
+- [ ] Verify all navigation links
+- [ ] Test accessibility across all pages
+- [ ] Run final tests on all features
 - [ ] Push all changes to GitHub
 - [ ] Save final checkpoint
