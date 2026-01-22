@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Plane, TrendingUp, Clock, Shield, Users, CheckCircle, ArrowLeft, Quote } from "lucide-react";
 import { Link } from "wouter";
+import VideoDemo from "@/components/VideoDemo";
 
 export default function AMAVCaseStudy() {
   return (
@@ -57,6 +58,17 @@ export default function AMAVCaseStudy() {
               <p className="text-white font-semibold">6 Months</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Video Demo */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <VideoDemo
+            title="AM-AV OCC System in Action: Complete Workflow Demo"
+            description="See the AM-AV Operations Control Center system in action. This comprehensive demo shows crew scheduling automation, real-time compliance checking, fatigue risk management, and the AI-powered rostering engine that reduced scheduling time by 70%."
+            duration="12:30"
+          />
         </div>
       </section>
 

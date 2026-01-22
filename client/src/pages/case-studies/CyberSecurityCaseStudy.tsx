@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Shield, TrendingUp, Clock, CheckCircle, AlertTriangle, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
+import VideoDemo from "@/components/VideoDemo";
 
 export default function CyberSecurityCaseStudy() {
   return (
@@ -37,6 +38,17 @@ export default function CyberSecurityCaseStudy() {
               <span className="font-semibold text-white mr-2">Duration:</span> 18 months
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Video Demo */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <VideoDemo
+            title="Security Architecture Transformation: Before & After"
+            description="Watch how we transformed this aviation operator's security posture from reactive incident response to proactive threat prevention. This demo walks through the architecture migration, AI-augmented SOC deployment, and real-time threat detection improvements."
+            duration="8:45"
+          />
         </div>
       </section>
 

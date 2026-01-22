@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Shield, AlertTriangle, CheckCircle, ArrowRight, Calendar, User } from "lucide-react";
 import SEO from "@/components/SEO";
+import WhitepaperDownload from "@/components/WhitepaperDownload";
 
 export default function AIModelPoisoning() {
   return (
@@ -221,6 +222,23 @@ export default function AIModelPoisoning() {
             </Link>
           </div>
 
+        </div>
+      </section>
+
+      {/* Whitepaper Download */}
+      <section className="py-20 bg-blue-950/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Download the Complete Whitepaper</h2>
+            <p className="text-xl text-gray-300">Get the full technical guide with implementation details, code examples, and case studies</p>
+          </div>
+          <WhitepaperDownload
+            title="Securing AI Training Pipelines Against Model Poisoning"
+            description="Comprehensive 45-page technical whitepaper covering threat vectors, detection techniques, defense strategies, and real-world implementation guidance."
+            whitepaperSlug="ai-model-poisoning"
+            pageCount="45"
+            fileSize="2.8 MB"
+          />
         </div>
       </section>
 

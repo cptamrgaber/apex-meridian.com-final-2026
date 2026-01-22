@@ -161,4 +161,98 @@ export const securityAssessmentRouter = router({
         throw new Error("Failed to send report. Please try again.");
       }
     }),
+
+  sendWhitepaper: publicProcedure
+    .input(z.object({
+        name: z.string().min(1),
+        email: z.string().email(),
+        company: z.string(),
+        whitepaperSlug: z.string(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const { name, email, company, whitepaperSlug } = input;
+
+      // Map whitepaper slugs to titles and descriptions
+      const whitepapers: Record<string, { title: string; description: string }> = {
+        "ai-model-poisoning": {
+          title: "Securing AI Training Pipelines Against Model Poisoning",
+          description: "Comprehensive technical guide covering threat vectors, detection techniques, and defense strategies for AI model security.",
+        },
+        "zero-trust-aviation": {
+          title: "Zero Trust Implementation for Aviation Operations Centers",
+          description: "Technical implementation roadmap for Zero Trust architecture in aviation OCC environments with crew management systems.",
+        },
+      };
+
+      const whitepaper = whitepapers[whitepaperSlug];
+      if (!whitepaper) {
+        throw new Error("Invalid whitepaper slug");
+      }
+
+      try {
+        // Send whitepaper email to user
+        await resend.emails.send({
+          from: "Apex Meridian Security <security@apex-meridian.com>",
+          to: email,
+          subject: `Your Whitepaper: ${whitepaper.title}`,
+          html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Your Whitepaper</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; margin: 0; padding: 20px;">
+  <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div style="background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%); color: white; padding: 30px 20px; text-align: center;">
+      <h1 style="margin: 0; font-size: 28px;">Your Whitepaper is Ready</h1>
+    </div>
+    <div style="padding: 30px 20px;">
+      <p>Hi ${name},</p>
+      <p>Thank you for your interest in our cybersecurity research. Here's your whitepaper:</p>
+      <div style="background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 15px; margin: 20px 0;">
+        <h2 style="margin: 0 0 10px 0; color: #0ea5e9; font-size: 20px;">${whitepaper.title}</h2>
+        <p style="margin: 0; color: #666;">${whitepaper.description}</p>
+      </div>
+      <p><strong>Access your whitepaper:</strong></p>
+      <p style="text-align: center; margin: 30px 0;">
+        <a href="https://apex-meridian.com/blog/${whitepaperSlug}" style="display: inline-block; background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold;">Read Online</a>
+      </p>
+      <p style="color: #666; font-size: 14px;">Note: The whitepaper is available as an online article. You can print it to PDF using your browser's print function (Ctrl/Cmd + P → Save as PDF).</p>
+      <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+      <p><strong>Need security expertise?</strong></p>
+      <p>Our team can help you design and implement enterprise-grade security architecture. <a href="https://apex-meridian.com/contact" style="color: #0ea5e9;">Contact us</a> to discuss your security needs.</p>
+    </div>
+    <div style="background: #f9fafb; padding: 20px; text-align: center; color: #666; font-size: 12px;">
+      <p style="margin: 0;">Apex Meridian - AI-Native Enterprise Security</p>
+      <p style="margin: 5px 0 0 0;">© 2026 Apex Meridian LLC. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
+          `,
+        });
+
+        // Send lead notification to internal team
+        await resend.emails.send({
+          from: "Apex Meridian Leads <leads@apex-meridian.com>",
+          to: "security@apex-meridian.com",
+          subject: `New Whitepaper Download: ${whitepaper.title}`,
+          html: `
+            <h2>New Whitepaper Download Lead</h2>
+            <p><strong>Whitepaper:</strong> ${whitepaper.title}</p>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Company:</strong> ${company}</p>
+            <p><strong>Downloaded:</strong> ${new Date().toISOString()}</p>
+          `,
+        });
+
+        return { success: true, message: "Whitepaper sent successfully" };
+      } catch (error) {
+        console.error("Failed to send whitepaper:", error);
+        throw new Error("Failed to send whitepaper. Please try again.");
+      }
+    }),
 });

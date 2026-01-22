@@ -1169,3 +1169,25 @@
 - [x] Add search functionality
 - [x] Add category filtering
 - [x] Style with consistent design system
+
+## Security Resource Hub & Whitepapers
+
+### Video Demo Placeholders
+- [x] Add video player component to aviation security case study
+- [x] Add video player component to AM-AV case study
+- [x] Create professional video placeholder UI with play button
+- [x] Add video upload instructions for future content
+
+### PDF Whitepapers with Email Gate
+- [x] Create whitepaper download component with email gate
+- [x] Generate PDF from AI Model Poisoning blog article
+- [x] Generate PDF from Zero Trust Aviation blog article
+- [x] Implement email capture and PDF delivery via tRPC
+- [x] Add whitepaper download CTAs to blog articles
+
+### Security Resource Hub
+- [x] Create /security-resources landing page
+- [x] Add persona-based navigation (CISO, CTO, Security Engineer)
+- [x] Create resource cards for assessment tool, blog, case studies, whitepapers
+- [x] Add filtering by resource type and persona
+- [ ] Link from Cybersecurity page and main navigation
