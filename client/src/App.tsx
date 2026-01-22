@@ -64,6 +64,7 @@ import CyberSecurityCaseStudy from "@/pages/case-studies/CyberSecurityCaseStudy"
 import SecurityAssessment from "@/pages/SecurityAssessment";
 import AIModelPoisoning from "@/pages/blog/AIModelPoisoning";
 import ZeroTrustAviation from "@/pages/blog/ZeroTrustAviation";
+import SecurityBlog from "@/pages/blog/SecurityBlog";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -122,6 +123,7 @@ function Router() {
       <Route path={"/security-assessment"} component={SecurityAssessment} />
       <Route path={"/blog/ai-model-poisoning"} component={AIModelPoisoning} />
       <Route path={"/blog/zero-trust-aviation"} component={ZeroTrustAviation} />
+      <Route path={"/blog/security"} component={SecurityBlog} />
       <Route path={"/news"} component={News} />
       <Route path={"/news/am-av-occ-system-launch"} component={AMAVLaunch} />
       <Route path={"/library"} component={Library} />

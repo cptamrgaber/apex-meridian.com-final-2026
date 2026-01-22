@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Shield, CheckCircle, Lock, AlertTriangle, ArrowRight } from "lucide-react";
+import { Shield, CheckCircle, Lock, AlertTriangle, ArrowRight, BookOpen, FileText } from "lucide-react";
 
 export default function Cybersecurity() {
   return (
@@ -209,8 +209,100 @@ export default function Cybersecurity() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Case Studies */}
+      <section className="py-20 bg-blue-950/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Security Case Studies</h2>
+            <p className="text-xl text-gray-300">Real-world implementations and measurable security improvements</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Link href="/case-studies/aviation-security">
+              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-400/40 transition-all cursor-pointer group">
+                <div className="flex items-center mb-4">
+                  <FileText className="h-8 w-8 text-cyan-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Aviation Security Transformation</h3>
+                </div>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  How a Middle East regional carrier achieved 94% incident reduction and sub-5-minute response times through Zero Trust architecture and AI-augmented SOC operations.
+                </p>
+                <div className="flex items-center text-cyan-400 font-semibold group-hover:translate-x-2 transition-transform">
+                  Read Case Study
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </div>
+              </div>
+            </Link>
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
+              <div className="flex items-center mb-4">
+                <Shield className="h-8 w-8 text-cyan-400 mr-3" />
+                <h3 className="text-2xl font-bold text-white">Assess Your Security Posture</h3>
+              </div>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Take our interactive security assessment to evaluate your current posture and receive personalized architecture recommendations.
+              </p>
+              <Link href="/security-assessment">
+                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-bold hover:from-cyan-600 hover:to-blue-600 transition-all inline-flex items-center">
+                  Start Assessment
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Security Blog */}
       <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Security Blog & Technical Articles</h2>
+            <p className="text-xl text-gray-300">In-depth technical content on AI security, Zero Trust, and threat defense</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Link href="/blog/ai-model-poisoning">
+              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-400/40 transition-all cursor-pointer group">
+                <div className="flex items-center mb-4">
+                  <BookOpen className="h-8 w-8 text-cyan-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Securing AI Training Pipelines</h3>
+                </div>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Comprehensive technical guide to defending AI training infrastructure from data poisoning, backdoor attacks, and adversarial manipulation.
+                </p>
+                <div className="flex items-center text-cyan-400 font-semibold group-hover:translate-x-2 transition-transform">
+                  Read Article
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </div>
+              </div>
+            </Link>
+            <Link href="/blog/zero-trust-aviation">
+              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-400/40 transition-all cursor-pointer group">
+                <div className="flex items-center mb-4">
+                  <BookOpen className="h-8 w-8 text-cyan-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Zero Trust for Aviation OCC</h3>
+                </div>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Technical implementation guide for Zero Trust security architecture in aviation operations centers with crew management and flight operations systems.
+                </p>
+                <div className="flex items-center text-cyan-400 font-semibold group-hover:translate-x-2 transition-transform">
+                  Read Article
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/blog/security">
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-bold hover:from-cyan-600 hover:to-blue-600 transition-all inline-flex items-center">
+                View All Security Articles
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-blue-950/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Secure Your Critical Infrastructure

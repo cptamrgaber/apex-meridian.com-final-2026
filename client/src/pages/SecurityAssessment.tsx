@@ -5,6 +5,8 @@ import { Shield, CheckCircle, AlertTriangle, ArrowRight, ArrowLeft, Download } f
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 interface Question {
   id: string;
@@ -55,6 +57,8 @@ export default function SecurityAssessment() {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [showReport, setShowReport] = useState(false);
   const [contactInfo, setContactInfo] = useState({ name: "", email: "", company: "", role: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const sendReportMutation = trpc.securityAssessment.sendReport.useMutation();
 
   const categories = Array.from(new Set(questions.map(q => q.category)));
   const questionsPerStep = questions.length / categories.length;
@@ -243,9 +247,43 @@ export default function SecurityAssessment() {
                   className="px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-700 focus:border-cyan-400 focus:outline-none"
                 />
               </div>
-              <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold py-4 text-lg">
+              <Button 
+                onClick={async () => {
+                  if (!contactInfo.name || !contactInfo.email || !contactInfo.company || !contactInfo.role) {
+                    toast.error("Please fill in all fields");
+                    return;
+                  }
+                  
+                  setIsSubmitting(true);
+                  try {
+                    const score = calculateScore();
+                    const categoryScores: Record<string, number> = {};
+                    categories.forEach(cat => {
+                      categoryScores[cat] = getCategoryScore(cat);
+                    });
+                    const recommendations = getRecommendations(score);
+                    
+                    await sendReportMutation.mutateAsync({
+                      name: contactInfo.name,
+                      email: contactInfo.email,
+                      company: contactInfo.company,
+                      role: contactInfo.role,
+                      score,
+                      categoryScores,
+                      recommendations,
+                    });
+                    toast.success("Report sent to your email! Check your inbox.");
+                  } catch (error) {
+                    toast.error("Failed to send report. Please try again.");
+                  } finally {
+                    setIsSubmitting(false);
+                  }
+                }}
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 <Download className="mr-2 h-5 w-5" />
-                Download Full Report & Schedule Consultation
+                {isSubmitting ? "Sending Report..." : "Email Full Report & Schedule Consultation"}
               </Button>
             </Card>
           </div>

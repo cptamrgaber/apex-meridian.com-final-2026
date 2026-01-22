@@ -1145,3 +1145,27 @@
 - [ ] Verify case study displays correctly
 - [ ] Test blog article rendering and navigation
 - [ ] Save final checkpoint
+
+## Cybersecurity Content Ecosystem Completion
+
+### Link Content from Cybersecurity Page
+- [x] Add "Case Studies" section to Cybersecurity page
+- [x] Add "Security Blog" section to Cybersecurity page
+- [x] Create cards linking to aviation security case study
+- [x] Create cards linking to AI model poisoning blog article
+- [x] Create cards linking to Zero Trust aviation blog article
+
+### Email Integration for Security Assessment Tool
+- [x] Create tRPC procedure for sending assessment reports via email
+- [x] Integrate with email service (Resend API)
+- [x] Generate PDF report from assessment results
+- [x] Send email with PDF attachment to user
+- [x] Add confirmation message after email sent
+
+### Security Blog Index Page
+- [x] Create /blog/security landing page
+- [x] Add featured articles section
+- [x] Implement article cards with excerpts
+- [x] Add search functionality
+- [x] Add category filtering
+- [x] Style with consistent design system
