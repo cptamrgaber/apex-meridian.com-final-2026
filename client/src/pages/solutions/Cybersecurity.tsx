@@ -28,7 +28,7 @@ export default function Cybersecurity() {
             Cybersecurity <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Shield</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl">
-            Protect critical infrastructure with AI-driven threat detection, behavioral anomaly analysis, and quantum-resistant encryption
+            Enterprise-grade security architecture for aviation, AI infrastructure, and critical systems. We design, build, and operate AI-augmented security platforms that protect high-value environments from advanced persistent threats, insider risks, and zero-day exploits.
           </p>
         </div>
       </section>
@@ -47,22 +47,22 @@ export default function Cybersecurity() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Threat Detection</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">AI-Augmented Threat Intelligence</h3>
               <p className="text-gray-300 mb-4">
-                Real-time threat identification using advanced machine learning models that detect zero-day exploits, malware, and sophisticated attack patterns.
+                Deep learning models trained on aviation-specific attack patterns, AI infrastructure vulnerabilities, and adversarial tactics. Our threat detection engine correlates network telemetry, endpoint behavior, and cloud activity to identify sophisticated attacks—including supply chain compromises, model poisoning attempts, and GPU infrastructure exploitation—before they escalate.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>98.2% threat detection accuracy</span>
+                  <span>Sub-second anomaly correlation across hybrid environments</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Sub-second response time</span>
+                  <span>Zero-day exploit detection through behavioral analysis</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Zero-day exploit detection</span>
+                  <span>Threat hunting automation with human-in-the-loop validation</span>
                 </li>
               </ul>
             </div>
@@ -76,22 +76,22 @@ export default function Cybersecurity() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Behavioral Anomaly Detection</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Zero Trust Architecture</h3>
               <p className="text-gray-300 mb-4">
-                Identify insider threats and compromised accounts through continuous behavioral analysis and user activity monitoring.
+                Continuous verification across identity, device, network, and application layers. Our Zero Trust implementation treats every access request as untrusted, enforcing least-privilege access, micro-segmentation, and real-time risk scoring. Designed for aviation operations centers, AI training clusters, and multi-cloud environments where traditional perimeter defenses fail.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>95% insider threat detection rate</span>
+                  <span>Identity-aware micro-segmentation for critical workloads</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Continuous user behavior profiling</span>
+                  <span>Continuous authentication with behavioral biometrics</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Automated risk scoring</span>
+                  <span>Automated policy enforcement across hybrid infrastructure</span>
                 </li>
               </ul>
             </div>
@@ -105,22 +105,22 @@ export default function Cybersecurity() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Quantum-Resistant Encryption</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Post-Quantum Cryptography</h3>
               <p className="text-gray-300 mb-4">
-                Future-proof your data with post-quantum cryptography algorithms that protect against both classical and quantum computing attacks.
+                Future-proof encryption for sensitive aviation data, AI model weights, and intellectual property. We implement NIST-standardized post-quantum algorithms alongside hybrid classical-quantum key exchange to protect against harvest-now-decrypt-later attacks. Our cryptographic architecture supports on-prem, cloud, and air-gapped deployments.
               </p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>NIST-approved algorithms</span>
+                  <span>NIST-approved lattice-based and hash-based algorithms</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Quantum-safe key exchange</span>
+                  <span>Hybrid key exchange for backward compatibility</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>End-to-end data protection</span>
+                  <span>Hardware security module (HSM) integration</span>
                 </li>
               </ul>
             </div>
@@ -132,7 +132,7 @@ export default function Cybersecurity() {
       {/* Benefits */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Why Choose Cybersecurity Shield?</h2>
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Security Operations & Incident Readiness</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex items-start space-x-4">
@@ -140,9 +140,9 @@ export default function Cybersecurity() {
                 <AlertTriangle className="h-6 w-6 text-cyan-400" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Proactive Threat Prevention</h3>
+                <h3 className="text-xl font-bold text-white mb-2">AI-Augmented SOC</h3>
                 <p className="text-gray-300">
-                  Stop attacks before they cause damage with predictive threat intelligence and automated response systems.
+                  We operate Security Operations Centers where AI handles tier-1 triage, alert correlation, and initial response while human analysts focus on complex investigations, threat hunting, and strategic decision-making. Our SOC integrates SIEM, EDR, NDR, and cloud security telemetry into a unified threat intelligence platform.
                 </p>
               </div>
             </div>
@@ -152,9 +152,9 @@ export default function Cybersecurity() {
                 <Lock className="h-6 w-6 text-cyan-400" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Comprehensive Protection</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Digital Forensics & Incident Response</h3>
                 <p className="text-gray-300">
-                  Protect all attack surfaces including network, endpoint, cloud, and application layers with unified security.
+                  Rapid containment, evidence preservation, and root cause analysis for aviation incidents, AI infrastructure breaches, and supply chain compromises. Our DFIR team follows NIST 800-61 incident handling procedures with aviation-specific playbooks for operational technology (OT) environments and AI training pipelines.
                 </p>
               </div>
             </div>
@@ -164,9 +164,9 @@ export default function Cybersecurity() {
                 <CheckCircle className="h-6 w-6 text-cyan-400" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Compliance Ready</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Compliance & Governance</h3>
                 <p className="text-gray-300">
-                  Meet GDPR, HIPAA, SOC 2, and other regulatory requirements with built-in compliance reporting and audit trails.
+                  Align security architecture with Egyptian Personal Data Protection Law (PDPL 151/2020), ISO 27001, NIST Cybersecurity Framework, and aviation-specific regulations (ICAO Annex 17, TSA directives). We provide continuous compliance monitoring, audit-ready documentation, and regulatory reporting automation.
                 </p>
               </div>
             </div>
@@ -176,9 +176,9 @@ export default function Cybersecurity() {
                 <Shield className="h-6 w-6 text-cyan-400" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">24/7 Monitoring</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Cloud, Hybrid & On-Prem Security</h3>
                 <p className="text-gray-300">
-                  Round-the-clock threat monitoring and incident response with AI-powered security operations center (SOC) capabilities.
+                  Unified security posture management across AWS, Azure, GCP, and on-premises infrastructure. We secure AI training clusters, GPU farms, aviation operational systems, and hybrid cloud workloads with consistent policy enforcement, encrypted data flows, and automated vulnerability remediation.
                 </p>
               </div>
             </div>
@@ -189,16 +189,16 @@ export default function Cybersecurity() {
       {/* Use Cases */}
       <section className="py-20 bg-blue-950/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Industry Applications</h2>
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Sector-Aware Security</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Financial Services", desc: "Protect customer data and prevent fraud in banking and fintech" },
-              { title: "Healthcare", desc: "Secure patient records and medical devices from cyber threats" },
-              { title: "Critical Infrastructure", desc: "Safeguard power grids, water systems, and transportation networks" },
-              { title: "Government", desc: "Defend national security systems and classified information" },
-              { title: "Enterprise", desc: "Protect corporate networks, intellectual property, and trade secrets" },
-              { title: "Cloud Services", desc: "Secure multi-tenant cloud environments and SaaS applications" }
+              { title: "Aviation Operations", desc: "Protect flight operations centers, crew scheduling systems, and aviation safety-critical infrastructure from cyber-physical attacks and insider threats" },
+              { title: "AI Infrastructure", desc: "Secure AI training pipelines, model registries, inference endpoints, and GPU clusters against model theft, poisoning attacks, and unauthorized access" },
+              { title: "Enterprise & Government", desc: "Defend corporate networks, classified systems, and critical business applications with defense-in-depth architecture and continuous monitoring" },
+              { title: "Cloud & SaaS Platforms", desc: "Implement tenant isolation, API security, and data residency controls for multi-tenant cloud services and SaaS applications" },
+              { title: "Critical Infrastructure", desc: "Safeguard operational technology (OT) environments, SCADA systems, and industrial control systems with air-gapped architectures and anomaly detection" },
+              { title: "Research & Development", desc: "Protect intellectual property, research data, and proprietary algorithms with data loss prevention, encryption, and access controls" }
             ].map((useCase, index) => (
               <div key={index} className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
                 <h4 className="text-lg font-bold text-white mb-2">{useCase.title}</h4>
@@ -213,14 +213,14 @@ export default function Cybersecurity() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Protect Your Organization Today
+            Secure Your Critical Infrastructure
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Schedule a security assessment to see how Cybersecurity Shield can protect your critical assets
+            Schedule a security architecture review to assess your current posture and design a defense strategy aligned with your operational requirements
           </p>
           <Link href="/contact">
             <button className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-bold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-2xl inline-flex items-center">
-              Request Security Assessment
+              Request Architecture Review
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </Link>
