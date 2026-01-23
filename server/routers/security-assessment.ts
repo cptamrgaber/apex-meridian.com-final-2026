@@ -2,6 +2,7 @@ import { z } from "zod";
 import { publicProcedure, router } from "../_core/trpc";
 import { Resend } from "resend";
 import { ENV } from "../_core/env";
+import { trackEvent } from "../lib/analytics";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "");
 
@@ -155,6 +156,13 @@ export const securityAssessmentRouter = router({
           `,
         });
 
+        // Track assessment completion
+        await trackEvent({
+          eventType: 'assessment_completion',
+          userEmail: email,
+          metadata: { score, riskLevel, company, role }
+        });
+
         return { success: true, message: "Report sent successfully" };
       } catch (error) {
         console.error("Failed to send email:", error);
@@ -247,6 +255,15 @@ export const securityAssessmentRouter = router({
             <p><strong>Company:</strong> ${company}</p>
             <p><strong>Downloaded:</strong> ${new Date().toISOString()}</p>
           `,
+        });
+
+        // Track whitepaper download
+        await trackEvent({
+          eventType: 'whitepaper_download',
+          resourceType: 'whitepaper',
+          resourceId: whitepaperSlug,
+          userEmail: email,
+          metadata: { company, whitepaperTitle: whitepaper.title }
         });
 
         return { success: true, message: "Whitepaper sent successfully" };

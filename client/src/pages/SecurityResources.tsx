@@ -7,9 +7,16 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { trpc } from "@/lib/trpc";
 
 export default function SecurityResources() {
   const [selectedPersona, setSelectedPersona] = useState<string | null>(null);
+  const trackPersona = trpc.analytics.trackPersonaSelection.useMutation();
+
+  const handlePersonaSelect = (persona: string) => {
+    setSelectedPersona(persona);
+    trackPersona.mutate({ personaType: persona });
+  };
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState<string | null>(null);
 

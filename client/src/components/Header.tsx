@@ -147,6 +147,9 @@ export default function Header() {
                   onMouseLeave={() => setResourcesOpen(false)}
                   className="absolute top-full left-0 mt-2 w-56 bg-blue-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-cyan-500/20 py-2"
                 >
+                  <Link href="/security-resources" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors font-semibold border-b border-cyan-500/20">
+                    Security Resources
+                  </Link>
                   <Link href="/resources/blog" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
                     Blog & News
                   </Link>

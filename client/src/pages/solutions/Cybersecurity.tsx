@@ -301,6 +301,27 @@ export default function Cybersecurity() {
         </div>
       </section>
 
+      {/* Security Resource Hub CTA */}
+      <section className="py-20 bg-gradient-to-br from-blue-900/50 to-cyan-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm rounded-3xl p-12 border border-cyan-500/30">
+            <Shield className="h-16 w-16 text-cyan-400 mx-auto mb-6" />
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Explore Our Security Resource Hub
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Access curated security resources tailored for CISOs, CTOs, and security engineers. Find assessments, case studies, technical articles, and whitepapers to strengthen your security posture.
+            </p>
+            <Link href="/security-resources">
+              <button className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-bold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-2xl inline-flex items-center">
+                Visit Resource Hub
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-blue-950/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
