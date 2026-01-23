@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -729,10 +729,11 @@ export const aiModerationQueue = mysqlTable("aiModerationQueue", {
   id: int("id").autoincrement().primaryKey(),
   contentType: mysqlEnum("contentType", ["post", "comment", "video", "message", "profile"]).notNull(),
   contentId: int("contentId").notNull(),
-  userId: int("userId").notNull(),
-  flagReason: mysqlEnum("flagReason", ["spam", "hate_speech", "violence", "nudity", "misinformation"]).notNull(),
-  aiConfidence: int("aiConfidence").notNull(), // 0-100
-  status: mysqlEnum("status", ["pending", "reviewed", "approved", "removed"]).default("pending").notNull(),
+  reportedBy: int("reportedBy"),
+  reason: text("reason"),
+  violationType: mysqlEnum("violationType", ["hate_speech", "harassment", "spam", "sexual_content", "violence", "illegal", "none"]),
+  aiConfidence: decimal("aiConfidence", { precision: 3, scale: 2 }), // 0-1
+  status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
   reviewedBy: int("reviewedBy"),
   reviewedAt: timestamp("reviewedAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),

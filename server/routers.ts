@@ -20,6 +20,7 @@ import { analyticsRouter } from "./routers/analytics";
 import { abTestingRouter } from "./routers/ab-testing";
 import { socialRouter } from "./routers/social";
 import { messagingRouter } from "./routers/messaging";
+import { moderationRouter } from "./routers/moderation";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -494,5 +495,6 @@ export const appRouter = router({
   // Social media platform
   social: socialRouter,
   messaging: messagingRouter,
+  moderation: moderationRouter,
 });
 export type AppRouter = typeof appRouter;
