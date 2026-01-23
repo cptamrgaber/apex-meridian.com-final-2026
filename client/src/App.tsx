@@ -68,6 +68,7 @@ import SecurityBlog from "@/pages/blog/SecurityBlog";
 import SecurityResources from "@/pages/SecurityResources";
 import AnalyticsDashboard from "@/pages/admin/AnalyticsDashboard";
 import LeadsDashboard from "@/pages/admin/LeadsDashboard";
+import ABTestingDashboard from "@/pages/admin/ABTestingDashboard";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -130,6 +131,7 @@ function Router() {
       <Route path="/security-resources" component={SecurityResources} />
       <Route path="/admin/analytics" component={AnalyticsDashboard} />
       <Route path="/admin/leads" component={LeadsDashboard} />
+      <Route path="/admin/ab-tests" component={ABTestingDashboard} />
       <Route path={"/news"} component={News} />
       <Route path={"/news/am-av-occ-system-launch"} component={AMAVLaunch} />
       <Route path={"/library"} component={Library} />
