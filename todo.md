@@ -1239,3 +1239,32 @@
 - [ ] Create A/B test management UI
 - [ ] Add statistical significance calculator
 - [ ] Implement winner selection and deployment
+
+## Marketing Automation System
+
+### Lead Scoring Dashboard
+- [x] Create /admin/leads page with top prospects table
+- [x] Add activity timeline for each lead
+- [x] Display lead score breakdown by activity type
+- [x] Add contact information and company details
+- [x] Implement one-click email/call actions
+- [x] Add lead filtering by score range and date
+- [x] Create lead export functionality (CSV)
+
+### A/B Testing Framework
+- [ ] Create A/B test configuration database schema
+- [ ] Build admin UI for creating A/B tests
+- [ ] Implement variant assignment logic
+- [ ] Add conversion tracking for each variant
+- [ ] Create A/B test results dashboard
+- [ ] Add statistical significance calculator
+- [ ] Implement automatic winner selection
+
+### Email Nurture Campaigns
+- [ ] Create email campaign database schema
+- [ ] Implement milestone-triggered email system
+- [ ] Create email templates for each milestone (40, 60, 80+ points)
+- [ ] Add campaign performance tracking
+- [ ] Build admin UI for managing campaigns
+- [ ] Implement unsubscribe functionality
+- [ ] Add email open/click tracking
