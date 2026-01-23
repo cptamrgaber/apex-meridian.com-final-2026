@@ -149,6 +149,18 @@ export default function SiteMap() {
               </ul>
             </div>
 
+            {/* Social Media Platform */}
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4">Social Media Platform</h2>
+              <ul className="space-y-2">
+                <li><Link href="/social" className="text-gray-300 hover:text-cyan-400 transition-colors">Apex Social - Home</Link></li>
+                <li><Link href="/social/setup" className="text-gray-300 hover:text-cyan-400 transition-colors">Create Profile</Link></li>
+                <li><Link href="/social/explore" className="text-gray-300 hover:text-cyan-400 transition-colors">Explore & Search</Link></li>
+                <li className="text-gray-400 text-sm italic">Profile pages (dynamic routes)</li>
+                <li className="text-gray-400 text-sm italic">Post pages (dynamic routes)</li>
+              </ul>
+            </div>
+
             {/* Admin & Management */}
             <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20">
               <h2 className="text-2xl font-bold text-cyan-400 mb-4">Admin & Management</h2>

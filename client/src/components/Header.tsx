@@ -249,6 +249,10 @@ export default function Header() {
                   <Link href="/system-monitoring" className="block px-4 py-2 text-sm text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
                     System Monitoring
                   </Link>
+                  <div className="border-t border-cyan-500/20 my-2"></div>
+                  <Link href="/social" className="block px-4 py-2 text-sm text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 transition-colors font-semibold">
+                    🚀 Apex Social Platform
+                  </Link>
                 </div>
               )}
             </div>
@@ -381,6 +385,12 @@ export default function Header() {
             </Link>
             <Link href="/contact" className="block px-4 py-3 text-gray-200 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors rounded">
               Contact
+            </Link>
+            
+            {/* Social Media Platform */}
+            <div className="border-t border-cyan-500/20 my-2"></div>
+            <Link href="/social" className="block px-4 py-3 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 transition-colors rounded font-semibold">
+              🚀 Apex Social Platform
             </Link>
           </div>
         </div>
