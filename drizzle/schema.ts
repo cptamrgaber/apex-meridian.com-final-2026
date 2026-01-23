@@ -580,6 +580,8 @@ export const messages = mysqlTable("messages", {
   replyToMessageId: int("replyToMessageId"),
   isEdited: int("isEdited").default(0).notNull(),
   isDeleted: int("isDeleted").default(0).notNull(),
+  isRead: int("isRead").default(0).notNull(),
+  readAt: timestamp("readAt"),
   expiresAt: timestamp("expiresAt"), // for disappearing messages
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),

@@ -1450,3 +1450,32 @@
 - [x] Add navigation link to social platform in main header (desktop and mobile)
 - [x] Test language switching functionality (ready for user testing)
 - [x] Test RTL layout with Arabic content (automatic via i18n)
+
+
+## Phase 21: Direct Messaging System
+
+- [x] Create messaging tRPC procedures (send, get conversations, get messages, mark as read, unread count)
+- [x] Build conversation list UI component
+- [x] Build chat interface with message thread
+- [x] Add read receipts (automatic mark as read)
+- [x] Implement message search (conversation search)
+- [x] Add unread message count badge
+- [ ] Add typing indicators (requires WebSocket)
+- [ ] Add online/offline status (requires WebSocket)
+- [ ] Add real-time message notifications (requires WebSocket)
+
+## Phase 22: AI Content Moderation
+
+- [ ] Create AI moderation tRPC procedures
+- [ ] Integrate LLM for content analysis
+- [ ] Build moderation queue UI for admins
+- [ ] Add automatic content filtering
+- [ ] Implement appeal system
+
+## Phase 23: Stories Feature
+
+- [ ] Create stories tRPC procedures
+- [ ] Build story creation UI
+- [ ] Build story viewer with 24-hour expiration
+- [ ] Add view tracking
+- [ ] Implement story reactions
