@@ -1212,3 +1212,30 @@
 - [x] Add tracking for persona selections
 - [x] Add tracking for whitepaper downloads
 - [x] Create analytics dashboard for viewing metricsation metrics
+
+## Advanced Analytics & Optimization
+
+### Analytics Dashboard
+- [x] Create admin analytics dashboard page
+- [x] Add conversion funnel visualization
+- [x] Add popular resources chart
+- [x] Add persona distribution chart
+- [x] Add assessment score trends over time
+- [x] Add resource download metrics
+- [x] Add whitepaper request metrics
+
+### Lead Scoring System
+- [ ] Create lead scoring database schema
+- [ ] Implement scoring algorithm (assessment +50, whitepaper +30, persona +10)
+- [ ] Add automated lead score calculation
+- [ ] Create high-value lead notification system
+- [ ] Add sales notification emails for hot leads
+- [ ] Create lead management dashboard
+
+### A/B Testing Framework
+- [ ] Create A/B test database schema
+- [ ] Implement variant assignment system
+- [ ] Add conversion tracking for variants
+- [ ] Create A/B test management UI
+- [ ] Add statistical significance calculator
+- [ ] Implement winner selection and deployment

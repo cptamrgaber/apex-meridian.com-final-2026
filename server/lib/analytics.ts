@@ -58,73 +58,40 @@ export async function trackEvent(event: AnalyticsEvent): Promise<void> {
 
 export async function getAnalytics(startDate?: Date, endDate?: Date) {
   const db = await getDb();
-  if (!db) return null;
+  if (!db) return { events: [] };
   
   try {
     const start = startDate || new Date(Date.now() - 30 * 24 * 60 * 60 * 1000); // Default: last 30 days
     const end = endDate || new Date();
 
-    // Get event counts by type
-    const eventCounts = await db.execute(sql`
+    // Get all events
+    const eventsResult: any = await db.execute(sql`
       SELECT 
-        event_type,
-        COUNT(*) as count
+        id,
+        event_type as eventType,
+        resource_type as resourceType,
+        resource_id as resourceId,
+        persona_type as personaType,
+        user_email as userEmail,
+        metadata,
+        created_at as createdAt
       FROM analytics_events
       WHERE created_at BETWEEN ${start.toISOString()} AND ${end.toISOString()}
-      GROUP BY event_type
+      ORDER BY created_at DESC
     `);
 
-    // Get resource downloads by type
-    const resourceDownloads = await db.execute(sql`
-      SELECT 
-        resource_type,
-        COUNT(*) as count
-      FROM analytics_events
-      WHERE event_type = 'resource_download'
-        AND created_at BETWEEN ${start.toISOString()} AND ${end.toISOString()}
-      GROUP BY resource_type
-    `);
-
-    // Get persona selections
-    const personaSelections = await db.execute(sql`
-      SELECT 
-        persona_type,
-        COUNT(*) as count
-      FROM analytics_events
-      WHERE event_type = 'persona_selection'
-        AND created_at BETWEEN ${start.toISOString()} AND ${end.toISOString()}
-      GROUP BY persona_type
-    `);
-
-    // Get assessment completions by day
-    const assessmentsByDay = await db.execute(sql`
-      SELECT 
-        DATE(created_at) as date,
-        COUNT(*) as count
-      FROM analytics_events
-      WHERE event_type = 'assessment_completion'
-        AND created_at BETWEEN ${start.toISOString()} AND ${end.toISOString()}
-      GROUP BY DATE(created_at)
-      ORDER BY date DESC
-    `);
-
-    // Get unique users
-    const uniqueUsersResult: any = await db.execute(sql`
-      SELECT COUNT(DISTINCT user_email) as count
-      FROM analytics_events
-      WHERE user_email IS NOT NULL
-        AND created_at BETWEEN ${start.toISOString()} AND ${end.toISOString()}
-    `);
+    // Get assessment scores from metadata
+    const events = eventsResult[0] || [];
+    const eventsWithScores = events.map((e: any) => ({
+      ...e,
+      assessmentScore: e.metadata ? JSON.parse(e.metadata).score : null,
+    }));
 
     return {
-      eventCounts,
-      resourceDownloads,
-      personaSelections,
-      assessmentsByDay,
-      uniqueUsers: uniqueUsersResult[0]?.count || 0,
+      events: eventsWithScores,
     };
   } catch (error) {
     console.error('Analytics retrieval error:', error);
-    return null;
+    return { events: [] };
   }
 }

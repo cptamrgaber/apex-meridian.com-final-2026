@@ -3,6 +3,7 @@ import { publicProcedure, router } from "../_core/trpc";
 import { Resend } from "resend";
 import { ENV } from "../_core/env";
 import { trackEvent } from "../lib/analytics";
+import { updateLeadScore } from "../lib/leadScoring";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "");
 
@@ -163,6 +164,9 @@ export const securityAssessmentRouter = router({
           metadata: { score, riskLevel, company, role }
         });
 
+        // Update lead score (+50 points)
+        await updateLeadScore(email, 'assessment_completion');
+
         return { success: true, message: "Report sent successfully" };
       } catch (error) {
         console.error("Failed to send email:", error);
@@ -265,6 +269,9 @@ export const securityAssessmentRouter = router({
           userEmail: email,
           metadata: { company, whitepaperTitle: whitepaper.title }
         });
+
+        // Update lead score (+30 points)
+        await updateLeadScore(email, 'whitepaper_download');
 
         return { success: true, message: "Whitepaper sent successfully" };
       } catch (error) {
