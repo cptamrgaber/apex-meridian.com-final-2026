@@ -1,8 +1,10 @@
 import { getDb } from "../db";
+import { eq } from "drizzle-orm";
+import * as schema from "../../drizzle/schema";
 import { Resend } from "resend";
-import { env } from "../_core/env";
+import { ENV } from "../_core/env";
 
-const resend = new Resend(env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || '');
 
 // Email templates for each milestone
 const EMAIL_TEMPLATES = {
@@ -89,13 +91,18 @@ const EMAIL_TEMPLATES = {
 };
 
 // Check and send nurture emails based on lead score
+// TODO: Add leads table to schema before enabling this function
 export async function checkAndSendNurtureEmails() {
+  console.log('Email nurture campaigns require leads table in schema');
+  return;
+  /* DISABLED UNTIL LEADS TABLE IS ADDED
+  async function _checkAndSendNurtureEmails() {
   const db = await getDb();
   
   try {
     // Get all leads with scores at milestone thresholds
     const leads = await db.query.leads.findMany({
-      where: (leads, { gte, lt }) => gte(leads.score, 40),
+      where: (leads, { gte }) => gte(leads.score, 40),
     });
 
     for (const lead of leads) {
@@ -123,12 +130,12 @@ export async function checkAndSendNurtureEmails() {
 
           // Update lead record with last email sent
           await db
-            .update(db.schema.leads)
+            .update(schema.leads)
             .set({
               lastEmailSent: milestone,
               updatedAt: new Date(),
             })
-            .where(db.eq(db.schema.leads.id, lead.id));
+            .where(eq(schema.leads.id, lead.id));
 
           console.log(`Sent ${milestone} email to ${lead.email}`);
         } catch (error) {
@@ -139,6 +146,8 @@ export async function checkAndSendNurtureEmails() {
   } catch (error) {
     console.error("Error checking and sending nurture emails:", error);
   }
+  }
+  */
 }
 
 // Schedule this function to run periodically (e.g., every hour)

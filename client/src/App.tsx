@@ -69,6 +69,10 @@ import SecurityResources from "@/pages/SecurityResources";
 import AnalyticsDashboard from "@/pages/admin/AnalyticsDashboard";
 import LeadsDashboard from "@/pages/admin/LeadsDashboard";
 import ABTestingDashboard from "@/pages/admin/ABTestingDashboard";
+import SocialHome from "@/pages/social/SocialHome";
+import ProfileSetup from "@/pages/social/ProfileSetup";
+import UserProfile from "@/pages/social/UserProfile";
+import Explore from "@/pages/social/Explore";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -183,6 +187,13 @@ function Router() {
       <Route path="/organization-chart" component={OrganizationChart} />
       <Route path="/departments/:dept" component={DepartmentPortal} />
       <Route path="/employee-requests" component={EmployeeRequests} />
+      
+      {/* Social Media Platform Routes */}
+      <Route path="/social" component={SocialHome} />
+      <Route path="/social/setup" component={ProfileSetup} />
+      <Route path="/social/profile/:username" component={UserProfile} />
+      <Route path="/social/explore" component={Explore} />
+      
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
