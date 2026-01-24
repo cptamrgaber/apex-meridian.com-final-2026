@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { Heart, MessageCircle, Share2, Send, Globe, Users, Lock } from "lucide-react";
 import { toast } from "sonner";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import NotificationCenter from "@/components/NotificationCenter";
 
 export default function SocialHome() {
   const { t } = useTranslation();
@@ -126,6 +127,7 @@ export default function SocialHome() {
               <Link href={`/social/profile/${profile.username}`}>
                 <Button variant="ghost" size="sm">{t('social.nav.profile')}</Button>
               </Link>
+              <NotificationCenter />
               <LanguageSwitcher />
             </nav>
           </div>

@@ -109,10 +109,13 @@
       "title": "Notifications",
       "noNotifications": "No notifications yet",
       "markAllRead": "Mark all as read",
-      "likedPost": "liked your post",
-      "commentedPost": "commented on your post",
-      "followedYou": "started following you",
-      "mentionedYou": "mentioned you in a post"
+      "likedPost": "{{name}} liked your post",
+      "commentedPost": "{{name}} commented on your post",
+      "followedYou": "{{name}} started following you",
+      "mentionedYou": "{{name}} mentioned you in a post",
+      "sharedPost": "{{name}} shared your post",
+      "newNotification": "New notification",
+      "allMarkedRead": "All notifications marked as read"
     },
     "settings": {
       "title": "Settings",

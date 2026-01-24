@@ -418,6 +418,24 @@ export const socialRouter = router({
             likesCount: sql`${schema.posts.likesCount} + 1`,
           })
           .where(eq(schema.posts.id, input.postId));
+
+        // Get post author to send notification
+        const postResults = await db.select().from(schema.posts)
+          .where(eq(schema.posts.id, input.postId))
+          .limit(1);
+        const post = postResults[0];
+
+        if (post && post.userId !== ctx.user.id) {
+          // Create notification for post author
+          await db.insert(schema.notifications).values({
+            userId: post.userId,
+            actorId: ctx.user.id,
+            type: "like",
+            entityType: "post",
+            entityId: input.postId,
+            isRead: 0,
+          });
+        }
       }
 
       return { success: true };
@@ -482,7 +500,7 @@ export const socialRouter = router({
         aiModerationStatus: "approved", // TODO: implement AI moderation
       });
 
-      // Increment comments count
+      // Increment comments count and create notification
       if (input.postId) {
         await db
           .update(schema.posts)
@@ -490,6 +508,25 @@ export const socialRouter = router({
             commentsCount: sql`${schema.posts.commentsCount} + 1`,
           })
           .where(eq(schema.posts.id, input.postId));
+
+        // Get post author to send notification
+        const postResults = await db.select().from(schema.posts)
+          .where(eq(schema.posts.id, input.postId))
+          .limit(1);
+        const post = postResults[0];
+
+        if (post && post.userId !== ctx.user.id) {
+          // Create notification for post author
+          await db.insert(schema.notifications).values({
+            userId: post.userId,
+            actorId: ctx.user.id,
+            type: "comment",
+            entityType: "post",
+            entityId: input.postId,
+            content: input.content.substring(0, 100),
+            isRead: 0,
+          });
+        }
       } else if (input.videoId) {
         await db
           .update(schema.videos)
@@ -657,6 +694,16 @@ export const socialRouter = router({
             followersCount: sql`${schema.socialProfiles.followersCount} + 1`,
           })
           .where(eq(schema.socialProfiles.userId, input.userId));
+
+        // Create notification for followed user
+        await db.insert(schema.notifications).values({
+          userId: input.userId,
+          actorId: ctx.user.id,
+          type: "follow",
+          entityType: "post",
+          entityId: ctx.user.id,
+          isRead: 0,
+        });
       }
 
       return { success: true, status };

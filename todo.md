@@ -1502,3 +1502,15 @@
 - [x] Add unread message count badge to Messages navigation link
 - [ ] Add new stories indicator badge to navigation (requires additional backend logic)
 - [ ] Update social home page with quick access cards to Stories and Messages (optional enhancement)
+
+
+## Phase 25: Notifications System
+
+- [x] Create notifications tRPC router (getNotifications, markAsRead, markAllAsRead, getUnreadCount, deleteNotification, createNotification)
+- [x] Build notification center UI component with dropdown
+- [x] Add unread notifications badge to navigation
+- [x] Add notification translation keys (English/Arabic)
+- [x] Integrate notification creation into like/comment/follow actions
+- [ ] Add notification preferences (enable/disable types)
+- [ ] Implement notification grouping (e.g., "John and 5 others liked your post")
+- [ ] Add real-time notification updates (polling or WebSocket)

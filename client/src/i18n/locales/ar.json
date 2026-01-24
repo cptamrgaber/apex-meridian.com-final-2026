@@ -109,10 +109,13 @@
       "title": "الإشعارات",
       "noNotifications": "لا توجد إشعارات بعد",
       "markAllRead": "تحديد الكل كمقروء",
-      "likedPost": "أعجب بمنشورك",
-      "commentedPost": "علق على منشورك",
-      "followedYou": "بدأ بمتابعتك",
-      "mentionedYou": "ذكرك في منشور"
+      "likedPost": "{{name}} أعجب بمنشورك",
+      "commentedPost": "{{name}} علق على منشورك",
+      "followedYou": "{{name}} بدأ بمتابعتك",
+      "mentionedYou": "{{name}} ذكرك في منشور",
+      "sharedPost": "{{name}} شارك منشورك",
+      "newNotification": "إشعار جديد",
+      "allMarkedRead": "تم تحديد جميع الإشعارات كمقروءة"
     },
     "settings": {
       "title": "الإعدادات",
