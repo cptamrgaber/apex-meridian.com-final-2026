@@ -5,8 +5,9 @@
     "nav": {
       "home": "الرئيسية",
       "explore": "استكشف",
-      "profile": "الملف الشخصي",
+      "stories": "القصص",
       "messages": "الرسائل",
+      "profile": "الملف الشخصي",
       "notifications": "الإشعارات",
       "settings": "الإعدادات"
     },

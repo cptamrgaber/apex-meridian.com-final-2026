@@ -156,6 +156,8 @@ export default function SiteMap() {
                 <li><Link href="/social" className="text-gray-300 hover:text-cyan-400 transition-colors">Apex Social - Home</Link></li>
                 <li><Link href="/social/setup" className="text-gray-300 hover:text-cyan-400 transition-colors">Create Profile</Link></li>
                 <li><Link href="/social/explore" className="text-gray-300 hover:text-cyan-400 transition-colors">Explore & Search</Link></li>
+                <li><Link href="/social/stories" className="text-gray-300 hover:text-cyan-400 transition-colors">Stories (24h)</Link></li>
+                <li><Link href="/social/messages" className="text-gray-300 hover:text-cyan-400 transition-colors">Direct Messages</Link></li>
                 <li className="text-gray-400 text-sm italic">Profile pages (dynamic routes)</li>
                 <li className="text-gray-400 text-sm italic">Post pages (dynamic routes)</li>
               </ul>
@@ -166,6 +168,7 @@ export default function SiteMap() {
               <h2 className="text-2xl font-bold text-cyan-400 mb-4">Admin & Management</h2>
               <ul className="space-y-2">
                 <li><Link href="/admin/settings" className="text-gray-300 hover:text-cyan-400 transition-colors">Admin Settings</Link></li>
+                <li><Link href="/admin/moderation" className="text-gray-300 hover:text-cyan-400 transition-colors">Content Moderation</Link></li>
                 <li><Link href="/login" className="text-gray-300 hover:text-cyan-400 transition-colors">Employee Login</Link></li>
                 <li><Link href="/employee" className="text-gray-300 hover:text-cyan-400 transition-colors">Employee Portal</Link></li>
                 <li><Link href="/hr-dashboard" className="text-gray-300 hover:text-cyan-400 transition-colors">HR Dashboard</Link></li>

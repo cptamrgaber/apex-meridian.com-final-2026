@@ -21,6 +21,7 @@ export default function SocialHome() {
     limit: 20,
     offset: 0,
   });
+  const { data: unreadCount } = trpc.messaging.getUnreadCount.useQuery();
 
   const createPostMutation = trpc.social.createPost.useMutation({
     onSuccess: () => {
@@ -100,12 +101,27 @@ export default function SocialHome() {
                 {t('social.brand')}
               </h1>
             </Link>
-            <nav className="flex items-center gap-6">
+            <nav className="flex items-center gap-4">
               <Link href="/social">
                 <Button variant="ghost" size="sm">{t('social.nav.home')}</Button>
               </Link>
               <Link href="/social/explore">
                 <Button variant="ghost" size="sm">{t('social.nav.explore')}</Button>
+              </Link>
+              <Link href="/social/stories">
+                <Button variant="ghost" size="sm" className="relative">
+                  {t('social.nav.stories')}
+                </Button>
+              </Link>
+              <Link href="/social/messages">
+                <Button variant="ghost" size="sm" className="relative">
+                  {t('social.nav.messages')}
+                  {unreadCount && unreadCount.unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {unreadCount.unreadCount > 9 ? '9+' : unreadCount.unreadCount}
+                    </span>
+                  )}
+                </Button>
               </Link>
               <Link href={`/social/profile/${profile.username}`}>
                 <Button variant="ghost" size="sm">{t('social.nav.profile')}</Button>

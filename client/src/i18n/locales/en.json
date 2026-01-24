@@ -5,8 +5,9 @@
     "nav": {
       "home": "Home",
       "explore": "Explore",
-      "profile": "Profile",
+      "stories": "Stories",
       "messages": "Messages",
+      "profile": "Profile",
       "notifications": "Notifications",
       "settings": "Settings"
     },
