@@ -1514,3 +1514,44 @@
 - [ ] Add notification preferences (enable/disable types)
 - [ ] Implement notification grouping (e.g., "John and 5 others liked your post")
 - [ ] Add real-time notification updates (polling or WebSocket)
+
+
+## Phase 26: Profile Enhancements & KYC Verification
+
+- [x] Update socialProfiles schema with birthday field
+- [x] Update socialProfiles schema with phoneNumber and phoneVerified fields
+- [x] Create KYC verification table (documents, status, admin review)
+- [x] Add verification badges fields (isVerified, verifiedAt)
+- [x] Create phoneVerificationOTPs table
+- [x] Push database schema changes
+- [x] Create phone verification tRPC procedures (sendOTP, verifyOTP)
+- [x] Create KYC submission tRPC procedures (submitKYC, getKYCStatus, reviewKYC, uploadKYCDocument, getPendingKYC, reviewKYC)
+- [ ] Build phone verification UI with OTP input
+- [ ] Build KYC submission form with document upload
+- [ ] Build admin KYC review dashboard
+- [ ] Update profile setup page with birthday and phone fields
+- [ ] Update profile page with verification badges
+- [ ] Add profile picture upload functionality
+
+## Phase 27: Comprehensive Testing & Bug Fixes
+
+- [ ] Test all navigation links (header, footer, sidebar)
+- [ ] Test all page routes (check for 404 errors)
+- [ ] Test social media features (posts, comments, likes, follows)
+- [ ] Test messaging system
+- [ ] Test stories feature
+- [ ] Test notifications system
+- [ ] Test phone verification flow
+- [ ] Test KYC submission and approval flow
+- [ ] Test moderation dashboard
+- [ ] Test multilingual support (English/Arabic)
+- [ ] Fix any broken links or dead pages
+- [ ] Fix any JavaScript errors
+- [ ] Fix any UI/UX issues
+
+## Phase 28: GitHub Upload & Final Publish
+
+- [ ] Upload code to GitHub repository (apex-meridian.com-final-2026)
+- [ ] Create final checkpoint
+- [ ] Review all features before publish
+- [ ] Publish to production

@@ -284,7 +284,16 @@ export const socialProfiles = mysqlTable("socialProfiles", {
   location: varchar("location", { length: 200 }),
   website: varchar("website", { length: 500 }),
   birthDate: timestamp("birthDate"),
+  phoneNumber: varchar("phoneNumber", { length: 20 }),
+  phoneVerified: int("phoneVerified").default(0).notNull(),
+  phoneVerifiedAt: timestamp("phoneVerifiedAt"),
   isVerified: int("isVerified").default(0).notNull(),
+  verifiedAt: timestamp("verifiedAt"),
+  kycStatus: mysqlEnum("kycStatus", ["none", "pending", "approved", "rejected"]).default("none").notNull(),
+  kycSubmittedAt: timestamp("kycSubmittedAt"),
+  kycReviewedAt: timestamp("kycReviewedAt"),
+  kycReviewedBy: int("kycReviewedBy"),
+  kycRejectionReason: text("kycRejectionReason"),
   isPrivate: int("isPrivate").default(0).notNull(),
   language: varchar("language", { length: 10 }).default("en").notNull(),
   followersCount: int("followersCount").default(0).notNull(),
@@ -296,6 +305,38 @@ export const socialProfiles = mysqlTable("socialProfiles", {
 
 export type SocialProfile = typeof socialProfiles.$inferSelect;
 export type InsertSocialProfile = typeof socialProfiles.$inferInsert;
+
+/**
+ * KYC Documents table - stores identity verification documents
+ */
+export const kycDocuments = mysqlTable("kycDocuments", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  documentType: mysqlEnum("documentType", ["passport", "national_id", "drivers_license", "selfie"]).notNull(),
+  documentUrl: varchar("documentUrl", { length: 1000 }).notNull(), // S3 URL
+  documentNumber: varchar("documentNumber", { length: 100 }),
+  expiryDate: timestamp("expiryDate"),
+  uploadedAt: timestamp("uploadedAt").defaultNow().notNull(),
+});
+
+export type KycDocument = typeof kycDocuments.$inferSelect;
+export type InsertKycDocument = typeof kycDocuments.$inferInsert;
+
+/**
+ * Phone verification OTP table
+ */
+export const phoneVerificationOTPs = mysqlTable("phoneVerificationOTPs", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  phoneNumber: varchar("phoneNumber", { length: 20 }).notNull(),
+  otpCode: varchar("otpCode", { length: 6 }).notNull(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  verified: int("verified").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PhoneVerificationOTP = typeof phoneVerificationOTPs.$inferSelect;
+export type InsertPhoneVerificationOTP = typeof phoneVerificationOTPs.$inferInsert;
 
 /**
  * User settings for social platform
