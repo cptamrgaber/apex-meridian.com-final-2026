@@ -1477,8 +1477,15 @@
 
 ## Phase 23: Stories Feature
 
-- [ ] Create stories tRPC procedures
-- [ ] Build story creation UI
-- [ ] Build story viewer with 24-hour expiration
-- [ ] Add view tracking
-- [ ] Implement story reactions
+- [x] Create stories tRPC procedures (createStory, getStories, getMyStories, getUserStories, viewStory, deleteStory, getStoryViewers, getStoryStats, uploadStoryMedia)
+- [x] Integrate S3 storage for story media (images/videos)
+- [x] Add automatic 24-hour expiration logic
+- [x] Build story viewer UI with swipe navigation
+- [x] Add story upload UI with media preview (base64 upload)
+- [x] Implement view tracking and viewer list
+- [x] Build story creation UI with file upload
+- [x] Build story viewer with 24-hour expiration and auto-advance
+- [x] Add view tracking with duplicate prevention
+- [x] Add story grid with user avatars and indicators
+- [ ] Add story indicators to user profiles (future enhancement)
+- [ ] Implement story reactions (future enhancement)
