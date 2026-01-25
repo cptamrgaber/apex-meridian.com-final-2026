@@ -160,6 +160,26 @@
     "delete": "Delete",
     "edit": "Edit",
     "save": "Save",
-    "close": "Close"
+    "close": "Close",
+    "verification": {
+      "addPhone": "Add Phone Number",
+      "addPhoneDesc": "Verify your phone number to secure your account",
+      "phoneNumber": "Phone Number",
+      "phoneFormat": "Include country code (e.g., +20 for Egypt)",
+      "sendOTP": "Send Verification Code",
+      "otpSent": "Code Sent!",
+      "otpSentDesc": "Check your phone for the verification code",
+      "verifyPhone": "Verify Phone Number",
+      "enterOTPDesc": "Enter the 6-digit code sent to your phone",
+      "otpCode": "Verification Code",
+      "otpExpires": "Code expires in 10 minutes",
+      "verify": "Verify",
+      "changeNumber": "Change Phone Number",
+      "resendOTP": "Resend Code",
+      "enterPhone": "Please enter your phone number",
+      "enterOTP": "Please enter the verification code",
+      "phoneVerified": "Phone Verified!",
+      "phoneVerifiedDesc": "Your phone number has been successfully verified"
+    }
   }
 }

@@ -76,6 +76,7 @@ import Explore from "@/pages/social/Explore";
 import Messages from "@/pages/social/Messages";
 import ModerationDashboard from "@/pages/admin/ModerationDashboard";
 import Stories from "@/pages/social/Stories";
+import PhoneVerification from "@/pages/social/PhoneVerification";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -199,6 +200,7 @@ function Router() {
       <Route path="/social/messages" component={Messages} />
       <Route path="/admin/moderation" component={ModerationDashboard} />
       <Route path="/social/stories" component={Stories} />
+      <Route path="/social/verify-phone" component={PhoneVerification} />
       
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
