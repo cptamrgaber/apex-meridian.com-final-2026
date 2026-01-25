@@ -19,6 +19,7 @@ export default function ProfileSetup() {
   const [location, setLocationValue] = useState("");
   const [website, setWebsite] = useState("");
   const [language, setLanguage] = useState("en");
+  const [birthDate, setBirthDate] = useState("");
 
   const updateProfileMutation = trpc.social.updateProfile.useMutation({
     onSuccess: () => {
@@ -50,6 +51,7 @@ export default function ProfileSetup() {
       location: location,
       website: website || undefined,
       language,
+      birthDate: birthDate || undefined,
     });
   };
 
@@ -153,6 +155,19 @@ export default function ProfileSetup() {
                 <option value="en">English</option>
                 <option value="ar">العربية (Arabic)</option>
               </select>
+            </div>
+
+            <div>
+              <Label htmlFor="birthDate" className="text-slate-200">
+                Birthday
+              </Label>
+              <Input
+                id="birthDate"
+                type="date"
+                value={birthDate}
+                onChange={(e) => setBirthDate(e.target.value)}
+                className="mt-2 bg-slate-800/50 border-slate-700 text-white"
+              />
             </div>
 
             <Button

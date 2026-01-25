@@ -1529,9 +1529,11 @@
 - [x] Build phone verification UI with OTP input
 - [x] Build KYC submission form with document upload
 - [x] Build admin KYC review dashboard
-- [ ] Update profile setup page with birthday and phone fields
-- [ ] Update profile page with verification badges
-- [ ] Add profile picture upload functionality
+- [x] Update ProfileSetup page with birthday field (phone verification is separate flow)
+- [x] Update UserProfile page with verification badges (phone ✓, KYC ✓)
+- [x] Add birthday display to user profiles
+- [ ] Add profile picture upload functionality with S3 storage
+- [ ] Update social router to support profile picture upload
 
 ## Phase 27: Comprehensive Testing & Bug Fixes
 

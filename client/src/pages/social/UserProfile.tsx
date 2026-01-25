@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useAuth } from '@/_core/hooks/useAuth';
 import { Link, useParams } from "wouter";
-import { MapPin, Link as LinkIcon, Calendar, Users, Heart, MessageCircle } from "lucide-react";
+import { MapPin, Link as LinkIcon, Calendar, Users, Heart, MessageCircle, Shield, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
 export default function UserProfile() {
@@ -113,7 +113,19 @@ export default function UserProfile() {
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h1 className="text-3xl font-bold">{profile.displayName}</h1>
+                    <div className="flex items-center gap-2">
+                      <h1 className="text-3xl font-bold">{profile.displayName}</h1>
+                      {profile.phoneVerified && (
+                        <div title="Phone Verified">
+                          <CheckCircle className="w-5 h-5 text-blue-500" />
+                        </div>
+                      )}
+                      {profile.kycStatus === "approved" && (
+                        <div title="Identity Verified">
+                          <Shield className="w-5 h-5 text-green-500" />
+                        </div>
+                      )}
+                    </div>
                     <p className="text-slate-400">@{profile.username}</p>
                   </div>
                   {!isOwnProfile && (
@@ -156,6 +168,12 @@ export default function UserProfile() {
                       >
                         {profile.website}
                       </a>
+                    </div>
+                  )}
+                  {profile.birthDate && (
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      Born {new Date(profile.birthDate).toLocaleDateString()}
                     </div>
                   )}
                   <div className="flex items-center gap-2">
