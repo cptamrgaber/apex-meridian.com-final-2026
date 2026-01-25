@@ -77,6 +77,8 @@ import Messages from "@/pages/social/Messages";
 import ModerationDashboard from "@/pages/admin/ModerationDashboard";
 import Stories from "@/pages/social/Stories";
 import PhoneVerification from "@/pages/social/PhoneVerification";
+import KYCSubmission from "@/pages/social/KYCSubmission";
+import KYCReviewDashboard from "@/pages/admin/KYCReviewDashboard";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -201,6 +203,8 @@ function Router() {
       <Route path="/admin/moderation" component={ModerationDashboard} />
       <Route path="/social/stories" component={Stories} />
       <Route path="/social/verify-phone" component={PhoneVerification} />
+      <Route path="/social/kyc-submission" component={KYCSubmission} />
+      <Route path="/admin/kyc-review" component={KYCReviewDashboard} />
       
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

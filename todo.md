@@ -1527,8 +1527,8 @@
 - [x] Create phone verification tRPC procedures (sendOTP, verifyOTP)
 - [x] Create KYC submission tRPC procedures (submitKYC, getKYCStatus, reviewKYC, uploadKYCDocument, getPendingKYC, reviewKYC)
 - [x] Build phone verification UI with OTP input
-- [ ] Build KYC submission form with document upload
-- [ ] Build admin KYC review dashboard
+- [x] Build KYC submission form with document upload
+- [x] Build admin KYC review dashboard
 - [ ] Update profile setup page with birthday and phone fields
 - [ ] Update profile page with verification badges
 - [ ] Add profile picture upload functionality
