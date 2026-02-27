@@ -1,0 +1,53 @@
+# ============================================================
+# Apex Meridian — Environment Variables Template
+# Author: Amro Gaber
+#
+# INSTRUCTIONS:
+#   1. Rename this file to .env in the project root
+#   2. Fill in all required values marked with [REQUIRED]
+#   3. Never commit your .env file to version control
+# ============================================================
+
+# ── Application ───────────────────────────────────────────
+NODE_ENV=production
+PORT=3000
+VITE_APP_TITLE=Apex Meridian
+VITE_APP_LOGO=https://apex-meridian.com/images/logo-main-white.png
+
+# ── Database ──────────────────────────────────────────────
+# For Docker: mysql://apexuser:apexpassword@db:3306/apex_meridian
+# For external MySQL/TiDB: mysql://user:password@host:3306/dbname
+DATABASE_URL=mysql://apexuser:apexpassword@db:3306/apex_meridian
+
+# Docker MySQL credentials (must match DATABASE_URL above)
+DB_ROOT_PASSWORD=CHANGE_THIS_STRONG_PASSWORD
+DB_NAME=apex_meridian
+DB_USER=apexuser
+DB_PASSWORD=CHANGE_THIS_STRONG_PASSWORD
+
+# ── Authentication ────────────────────────────────────────
+# Generate: openssl rand -base64 64
+JWT_SECRET=CHANGE_THIS_TO_A_LONG_RANDOM_SECRET_STRING
+
+# Manus OAuth (from https://manus.im developer settings)
+VITE_APP_ID=YOUR_MANUS_APP_ID
+OAUTH_SERVER_URL=https://api.manus.im
+VITE_OAUTH_PORTAL_URL=https://manus.im/login
+
+# Owner info (primary admin account)
+OWNER_OPEN_ID=YOUR_MANUS_OPEN_ID
+OWNER_NAME=Amro Gaber
+
+# ── Email (Resend) ────────────────────────────────────────
+# Get from: https://resend.com
+RESEND_API_KEY=re_YOUR_RESEND_API_KEY
+
+# ── Manus Built-in APIs ───────────────────────────────────
+BUILT_IN_FORGE_API_KEY=YOUR_FORGE_API_KEY
+BUILT_IN_FORGE_API_URL=https://api.manus.im/forge
+VITE_FRONTEND_FORGE_API_KEY=YOUR_FRONTEND_FORGE_KEY
+VITE_FRONTEND_FORGE_API_URL=https://api.manus.im/forge
+
+# ── Analytics ─────────────────────────────────────────────
+VITE_ANALYTICS_ENDPOINT=https://analytics.apex-meridian.com
+VITE_ANALYTICS_WEBSITE_ID=YOUR_WEBSITE_ID
