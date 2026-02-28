@@ -24,6 +24,13 @@ import { moderationRouter } from "./routers/moderation";
 import { storiesRouter } from "./routers/stories";
 import { notificationsRouter } from "./routers/notifications";
 import { verificationRouter } from "./routers/verification";
+import { reportingRouter } from "./routers/reporting";
+import { groupsRouter } from "./routers/groups";
+import { notificationPreferencesRouter } from "./routers/notificationPreferences";
+import { callsRouter } from "./routers/calls";
+import { socialAnalyticsRouter } from "./routers/socialAnalytics";
+import { gamificationRouter } from "./routers/gamification";
+import { chatWidgetRouter } from "./routers/chat-widget";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -502,5 +509,12 @@ export const appRouter = router({
   stories: storiesRouter,
   notifications: notificationsRouter,
   verification: verificationRouter,
+  reporting: reportingRouter,
+  groups: groupsRouter,
+  notificationPreferences: notificationPreferencesRouter,
+  calls: callsRouter,
+  socialAnalytics: socialAnalyticsRouter,
+  gamification: gamificationRouter,
+  chatWidget: chatWidgetRouter,
 });
 export type AppRouter = typeof appRouter;

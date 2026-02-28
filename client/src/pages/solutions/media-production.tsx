@@ -18,7 +18,7 @@ export default function MediaProduction() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-home.jpg"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663044057183/eVkqz4AKzNzJoRDSPXy4aQ/hero-media-production-nXEAStYsdc7E37mxA2JNNQ.webp"
             alt="AI Media Production"
             className="w-full h-full object-cover opacity-20"
           />
@@ -28,7 +28,7 @@ export default function MediaProduction() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <img 
-              src="/images/ai-logo-white-96.png" 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663044057183/eVkqz4AKzNzJoRDSPXy4aQ/ai-logo-white-96_005a8c43.png" 
               alt="AI Media Production" 
               className="h-20 w-auto mx-auto mb-6 opacity-90"
             />

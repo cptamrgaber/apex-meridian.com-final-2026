@@ -71,18 +71,25 @@ import LeadsDashboard from "@/pages/admin/LeadsDashboard";
 import ABTestingDashboard from "@/pages/admin/ABTestingDashboard";
 import SocialHome from "@/pages/social/SocialHome";
 import ProfileSetup from "@/pages/social/ProfileSetup";
+import CreatorAnalytics from "@/pages/social/CreatorAnalytics";
 import UserProfile from "@/pages/social/UserProfile";
 import Explore from "@/pages/social/Explore";
-import Messages from "@/pages/social/Messages";
+import Messages from '@/pages/social/Messages';
+import NotificationSettings from '@/pages/social/NotificationSettings';
 import ModerationDashboard from "@/pages/admin/ModerationDashboard";
 import Stories from "@/pages/social/Stories";
 import PhoneVerification from "@/pages/social/PhoneVerification";
 import KYCSubmission from "@/pages/social/KYCSubmission";
 import KYCReviewDashboard from "@/pages/admin/KYCReviewDashboard";
+import ReportsDashboard from "@/pages/admin/ReportsDashboard";
+import Settings from "@/pages/social/Settings";
+import Groups from "@/pages/social/Groups";
+import GroupDetail from "@/pages/social/GroupDetail";
 import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ChatWidget } from "./components/ChatWidget";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
@@ -200,11 +207,17 @@ function Router() {
       <Route path="/social/profile/:username" component={UserProfile} />
       <Route path="/social/explore" component={Explore} />
       <Route path="/social/messages" component={Messages} />
+      <Route path="/social/analytics" component={CreatorAnalytics} />
+      <Route path="/social/notifications/settings" component={NotificationSettings} />
       <Route path="/admin/moderation" component={ModerationDashboard} />
       <Route path="/social/stories" component={Stories} />
       <Route path="/social/verify-phone" component={PhoneVerification} />
       <Route path="/social/kyc-submission" component={KYCSubmission} />
       <Route path="/admin/kyc-review" component={KYCReviewDashboard} />
+      <Route path="/admin/reports" component={ReportsDashboard} />
+      <Route path="/social/settings" component={Settings} />
+      <Route path="/social/groups" component={Groups} />
+      <Route path="/social/groups/:id" component={GroupDetail} />
       
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
@@ -221,6 +234,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <ChatWidget />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

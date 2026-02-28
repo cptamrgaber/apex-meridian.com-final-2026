@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src="/images/logo-main.png"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663044057183/eVkqz4AKzNzJoRDSPXy4aQ/logo-main_3124fb5b.png"
                 alt="Apex Meridian"
                 className="h-8 w-auto mb-2 brightness-0 invert"
                 style={{ objectFit: 'contain' }}

@@ -19,7 +19,7 @@ export default function Header() {
           <Link href="/">
             <div className="cursor-pointer group">
               <img
-                src="/images/logo-main.png"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663044057183/eVkqz4AKzNzJoRDSPXy4aQ/logo-main_3124fb5b.png"
                 alt="Apex Meridian"
                 className="h-11 w-auto group-hover:scale-105 transition-transform brightness-0 invert"
                 style={{ objectFit: 'contain' }}
