@@ -452,3 +452,40 @@ server/routers/
 **Status:** Active Development  
 
 © 2026 Apex-Meridian® LLC. All rights reserved.
+
+## Deployment
+
+### Production Server (Hostinger VPS)
+- **IP**: 76.13.6.68 (public) / 100.69.5.27 (Tailscale)
+- **Domain**: https://apex-meridian.com
+- **DNS**: Cloudflare (proxied)
+
+### Services
+| Service | Port | Status |
+|---------|------|--------|
+| Website (Node.js) | 3000 | PM2 managed |
+| Authentik (SSO) | 9000, 9443 | Docker |
+| Stalwart (Mail) | 25, 587, 993 | Systemd |
+| SnappyMail | 80/443 | Nginx |
+
+### Quick Commands
+```bash
+# SSH to VPS
+ssh root@100.69.5.27
+
+# PM2 management
+pm2 status
+pm2 logs apex-meridian
+pm2 restart apex-meridian
+
+# Rebuild & deploy
+cd /var/www/apex-meridian
+npm run build
+pm2 restart apex-meridian --update-env
+```
+
+### Authentication
+- **Simple Auth**:  with 
+- **OAuth**: Via Authentik at port 9000
+- **Admin**: Authentik admin at https://100.69.5.27:9000
+
